@@ -20,9 +20,9 @@ before_script:
    - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 
 script:
-  - npm run build.packages
-  - npm run lint.packages
-  - npm run test.packages
+  - ./scripts/ci/build.sh prod
+  - ./scripts/ci/link.sh
+  - ./scripts/ci/test.sh
 
 
 notifications:
