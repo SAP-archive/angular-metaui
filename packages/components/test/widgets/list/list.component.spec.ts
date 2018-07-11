@@ -183,10 +183,12 @@ describe('Component: List', () => {
             fixtureWrapper.detectChanges();
 
             let listbox = fixtureWrapper.nativeElement.querySelector('.ui-listbox');
-            let computedStyle = getComputedStyle(listbox);
 
-            console.log(listbox.attributes.style);
-            expect(computedStyle.height).toBe('100px');
+            // computed styles does not work on Travis so I just need to check if the style
+            // was properly set onto the element
+
+            expect(listbox.attributes.style.textContent.indexOf('height: 100px;') !== -1)
+                .toBeTruthy();
 
         });
 
@@ -197,7 +199,8 @@ describe('Component: List', () => {
             let listbox = fixtureWrapper.nativeElement.querySelector('.ui-listbox');
             let computedStyle = getComputedStyle(listbox);
 
-            expect(computedStyle.width).toBe('150px');
+            expect(listbox.attributes.style.textContent.indexOf('width: 150px;') !== -1)
+                .toBeTruthy();
         });
 
         it('should change overflow-y to auto when height is used ', () => {
