@@ -16,20 +16,21 @@
  *
  *
  */
-import {Component, CUSTOM_ELEMENTS_SCHEMA, Injector, NO_ERRORS_SCHEMA} from '@angular/core';
-import {fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
+import {Component} from '@angular/core';
+import {fakeAsync, TestBed, tick} from '@angular/core/testing';
 import {APP_BASE_HREF} from '@angular/common';
 import {By} from '@angular/platform-browser';
 import {UIMeta} from '../../../src/core/uimeta';
 import {Expr} from '../../../src/core/property-value';
-import {Router, Routes} from '@angular/router';
+import {Routes} from '@angular/router';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AribaMetaUIModule} from '../../../src/ariba.metaui.module';
 import {
-    ComponentRegistry, BaseComponent, AribaComponentsTestProviderModule
+    AribaComponentsTestProviderModule,
+    BaseComponent,
+    ComponentRegistry
 } from '@aribaui/components';
 import {AribaCoreModule, Environment} from '@aribaui/core';
-import {MetaFormRowComponent} from '../../../src/layout/meta-form/meta-form-row/meta-form-row.component';
 
 
 const routes: Routes = [
