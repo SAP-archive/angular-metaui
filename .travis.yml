@@ -20,9 +20,8 @@ before_script:
    - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 
 script:
-  - ng build core
-  - ng build components
-  - ng test components --browsers=ChromeHeadlessCI --source-map=false --watch=false
+  - npm run build.packages
+  - ng test components --browsers=ChromeHeadlessCI,FirefoxHeadless --source-map=false --watch=false
 
 
 
