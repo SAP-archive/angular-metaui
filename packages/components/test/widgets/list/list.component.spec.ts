@@ -178,14 +178,14 @@ describe('Component: List', () => {
         }));
 
 
-        it(' should set the height style on the top level element ', () => {
+        fit(' should set the height style on the top level element ', () => {
             let fixtureWrapper = TestBed.createComponent(TestHeightWidthForListComponent);
             fixtureWrapper.detectChanges();
 
             let listbox = fixtureWrapper.nativeElement.querySelector('.ui-listbox');
             let computedStyle = getComputedStyle(listbox);
 
-            console.log(computedStyle);
+            dumpComputedStyles(computedStyle);
             expect(computedStyle.height).toBe('100px');
 
         });
@@ -386,6 +386,15 @@ describe('Component: List', () => {
 
 });
 
+function dumpComputedStyles(cs: any) {
+    let len = cs.length;
+    for (let i = 0; i < len; i++) {
+
+        let style = cs[i];
+        console.log(style + ' : ' + cs.getPropertyValue(style));
+    }
+
+}
 
 function borderColor(element: any) {
     let computedStyle = getComputedStyle(element);
