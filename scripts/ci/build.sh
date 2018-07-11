@@ -9,16 +9,16 @@ if [[ ${TRAVIS_TEST_RESULT=0} == 1 ]]; then
 fi
 
 if [ ${args[0]} == "prod" ]; then
-   echo "Building core module"
+   echo "################ Building core module ################"
    ng build core --prod
 
-   echo "Building components module"
+   echo "################ Building components module ################"
    ng build components --prod
 
-   echo "Building resources module"
+   echo "################ Building resources module ################"
    npm run build.resources
 
-   echo "Building metaui module"
+   echo "################  Building metaui module ################"
    ng build metaui --prod
 
 else
