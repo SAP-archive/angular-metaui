@@ -178,7 +178,7 @@ describe('Component: List', () => {
         }));
 
 
-        fit(' should set the height style on the top level element ', () => {
+        it(' should set the height style on the top level element ', () => {
             let fixtureWrapper = TestBed.createComponent(TestHeightWidthForListComponent);
             fixtureWrapper.detectChanges();
 

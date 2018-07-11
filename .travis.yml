@@ -22,7 +22,7 @@ before_script:
 script:
   - ng build core
   - ng build components
-  - ng test components --browsers=FirefoxHeadless,ChromeHeadlessCI --source-map=false --watch=false
+  - ng test components --browsers=ChromeHeadlessCI --source-map=false --watch=false
 
 
 
