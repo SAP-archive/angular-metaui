@@ -5,7 +5,11 @@ node_js:
   - '8.9.1'
 
 addons:
-  chrome: stable
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stablee
 
 branches:
   only:
@@ -16,17 +20,31 @@ cache:
      - ./node_modules
 
 before_script:
-   - "sudo chown root /opt/google/chrome/chrome-sandbox"
-   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
-
-before_install:
-   - export CHROME_BIN=chromium-browser
-   - export DISPLAY=:99.0
-   - sh -e /etc/init.d/xvfb start
+     - set -e
+     - npm install
+     - npm run build:library
+     - npm install -g angular-cli-ghpages
+     - export DISPLAY=:99.0
+     - sh -e /etc/init.d/xvfb start
 
 
 script:
-  - ng build core
-  - ng test core  --watch=false
+  - npm run build.packages.prod
+  - npm run lint.packages
+  - npm run test.packages
 
+
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
+
+
+
+after_success:
+  - echo "Build ok"
+
+after_failure:
+    - echo "Build OK"
 
