@@ -21,8 +21,8 @@ before_script:
 
 script:
   - npm run build.packages
-  - ng test components --browsers=ChromeHeadlessCI,FirefoxHeadless --source-map=false --watch=false
-
+  - npm run lint.packages
+  - npm run test.packages
 
 
 notifications:
