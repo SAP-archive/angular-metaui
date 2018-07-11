@@ -218,9 +218,8 @@ describe('Component: List', () => {
             fixtureWrapper.detectChanges();
 
             let listbox = fixtureWrapper.nativeElement.querySelector('.ui-listbox');
-            let computedStyle = getComputedStyle(listbox);
 
-            expect(computedStyle.borderColor).toBe('rgb(0, 0, 0)');
+            expect(borderColor(listbox)).toBe('rgb(0, 0, 0)');
         });
 
 
@@ -386,6 +385,15 @@ describe('Component: List', () => {
 
 });
 
+
+function borderColor(element: any) {
+    let computedStyle = getComputedStyle(element);
+
+    return computedStyle.borderColor !== '' ? computedStyle.borderColor :
+        computedStyle.borderBottomColor;
+
+
+}
 
 @Component({
     selector: 'wrapper-comp',

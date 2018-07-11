@@ -19,11 +19,8 @@ before_script:
    - "sudo chown root /opt/google/chrome/chrome-sandbox"
    - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 
-
 script:
-  - npm run build.packages.prod
-  - npm run lint.packages
-  - npm run test.packages
+  - ng test components --browsers=FirefoxHeadless,ChromeHeadlessCI --source-map=false --watch=false
 
 
 

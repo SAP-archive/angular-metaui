@@ -16,7 +16,7 @@
  *
  *
  */
-import {Component, Injector} from '@angular/core';
+import {Component, CUSTOM_ELEMENTS_SCHEMA, Injector, NO_ERRORS_SCHEMA} from '@angular/core';
 import {fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
 import {APP_BASE_HREF} from '@angular/common';
 import {By} from '@angular/platform-browser';
@@ -29,6 +29,7 @@ import {
     ComponentRegistry, BaseComponent, AribaComponentsTestProviderModule
 } from '@aribaui/components';
 import {AribaCoreModule, Environment} from '@aribaui/core';
+import {MetaFormRowComponent} from '../../../src/layout/meta-form/meta-form-row/meta-form-row.component';
 
 
 const routes: Routes = [
@@ -64,7 +65,7 @@ describe('Meta Context Component', () => {
             declarations: [
                 TestContainerEditComponent,
                 TestContainerViewComponent,
-                TestContainerViewDefferedComponent
+                TestContainerViewDefferedComponent,
             ],
             imports: [
                 RouterTestingModule.withRoutes(routes),
@@ -80,14 +81,6 @@ describe('Meta Context Component', () => {
         // console.log('Time :', (Date.now() - start));
 
     });
-
-    it('Check Router Injector ', inject([Injector], (injector: Injector) => {
-
-        // expect(router).toBeDefined();
-
-        expect(injector.get(Router)).toBeDefined();
-
-    }));
 
 
     it('It should render 4 input fields with pre-loaded values: Frank, Kolar, 1000, Some note' +
