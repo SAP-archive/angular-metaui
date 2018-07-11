@@ -185,7 +185,7 @@ describe('Component: List', () => {
             let listbox = fixtureWrapper.nativeElement.querySelector('.ui-listbox');
             let computedStyle = getComputedStyle(listbox);
 
-            dumpComputedStyles(computedStyle);
+            console.log(listbox.attributes.style);
             expect(computedStyle.height).toBe('100px');
 
         });
