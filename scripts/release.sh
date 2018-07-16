@@ -51,9 +51,13 @@ perl -p -i -e "s/VERSION_PLACEHOLDER/${NEW_VERSION}/g" $(grep -ril VERSION_PLACE
 echo "Tagging Repo with git tag v${NEW_VERSION}"
 git tag v${NEW_VERSION}
 
-printf "Now go to change log and do last minute editing if needed and running following commands:\n\n"
+printf "=============== Now go to CHANGELOG.md and check if everything is ok then run following commands:================\n\n"
+printf "  git commit -m \"docs(CHANGELOG): v${NEW_VERSION}\" ./CHANGELOG.md && git add . &&  git commit -m \"chore(release): v${NEW_VERSION}\"\n\n"
+printf "  git push --follow-tags origin master\n\n"
 
-echo "git commit -m ""docs(CHANGELOG): v${NEW_VERSION}" ./CHANGELOG.md" && git add . &&  git commit -m ""chore(release): v${NEW_VERSION}"""
+
+
+
 
 
 
