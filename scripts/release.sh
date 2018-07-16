@@ -48,6 +48,18 @@ echo "Bumping up package(s).json to version ${NEW_VERSION}"
 cd ./dist
 perl -p -i -e "s/VERSION_PLACEHOLDER/${NEW_VERSION}/g" $(grep -ril VERSION_PLACEHOLDER .) < /dev/null 2> /dev/null
 
+echo "Tagging Repo with git tag v${NEW_VERSION}"
+git tag v${NEW_VERSION}
+
+printf "Now go to change log and do last minute editing if needed and running following commands:\n\n"
+
+echo "git commit -m ""docs(CHANGELOG): v${NEW_VERSION}" ./CHANGELOG.md" && git add . &&  git commit -m ""chore(release): v${NEW_VERSION}"""
+
+
+
+
+
+
 
 
 
