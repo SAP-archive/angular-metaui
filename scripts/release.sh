@@ -36,7 +36,7 @@ fi
 
 
 if [ ${args[0]} != "none" ]; then
-    echo "Running standard-version to create a release package with ${standardVersionBin} --release-as ${args[0]}"
+    echo "Running standard-version to create a release package with --release-as ${args[0]}"
 
     cd ..
     ./node_modules/.bin/standard-version --release-as ${args[0]}
