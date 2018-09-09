@@ -278,6 +278,52 @@
         }
       }
     },
+    "compiler": {
+      "root": "packages/compiler",
+      "sourceRoot": "packages/compiler/src",
+      "projectType": "library",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "packages/compiler/tsconfig.lib.json",
+            "project": "packages/compiler/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "packages/compiler/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/compiler/test.ts",
+            "tsConfig": "packages/compiler/tsconfig.spec.json",
+            "karmaConfig": "packages/compiler/karma.conf.js",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "packages/compiler/test/assets",
+                "output": "/assets"
+              }
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/compiler/tsconfig.lib.json",
+              "packages/compiler/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
     "metaui-evolution": {
       "root": "modules/metaui-evolution/",
       "sourceRoot": "modules/metaui-evolution/src",
