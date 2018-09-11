@@ -1,0 +1,1034 @@
+Part III. MetaUI Applications
+=============================
+
+![AribaWeb Stack: MetaUI App](stack_metaui.jpg)
+In this section we'll introduce the MetaUI framework.
+MetaUI builds upon AribaWeb Core (and, tangentially, on Widgets) to assemble interfaces
+on the fly (without templates). We'll cover the following:
+
+  - [AribaWeb and MetaUI]#
+  - [Rules]#
+  - [Context and Properties]#
+  - [Chaining]#
+  - [Annotation Rules]#
+  - [Built-in Rules]#
+  - [Application Rules]#
+  - [Rule Loading]#
+  - [Rule Ranking]#
+  - [Visibility]#
+  - [Validation]#
+  - [Editibility]#
+  - [Actions]#  
+  - [Layouts]#
+  - [MetaUI and Databases]#
+  - [Other Areas to Explore]#
+
+AribaWeb and MetaUI
+--------
+Let's add another field on the Post object:
+
+        public class Post {
+            ...
+            public int rating = 3;
+            public boolean isPrivate;
+        }
+
+To display this new field in the UI, we can add an entry to the FormTable, the list, the AWTDataTable, and the EditPost page.
+This seem like a bit repetitive and a hassle if I need to add more fields. Let's try using MetaUI to derive the UI for us.
+
+First let's convert our project to a MetaUI project.
+In the project's build.xml, change the build import like this:
+
+        <import file="${aw.home}/tools/build-metaui-app.xml"/>
+
+Next, let's swap out the FormTable in Main.awl with this:
+
+        <m:Context object="$newPost" operation="create" layout="Inspect">
+            <m:IncludeComponent/>
+        </m:Context>
+        <a:SubmitButton action="$add"/>
+
+and switch the DataTable with this:
+
+        <m:Context class="app.Post" displayGroup="$displayGroup"
+                   layout="Table">
+            <m:IncludeComponent/>
+        </m:Context>
+
+with this update to Main.java:
+
+        import ariba.ui.table.AWTDisplayGroup;
+
+        public AWTDisplayGroup _displayGroup = new AWTDisplayGroup();
+
+        public void add () {
+            ...
+            updateDisplayGroup();
+            _newPost = new Post();
+        }
+
+        public void deleteCurrent () {
+            ...
+            updateDisplayGroup();
+        }
+
+        private void updateDisplayGroup () {
+            _displayGroup.setObjectArray(_posts);
+        }
+
+finally replace the content of EditPost.awl with this:
+
+        <w:ModalPageWrapper title="Edit Post">
+            <m:Context object="$post" operation="edit" layout="Inspect">
+                <m:IncludeComponent/>
+            </m:Context>
+        </w:ModalPageWrapper>
+
+![New Post with Meta UI](MetaNewPost.gif)
+![Posts with Meta UI](MetaPosts.gif)
+![Edit Post with Meta UI](MetaEditPost.gif)
+The fields magically get display with some editing components defaulted in based on type of the field in all the three areas we changed.
+MetaUI assembles interfaces by applying *rules* to dynamically (and recursively) select
+and configure AWComponents -- the exact same components in AribaWeb Core and Widgets that
+we learned about in Part I and Part II.
+This results in [less code and higher productivity](http://aribaweb.blogspot.com/2009/02/way-way-less-code.html).
+
+Notice that we can mix AW elements and Widgets elements with MetaUI.
+That is because [MetaContext]#api and [MetaIncludeComponent]#api are just AW elements that interact with the MetaUI rule engine.
+To understand the interaction, we need to understand the MetaUI fundamentals: rules, context, and properties...
+
+Rules
+--------
+A [Rule]#api defines a map of properties that should apply in the event that a set of Selectors
+are matched.  Given a rule base [Meta]#api and a set of asserted values [Context]#api a list of matching
+rules can be computed (by matching their selectors against the values) and by successively (in
+rank / priority order) applying (merging) their property maps, a set of effective properties can
+be computed.
+
+Each rule can be stated like this:
+
+        If selectors [__,__,...] match the current context values,
+        then apply the properties [__,__,...].
+ 
+These rules can come from a variety of sources:
+
+ - Runtime introspection of Java classes
+   > These rules declare the available properties (fields) and actions, along with their data types.
+   Example: "What are the fields in the app.Post class?" In rules term:
+
+        If selectors [class=app.Post, declare=field]
+            match the current context values,
+        then apply the properties
+            [field:userName]
+            
+        If selectors [class=app.Post, declare=field]
+            match the current context values,
+        then apply the properties
+            [field:isPrivate]
+
+ - Annotations on Java classes
+   > Annotations can provide additional information not inferable from the class alone.
+   Example: "Is the username required?" In rules term:
+
+        If selectors [class=app.Post, field=username] 
+            match the current context values,
+        then apply the properties
+            [trait:required]
+
+ - Built-in rules
+   > MetaUI includes a base set of rules to describe, for instance, a mapping from field data type to UI component.
+   Example: "If it's a Date and we're editing, use the date field."  In rules term:
+
+        If selectors [field=any, type=Date, editable=true]
+            match the current context values,
+        then apply the properties
+            [component:DateField]
+
+ - Application provided rules
+   > Applications may provide explicit rules via "object style sheet (oss) files".  These are a convenient place to express presentation-oriented rules that really don't belong in (UI agnostic) domain classes.
+   Example: "The comment field should appear after isPrivate field." In rules term:
+
+        If selectors [class=app.Post, field=comment]
+            match the current context values,
+        then apply the properties
+            [after:isPrivate]
+
+ - Other Sources of Meta Data
+   > Many applications have other external sources of information about the application's domain classes.  For instance, an application may have ORM meta data (perhaps expressed in annotations or in XML files) that provide additional information about classes and fields that should be taken into account when creating user interfaces (e.g. "is this field an owned to-many relationship?").  MetaUI provides generic hooks for integrating such sources of metadata (in fact, the metadata sources above integrate via these same hooks).
+
+We'll go into more details for each type of rules, but for now let's take a look at context and properties...
+
+Context and Properties
+--------------------
+[Context]#api represents a stack of assignments (e.g. object="$post", operation="create", layout="Inspect").
+The current values are run against the Meta rule set to compute the effective property map.
+
+The property map holds property key/value pairs that directly affects the UI (eg, component="AWCheckbox", editable="$false")
+
+This is similar to how CSS works.  HTML elements can have classes to provide context.  For example:
+
+        // Example.htm
+        <div class="box">
+            <h1>Hey</h1>
+        </div>
+
+        <div class="X">
+         <div class="box">
+            <h1>There</h1>
+         </div>
+        </div>
+
+Then you have rules that depending on the context and how they are nested, you get different styling properties:
+
+        // Foo.css
+        .box {
+           border:1px solid red;
+           width:100px;
+           float:left;
+           color:green;
+        }
+        /*
+           if an element with class "box" that is contained
+           in an element with class "X",
+           then applies these properties
+        */
+        .X .box {
+            border:3px solid blue;
+            background-color:yellow;
+        }
+        /*
+           if a h1 element is contained
+           in an element with class "box" that is contained
+           in an element with class "X",
+           then applies these properties
+        */
+        .X .box h1 {
+            color:orange;
+        }
+
+![CSS Rules](CSSRules.gif)
+
+If multiples rules match, properties are merged and overridden.
+In this example,the "There" element merged the width and float properties,
+but overrode the border and color properties from more specific rules.
+
+In MetaUI, context values are set using [MetaContext]#api:
+
+        <m:Context object="$newPost" operation="create" layout="Inspect">
+            <m:IncludeComponent/>
+        </m:Context>
+
+        <m:Context object="$newPost" operation="view" layout="Inspect">
+            <m:IncludeComponent/>
+        </m:Context>
+
+Then you have rules that depending on the context and how they are nested, you get different UI properties:
+
+        If selectors [operation=create, field=any]
+            match the current context values,
+        then apply the properties
+            [editing:true]
+
+        If selectors [operation=view, field=any]
+            match the current context values,
+        then apply the properties
+            [editing:false]
+
+![New Post with Create and View context](MetaNewPostViewCreate.gif)
+
+[MetaIncludeComponent]#api and various Meta components takes the effective property map to generate the UI.
+
+Here are some interesting *context keys*:
+
+ - **module** Global nav tab
+ - **layout** Define a named layout (e.g. "Inspect", "SearchForm", "TableRow")
+ - **operation** "view", "edit", "create", "search"
+ - **class** Full class name (org.package.Class), Can be derived from object
+ - **object** Object instance (e.g. a User object)
+ - **action** An action (e.g. could be fired from a button)
+ - **field** current field of class
+ - **type** (Java) type of current field
+ - **elementType** If type is collection, the type of its elements
+ - **editing** Currently editing? Derived from operation
+ - **trait** Current traits in effect (like CSS classes)
+
+Here are some interesting *property keys*:
+
+*General*
+
+ - **trait**	List of traits to apply
+ - **after**	Name of item (or zone) that this item should follow (for layout order)
+ - **visible**	Should current item be shown
+ - **component**	AW Component name to use for display
+ - **bindings**	Map of bindings to pass to component
+ - **wrapperComponent**	Name of component to wrap around this component (also, **wrapperBindings**)
+
+*Class*
+
+ - **fieldsByZone**	Map of List<Fields> for the layout zones (e.g. "zTop", "zLeft", …)
+ - **zonePath**	Zone key path for sub map to render
+
+*Layout, Module, Field, Action*
+
+ - **label**	Display key
+
+*Field*
+
+ - **editable**	Should current field be editable
+ - **valid**	Is current value valid
+
+*Layout*
+
+ - **layoutsByZone**	List of sub-layout names grouped by zone (zTop, zLeft, …)
+
+*Action*
+
+ - **actionResults**	AWResponseGenerating result: fires action
+
+We can get a better understanding of the runtime using component inspector...
+
+![Meta Component Path](MetaPath.gif)
+Bring up component inspector by Alt-clicking on the Is Private checkbox, and then click on "Meta" to filter the click path down to just the Meta elements.
+You can see that another Meta element [MetaForm]#api and multiple [MetaContext]#api and [MetaIncludeComponent]#api are involved in constructing this UI. 
+
+![Inspect Properties](InspectProperties.gif)
+Then click on the "Meta Properties" tab, and then "Properties".  It shows the effect properties and their final computed values.
+[MetaIncludeComponent]#api uses the component property to bring in the right component and uses the bindings property passes to it AW bindings.
+
+![Inspect Rules](InspectRules.gif)
+Click on "Assignments" to see the rules that are applicable in the current context. For each rule, we see:
+ - the selectors and property map
+ - the source of each rule (OSS, Java introspection, etc)
+ - the ranking. The first rule listed has the highest priority. Properties in lower priority rules are overridden or merged.
+
+![Inspect Context](InspectContext.gif)
+Click on "Context" to see the context stack at the point of the element.
+In our example, we used [MetaContext]#api to directly assign values to the context.
+We see that object, operation, and layout is in the context stack, but where did the others come from?
+Some are set explicitly by various Meta components internally using [MetaContext]#api.
+The context values can either be from the current property map or from other sources.
+
+Here are some of the interesting context keys that are explicitly set into the context:
+
+  - **field** set by [MetaForm]#api, [MetaTableColumnRenderer]#api, [MetaTableDetailColumnRenderer]#api
+  - **action** set by [MetaActionList]#api, [MetaNavCommandBar]#api
+  - **actionCategory** set by [MetaActionList]#api, [MetaNavCommandBar]#api
+  - **class** set by [MetaDetailTable]#api, [MetaNavCommandBar]#api
+  - **object** set by [MetaTable]#api, [MetaTableColumnRenderer]#api, [MetaTableDetailColumnRenderer]#api, [MetaDetailTable]#api
+  - **layout** set by [MetaTable]#api, [MetaTableColumnRenderer]#api, [MetaDetailTable]#api, [MetaSection]#api, [MetaTabs]#api, [MetaDashboardLayout]#api
+  - **module** set by [MetaHomePage]#api, [MetaNavCommandBar]#api
+  - **displayGroup** set by [MetaDetailTable]#api
+  - **dataSourceType** set by [MetaDetailTable]#api
+
+However, some are implicitly set by the MetaUI engine.  It's time to talk about *chaining*...
+
+Chaining
+--------------------
+*Chaining* is when *some* properties resulting from one rule are fed back as new context assignments, resulting in new matches.
+
+These context assignments are "implied" by the current assignments are applied, (resulting in a revised computation
+of the current property map, and possible further chaining).
+
+Referring to the rules listed below, we can see how this particular chaining sequence happens:
+
+ - The field=isPrivate value is assigned into the context by [MetaForm]#api and activates rules 1 - 5.
+ - The type property from rule 1 is chained/implicitly assigned backed into the context and activates rules 4 and 5.
+ - The editing property from 2 is chained/implicitly assigned backed into the context and activates rule 3.
+ - The editable property from 3 is chained/implicitly assigned backed into the context and activates rule 4.
+
+        1) If selectors [class=app.Post, field=isPrivate]
+               match the current context values,
+           then apply the properties
+               [type:boolean]
+
+        2) If selectors [operation=create, field=any]
+               match the current context values,
+            then apply the properties
+                [editing:true]
+
+        3) If selectors [field=any,editing=true]
+               match the current context values,
+           then apply the properties
+               [editable:true]
+
+        4) If selectors [field=any, type=boolean, editable=any]
+               match the current context values,
+           then apply the properties
+               [component:AWCheckbox]
+
+        5) If selectors [field=any, type=boolean]
+               match the current context values,
+           then apply the properties
+               [bindings: {value=value, formatter=formatters.boolean}]
+
+Not all properties are chained.  The following are some of the interesting properties that are chained:
+
+ - class
+ - type
+ - elementType
+ - trait
+ - editable
+ - editing
+ - layout
+ - component
+
+You should now have a sense of the power of rule based UI.
+Most of the rules to generate the UI are already available from the domain object,
+or are conventions that are redundant to repeat. 
+We don't need to worry about updating all the areas every time we add/remove/change a field,
+but we lost some of the modifications we made from the previous chapter.
+Let's see how we can add some more rules to easily to restore them.  We'll start with annotation rules...
+
+Annotation Rules
+--------------------
+Let's add back "Name" as the label for the userName field like this:
+
+        import ariba.ui.meta.annotations.Property;
+        
+        @Property.Label("Name")
+        public String userName;
+
+![Label Annotation](LabelAnnotation.gif)
+The set of annotations in [Property]#api creates rules with selectors [class=*className*, field=*fieldName*].
+So in our example, this rule was created:
+
+        If selectors [class=app.Post, field=userName]
+            match the current context values,
+        then apply the properties
+            [label:"Name"]
+
+We can also annotate any property like this with the general [Properties]#api annotation:
+
+        import ariba.ui.meta.annotations.Properties;
+
+        @Properties("label:'Name';")
+        public String userName;
+
+We can similiarly add trait properties with [Trait]#api annotations like this:
+
+        import ariba.ui.meta.annotations.Trait;
+
+        @Property.Label("Name")
+        @Trait.Required
+        public String userName;
+
+        @Trait.RichText
+        public String comment;
+
+We can also annotate any trait property like this with the general [Traits]#api annotation:
+
+        import ariba.ui.meta.annotations.Traits;
+
+        @Traits("required")
+        public String userName;
+
+The following rules are created:
+
+        If selectors [class=app.Post, field=userName]
+            match the current context values,
+        then apply the properties
+            [trait:required]
+
+        If selectors [class=app.Post, field=comment]
+            match the current context values,
+        then apply the properties
+            [trait:richtext]
+
+![Annotation](NewPostAnnotation.gif)
+Now the userName field is required and [RichTextArea]#api is for the comment field in *all* the areas that is using MetaUI!
+
+We've discussed how [MetaIncludeComponent]#api switches in the right component with the component property through chaining.
+As mentioned, the trait property is chained back to the context, but where are the rest of rules involved?
+This takes us to the MetaUI built-in rules...
+
+Built-in Rules
+--------------------
+AN important source of built-in rules are specified in [WidgetsRules.oss](http://code.google.com/p/aribaweb/source/browse/trunk/src/metaui/ariba/ui/meta/layouts/WidgetsRules.oss).
+In this file, you will find many useful rules for data type, decoration, trait, operation, layout, action, and module in *OSS*.
+In particular, you will find these nested OSS rules:
+
+        field {
+            type=java.lang.String {
+                @trait=richtext {
+                    after:zBottom;
+                    bindings:{escapeUnsafeHtml:true}
+                    editable {
+                        component:RichTextArea;
+                        bindings:{cols:60; rows:10}
+                    }
+                    operation=(search) { after:zNone }
+                    operation=(list) { editable:false; after:zDetail; }
+                }
+
+We'll cover the OSS syntax in more details in a different tutorial, but this is one of the rules:
+
+        If selectors [field=any, type=String,
+                      trait=richtext, editable=true]
+            match the current context values,
+        then apply the properties
+            [component:RichTexArea]
+
+In combination with the above annotation rule and chaining, the component property is applied.
+The component for the rating field also got defaulting to [AWTextField]#api similarly,
+but let's create an application rule to restore the RatingBar component...
+
+Application Rules
+--------------------
+First, we need to add a "Application.oss" file and "rules.oss" file in the app/ directory.
+Then in rules.oss, add the following:
+
+        class=app.Post field=rating {
+            component:RatingBar;
+        }
+
+This results in this rule:
+
+        If selectors [class=app.Post, field=rating]
+            match the current context values,
+        then apply the properties
+            [component:RatingBar]
+
+![Rating component using OSS](RatingOSS.gif)
+And with that, we just overrode the default component property.
+To see how MetaUI determine how properties from multiple rules are applied,
+we need to understand how rules are loaded and ranked...
+
+Rule Loading
+--------------------
+On application initialization:
+
+ - Built-in rules are loaded.
+ - Application.oss is loaded and there can only be one for the entire application.
+
+ On first reference to class name in the MetaUI context:
+ - Introspection and annotation rules are created.
+ - [package path]/rules.oss is loaded
+
+Application code can call Meta APIs to programmatically load rules files or register rules.
+
+Rule Ranking
+--------------------
+
+ - Matching rules are applied in rank order to build the property map.
+ - Rules from system (default rules) have lowest rank, then introspection / annotation derived rules, then .oss rules.
+ - Rank is (roughly) the order of appearance in the .oss file (later == higher rank)
+ - When multiple rules update the same property, type and key-specific merge rules are applied:
+ 
+   - Maps and trait lists are merged
+   - visible, editable, and valid expressions are chained with AND semantics (except if override value is used - e.g. visible=true!)
+   - Other values are overridden
+
+Visibility
+--------------------
+
+Let's continue by adding some advanced annotation rules.
+We want to hide the comment field when we are not editing and isPrivate is true with the *Visible* annotation:
+
+        @Property.Visible("${properties.editing || !object.isPrivate}")
+        public String comment;
+
+which creates this rule:
+
+        If selectors [class=app.Post, field=comment]
+            match the current context values,
+        then apply the properties
+            [visible:${properties.editing || !object.isPrivate}]        
+
+![Visible Property](VisibleProperty.gif)
+The comment is hidden for Post with isPrivate == false as expected.
+Also note that the property value is not just a literal in this case, but rather a dynamic value using expressions.
+The expression is evaluating when the property is accessed.
+
+Expressions are wrapped in ${…} and use the AribaExpr language.
+The same kind of expression we discussed in Part I AribaWeb Core.
+However, when used in property value, the "this" is the Context object - key paths reference assignments in context
+
+The context also has special keys for the following:
+
+ - **object** The current object instance set on the context by the *object* context key
+ - **value**  The field value from evaluating the current *field* on the current *object* in the context
+ - **properties** The current property map
+ - **requestContext** The current [AWRequestContext]#api
+
+Validation
+--------------------
+
+Next we add a validation on the birthday to ensure that it's not a future date with the *Validation* annotation: 
+
+        @Property.Valid("${object.isValidBirthday}")
+        public Date birthday;
+
+which creates this rule:
+
+        If selectors [class=app.Post, field=birthday]
+            match the current context values,
+        then apply the properties
+            [valid:${object.isValidBirthday}]
+
+We need to define the validation method like this:
+
+        public Object isValidBirthday () {
+            if (birthday == null || birthday.before(new java.util.Date())) {
+                return true;
+            }
+            return "Birthday cannot be in the future";
+        }
+
+![Validation Property](ValidationProperty.gif)
+The method return true if birthday is valid.  Otherwise, we return an error message.
+It automatically shows up if the validation fails.
+
+Editibility
+--------------------
+
+Let's add a rule to prevent the editing of the userName field if the value is "admin".
+So we annotate the field like this:
+
+        @Property.Editable("${properties.editing && value!='admin'}")
+        public String userName;
+
+which creates this rule:
+
+        If selectors [class=app.Post, field=userName]
+            match the current context values,
+        then apply the properties
+            [editable:${properties.editing && value!='admin'}]
+
+
+![Editibility Property](EditibilityProperty.gif)
+Create a post with userName admin, and we see that it is not editable in the edit panel.
+
+
+
+Actions
+--------------------
+Let's add a method in the Post object and expose it as an action in the UI.
+In Post.java, add this:
+
+        import ariba.ui.meta.annotations.Action;
+
+        @Action(message="isPrivate set to %s")
+        public boolean toggleIsPrivate () {
+            isPrivate = !isPrivate;
+            return isPrivate;
+        }
+
+and in Main.java:
+
+        public void add () {
+            ...
+            _displayGroup.setSelectedObject(_newPost);
+            _newPost = new Post();
+        }
+
+These rules are created by introspection on the [Action]#api annotation:
+
+        If selectors [class=app.Post, declare=action]
+            match the current context values,
+        then apply the properties
+            [action:toggleIsPrivate]
+
+        If selectors [class=app.Post, action=toggleIsPrivate]
+            match the current context values,
+        then apply the properties
+            [trait:[instance,messageResults],
+             message:"isPrivate set to %s"]
+
+![Action Annotation 1](ActionAnnotation-1.gif)
+![Action Annotation 3](ActionAnnotation-3.gif)
+![Action Annotation 2](ActionAnnotation-2.gif)
+The toggle button now appears at the bottom of the [DataTable]#api.
+Clicking on it will toggle the isPrivate boolean on the selected post,
+and you see the visibility of the comment being displayed and hidden.
+Also, the message specified in the annotations shows up in the page banner.
+The chained trait=messageResults property matches this important rule in WidgetsRules.oss:
+
+        If selectors [action=any, trait=messageResults]
+            match the current context values,
+        then apply the properties
+            [actionResults:${
+                /*
+                   - evaluate the action on the object
+                   - format the message with the result vale
+                   - set the message on the page banner
+                   - and return the current page
+                */
+                }
+            ]
+
+The actionResults property value is dynamiclly evaluated by [MetaActionList]#api,
+and the resulting page is returned.
+
+Let's see how we can specify rules with this property to restore our delete and edit actions on the table.
+Refactor the deleteCurrent() in Main.java as follows:
+
+        public void deleteCurrent () {
+            delete(_currentPost);
+        }
+
+        public void delete (Post post) {
+            _posts.remove(post);
+            updateDisplayGroup();
+        }
+
+Then add these OSS rules to rules.oss:
+
+        class=app.Post @action=Delete {
+            trait:instance;
+            actionResults:${
+                requestContext.pageComponent().delete(object);
+                null}
+        }
+
+        class=app.Post @action=Edit {
+            trait:instance;
+            actionResults:${
+                requestContext.pageWithName("EditPost",
+                    [post:object,
+                          clientPanel:true])}
+        }
+
+These four rules are created:
+
+        If selectors [class=app.Post, declare=action]
+            match the current context values,
+        then apply the properties
+            [action=Delete]
+
+        If selectors [class=app.Post, action=Delete]
+            match the current context values,
+        then apply the properties
+            [trait:instance,
+             actionResults:${
+                requestContext.pageComponent().delete(object);
+                null}
+            ]
+
+        If selectors [class=app.Post, declare=action]
+            match the current context values,
+        then apply the properties
+            [action=Edit]
+
+        If selectors [class=app.Post, action=Edit]
+            match the current context values,
+        then apply the properties
+            [trait:instance,
+             actionResults:${
+                requestContext.pageWithName("EditPost",
+                    [post:object,
+                          clientPanel:true])}
+            ]
+
+![Action OSS](ActionOSS.gif)
+The edit button should now open up the modal panel with the selected object,
+and delete should delete the selected object.
+
+Let's also take advantage of this in the list tab.
+We can replace the list of [AWHyperlink]#api with this:
+
+        said:
+        [<m:Context object="$currentPost" layout="Links">
+            <m:IncludeComponent/>
+        </m:Context>]
+        <br/>
+
+![Action Links OSS](ActionOSS-2.gif)
+And now we can get the same benefits with updating actions as upading fields.
+New actions are automatically exposed when a Post object is in the context.
+
+Next, we'll see the other layouts MetaUI can assemble on the fly...
+
+Layouts
+--------------------
+Top level application tabs can be declared implicitly
+as modules with the [NavModuleClass]#api annotation
+
+        import ariba.ui.meta.annotations.NavModuleClass;
+        
+        @NavModuleClass
+        public class Post {
+
+or declared explicitly in Application.oss:
+
+        @module=Home {
+        }
+
+![Explicit Module](HomeModule.gif)
+
+These Module tabs are generated by [MetaNavTabBar]#api.
+
+Modules can specify a custom homePage component.
+The default homePage component is [MetaHomePage]#api which allows for nested layout declarations,
+positioned in a five zone grid (zToc, zTop, zLeft, zRight, and zBottom) via [MetaDashboardLayout]#api.
+
+Let's restore the home page for the Post in Application.oss:
+
+        module=app.Post {
+            homePage:Main;
+        }
+
+![Post Home Page](PostHomePage.gif)
+
+Top level application action categories and actions can be declared in the zNav zone.
+Let's declare a "Create" action category with one "Post" action in Application.oss:
+
+        @actionCategory=Create {
+            after:zNav;
+
+            @action=Post {
+                actionResults:${requestContext.pageWithName("Main")};
+            }
+        }
+
+![Global Navigation Action](GlobalNavAction.gif)
+
+Click on the Create Post action and notice that the correct tab is highlighted.
+Global navigation action layouts by [MetaNavCommandBar]#api.
+
+Let's add some content to the Home module  in each of the five zones with this in Application.oss:
+
+        @module=Home {
+             @layout=Hint#Hint {
+                 bindings:{
+                     value:"Welcome!";
+                 }
+             }
+
+             @layout=HelloNorthAmerica#pad8 {
+                 after:zToc;
+                 component:AWString;
+                 bindings:{
+                     value:"North America";
+                 }
+             }
+
+             @layout=HelloSouthAmerica#pad8 {
+                 after:HelloNorthAmerica;
+                 component:AWString;
+                 bindings:{
+                     value:"South America";
+                 }
+             }
+             @layout=HelloEurope#pad8 {
+                 after:zLeft;
+                 component:AWString;
+                 bindings:{
+                     value:"Europe";
+                 }
+             }
+             @layout=HelloAfrica#pad8 {
+                 after:HelloEurope;
+                 component:AWString;
+                 bindings:{
+                     value:"Africa";
+                 }
+             }
+             @layout=HelloAsia#pad8 {
+                 after:zRight;
+                 component:AWString;
+                 bindings:{
+                     value:"Asia";
+                 }
+             }
+             @layout=HelloAustralia#pad8 {
+                 after:HelloAsia;
+                 component:AWString;
+                 bindings:{
+                     value:"Australia";
+                 }
+             }
+             @layout=HelloAntarctica#pad8 {
+                 after:zBottom;
+                 component:AWString;
+                 bindings:{
+                     value:"Antarctica";
+                 }
+             }
+        }
+
+![Zoned Home Page](ZonedHomePage.gif)
+
+ #Hint specifies the layout trait that specifies the after property in the zTop zone.
+
+[MetaDashboardLayout]#api is a multi-zone layout that can contain other zoned layouts.
+
+Here's a list of single zone container layout components:
+
+ - **[MetaElementList]#api**	Specified with #Stack
+ - **[MetaTabs]#api**	Specified with #Tabs
+ - **[MetaSections]#api**	Specified with #Sections
+ - **[OutlineBox]#api**	Specified with #OutlineBox
+
+Container layouts can in turn contain other container layouts or object layouts and action layouts.
+
+Here's a list of object layouts:
+
+ - **[MetaForm]#api**	Displays a single object; specified with #Form; zones:zTop, zLeft, zRight, zBottom
+ - **[MetaList]#api**	Displays a list of objects; single zone.
+ - **[MetaTable]#api**	Displays a list of objects; specified with layout="Layout"; zones:zDetail
+ - **[MetaActionList]#api**	Displays a list of actions; specified with #ActionMenu, #ActionButtons, or #ActionLinks;
+specified with #InstanceActionButtons or #StaticActionButtons in the context of layout="Table";   
+
+Here's an example in a different context:
+Make the root layout a "Stack" with an "OutlineBox" and "Tabs" as children.  The Tabs layout, has Forms as children
+
+        layout=Inspect#Stack {
+            @layout=Main#OutlineBox {
+               @layout=Content#Form {}
+               @layout=Actions#ActionButtons {}
+            }
+           @layout#Tabs {
+               @layout=Overview#Form { zonePath:Overview }
+               @layout=Details#Form { zonePath:Details }
+               @layout=Projects#Form { zonePath:Projects;  }
+            }
+        }
+
+![Nested Layout](NestedLayout.jpg)
+
+Fields are "zoned" by setting their predecessor with a dotted path (e.g. "Overview.zRight") that is establish as the "zonePath" for the nested form.
+
+        Overview.zLeft => name => accountBalance => accountStatus...;
+        Overview.zRight => birthDay => fullProfile => fileDesc...;
+        Details.zTop => rating => description => bio;
+        ...
+
+Let's try some to display some Post objects in the Home module belonging to different continents.
+
+Modify each continent layout in Application.oss like this:
+
+        @layout=HelloNorthAmerica#pad8 {
+            after:zToc;
+            component:MetaList;
+            bindings:{
+                list:${
+                    app.Post.postsForContinent
+                    (app.Continent.NorthAmerica)
+                }
+            }
+        }
+
+Create Continent.java and define the continents:
+
+        package app;
+
+        public enum Continent {
+            NorthAmerica, SouthAmerica, Europe,
+            Asia, Africa, Australia, Antarctica
+        }
+
+Then add some code to generate the initial posts and the continent field in Post.java:
+
+        import ariba.util.core.Fmt;
+        ...
+        @Trait.Required
+        public Continent continent;
+        ...
+        public static List Posts = initialPosts();
+
+        private static List initialPosts () {
+            List posts = new ArrayList();
+            for (Continent continent :
+                EnumSet.allOf(Continent.class))
+            {
+                addInitialPost(posts, continent);
+            }
+            return posts;
+        }
+
+        private static void addInitialPost (
+            List posts, Continent continent)
+        {
+            Post post = new Post();
+            post.userName = "admin";
+            post.birthday = new Date();
+            post.title = Fmt.S("First %s Post", continent);
+            post.comment = Fmt.S("Hello %s!", continent);
+            post.continent = continent;
+            posts.add(post);
+        }
+
+        public static List postsForContinent (
+            Continent continent)
+        {
+            List postsForContinent = new ArrayList();
+            for (int i = 0; i < Posts.size(); i++) {
+                Post post = (Post)Posts.get(i);
+                if (post.continent == continent) {
+                    postsForContinent.add(post);
+                }
+            }
+            return postsForContinent;
+        }
+
+Referenced the generated list in Main.java:
+
+        public List _posts = Post.Posts;
+
+![MetaList](MetaList.gif)
+
+To finish off, let's make a view action on each post listing on the Home module.
+
+Let's reuse EditPost by making the title and operation dynamic like this:
+
+        <w:ModalPageWrapper title="$title">
+            <m:Context object="$post" operation="$operation" layout="Inspect">
+
+And in EditPost.java:
+
+        import ariba.ui.aribaweb.util.AWUtil;
+        ...
+        public String _operation = "edit";
+
+        public String title ()
+        {
+            return AWUtil.decamelize(_operation, ' ', true) + " Post";
+        }
+
+Finally, let's tie a hyperlink action to the EditPost in rules.oss:
+
+        layout=ListItem class=app.Post {
+            component:AWHyperlink;
+            bindings:{
+                awcontent:${properties.objectTitle};
+                action:${requestContext.pageWithName("EditPost",
+                    [post:object,
+                     clientPanel:true,
+                     operation:"view"])};
+            }
+            wrapperComponent:AWGenericContainer;
+            wrapperBindings: { tagName:h4; }
+        }
+
+![MetaList Action](MetaListAction.gif)
+![View Post](ViewPost.gif)
+
+So you've seen how MetaUI works with POJO's to generate various user interfaces derived from annotations and explicit rules.
+But what about persistence?  This brings us to another layer of MetaUI that deals with persistence...
+
+MetaUI and Databases
+--------------------
+*MetaUI has a persistence abstraction layer, but itself knows nothing about databases*.
+MetaUI can be used to build UIs on plain old POJOs
+(or even atop plain Maps or any other structure for which metadata can be provided).  This means that
+MetaUI is suitable for non-database applications, applications that use non-relational sources of data,
+or applications for which you have your own database persistence solution.
+
+The bundled support in the AribaWeb stack for building database applications is **MetaUI-JPA**.
+This is a small layer -- quite distinct from MetaUI itself -- that binds MetaUI to the Java-standard
+JPA persistence APIs (and, by default, the Hibernate ORM layer).
+We will cover MetaUI-JPA and the persistence layer of MetaUI in Part IV.
+
+**You can find the source code for the final version of this example in `examples/GuestBook`**
+
+Other Areas to Explore
+----------------------
+
+ - Watch the screencast [AribaWeb: Understanding MetaUI](http://www.vimeo.com/1840925)
+ - Watch the screencast [AribaWeb: MetaUI Live Editing](http://vimeo.com/2239096)
+ - Check out this (intimidatingly technical) [slide presentation](http://aribaweb.org/papers/MetaUI-InDepth.pdf)
+ - Dig in to the MetaUI examples in the Demo application (`examples/Demo`):
+    - `gallery/metaui` contains several AW components that embed metaui interfaces
+    - `busobj/rules.oss` shows the rule file
+
+Next up: **[Part IV: MetaUI-JPA](../4_MetaUI-JPA/MetaUI-JPA.txt)**
