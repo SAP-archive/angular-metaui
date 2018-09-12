@@ -1,6 +1,6 @@
 # MetaUI Architecture
 
-This document describes `MetaUI framework` fundamentals and also shows you the the implementation aspects in the 
+This document describes `MetaUI framework` fundamentals and also shows you the implementation aspects in the 
 Typescript (Javascript) environment, what are the limitations and workarounds that we need to follow. 
 
 
@@ -104,7 +104,7 @@ you push using `MetaContext` component.
 
 ```
 
-When you use above HTML fragment it treats bindings as a list of key/values which result following calls:
+When you use above HTML fragment it treats bindings as a list of key/values and results following calls:
 
 
 ```ts
@@ -116,8 +116,8 @@ When you use above HTML fragment it treats bindings as a list of key/values whic
     
 ```
 
-Every `.set()` call pushes key /value property onto the Stack (`Context`), then sent to the `Rule Engine` and  
-result is cached and properties are retrieved.
+Every `.set()` call pushes key /value property onto the Stack (`Context`) followed by passing it the `Rule Engine` to get back a  
+result which is cached and properties are retrieved.
 
 Example of retrieved properties:
 
@@ -151,7 +151,7 @@ Example of retrieved properties:
 Once rules are evaluated and list of properties is retrieved then the `MetaIncludeComponent`
 will take care of the rest.
 
-Here you can notice the second line the `<m-include-component>` that reads generated properties. So wrapping element
+Here you can notice the second line the `<m-include-component>` that reads generated properties. Therefore the wrapping element
 `<m-context>` is responsible for pushing and the `<m-include-component>` is here for collecting whatever is available 
 and rendering UI.
  
@@ -178,7 +178,7 @@ ex.:
 
 ```
 
-To render a UI we use Angular's API (`ComponentFactoryResolver`, `ViewContainerRef`) and some DOM native manipulation operations.
+To render a UI we use Angular's API (`ComponentFactoryResolver`, `ViewContainerRef`) and some DOM native operations.
 
 
 **Example**
@@ -197,7 +197,7 @@ Let's start from the top left corner:
 3) Inside our Stack `(Context)`, we check and try to retrieve existing Activation which is sharable object
 that holds Assignments hierarchy
 4) If it does not exists we initiate `match`
-5) Before it reaches Indexed KEYDATA store, on its way it broacasts several notifications
+5) Before it reaches Indexed KEYDATA store (completely on the right), on its way it broadcasts several notifications (see the phone)
 6) These notification are received by Observers that are responsible to pre-load and register
 new rules relevant to current data
 7) `Rules Engine` gives back `Value Matches` which is at this point just pointers to RuleDB (not real properties)
@@ -244,7 +244,7 @@ class=Order {
 
 is converted into something like this a Map-like format:
 
-```json
+```
 /**
  *  This is generated file. Do not edit !!
  *
@@ -298,7 +298,7 @@ export const OrderRule = {
 
 ```
 
-And this typescript content is then read by our special loader `RuleLoader` which registers them with the rule 
+And this TS content is then read by our special loader `RuleLoader` which registers them with the rule 
  engine (the `Meta` class).
  
 ```ts
@@ -314,8 +314,8 @@ Therefore we are using following directory structure. Here we store `Rule files 
 
 ![alt text](../../../docs/img/meta/meta-1.2.png?size=small "Directory structure")
 
-and barrel `index.ts` that just exports all from this directory. It is worth to mentions that you can pick any structure 
-you want as long you can have 1 one file at the end like `user-rules.ts` that exports everything so it can be imported 
+and barrel `index.ts` that just exports all from this directory. It is worth mentioning that you can pick any structure 
+you want as long you can have one file at the end like `user-rules.ts` that exports everything so it can be imported 
 and used in the app module. The rest is standard cli's project.
 
 Everytime you change rules, you just run a OSS compiler.
@@ -346,7 +346,7 @@ Once you run this command it will create `ts` directory under the `<DIRECTORY WI
 
 `Note: Rules are loaded lazily so a specific rule file for example the  order.oss (order.ts) is loaded after you really push Order object to a stack`
 
-Even there is a activity in progress where I try to finish a parser in TS (there is a branch called compier) , but it does not go as fast as I 
+**Even there is a activity in progress where we try to finish a parser in TS** (there is a branch called compier) , but it does not go as fast as I 
 would like to. Maybe we will drop OSS completely and we will try to replace it somehow with TS support to define system level as well as user level 
 rules. 
 
@@ -354,12 +354,23 @@ rules.
 
 ### Domain object introspection
 
-Just like in css world you define CSS selectors and you try to match against these selectors your HTML along with some other context properties the same 
-works here. So far we loaded and registered `OSS files (TS files) ` and now we need to introspect object to understand its internal structure so we 
-can match the best selector and retrieve right properties once a class, field or layout is being processed.
+Just like in css world where you define CSS selectors and you try to match against these selectors your HTML along with some other context properties the same 
+works here. 
+
+So far we loaded and registered `OSS files (TS files) ` and now we need to introspect object to understand its internal structure so we 
+can register additional rules that are not covered by our `OSS files`.
+
+
+Let's remember OSS stands for `Object style sheet`, meaning there is the same analogy with CSS:
+
+* You first need to have rules in place
+* You throw in an `Object` and a selector(s) are matched
+* It returns properties that are defined under these selectors. 
+* Properties are picked by `m-include-component`
+* UI is rendered
+
 
 Some example how we register rules for specific object:
-
 
 ```ts
 
