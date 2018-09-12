@@ -116,8 +116,7 @@ When you use above HTML fragment it treats bindings as a list of key/values and 
     
 ```
 
-Every `.set()` call pushes key /value property onto the Stack (`Context`) followed by passing it the `Rule Engine` to get back a  
-result which is cached and properties are retrieved.
+Every `.set()` call pushes key /value property onto the Stack (`Context`) followed by passing it the `Rule Engine` to get back a  result which is cached and properties are retrieved.
 
 Example of retrieved properties:
 
@@ -346,7 +345,7 @@ Once you run this command it will create `ts` directory under the `<DIRECTORY WI
 
 `Note: Rules are loaded lazily so a specific rule file for example the  order.oss (order.ts) is loaded after you really push Order object to a stack`
 
-**Even there is a activity in progress where we try to finish a parser in TS** (there is a branch called compier) , but it does not go as fast as I 
+**Even there is a activity in progress where we try to finish a parser in TS** (there is a branch called compiler) , but it does not go as fast as I 
 would like to. Maybe we will drop OSS completely and we will try to replace it somehow with TS support to define system level as well as user level 
 rules. 
 
