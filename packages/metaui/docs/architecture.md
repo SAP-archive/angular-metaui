@@ -1,11 +1,10 @@
 # MetaUI Architecture
 
-This document describes `MetaUI framework` fundamentals and tries to explain you how things are connected in order to 
-render pages on the fly without using templates. We will also look at the implementation aspects in the Typescript (Javascript) environment, what are the limitations and 
-workarounds that we need to follow. 
+This document describes `MetaUI framework` fundamentals and also shows you the the implementation aspects in the 
+Typescript (Javascript) environment, what are the limitations and workarounds that we need to follow. 
 
 
-_`Note: If you are trying to integrate MetaUI into your project you might want to read this documents first!`_
+_`Note: If you are trying to integrate MetaUI into your project you might want to read this document first!`_
 
 
 
@@ -19,11 +18,11 @@ We can see 3 big pieces  here that makes `MetaUI` framework what it is. So Let's
 
 _Rule engine_ is implemented by `UIMeta` class along with other helper classes and here we accepts different assignments passed 
 from _UIContext_ and evaluate the best possible match and return set of properties which are used later on to 
-render _User Interface_. Simple right ?
+render _User Interface_.  The same way you would expect any Internet Browser to work when parsing CSS. Simple right ?
 
-Rules are loaded from the `files` as well as from `objects` by introspecting typescript class and trying to figure some characteristics of 
-objects such as types. This is why our _Domain Object_ implements interface `Deserializable` for retrieving types.  You might also notice that we have a `$proto() `
-method, this is something that we used before and it is still used on some places but it will be removed soon.
+Rules are loaded from the `files` as well as from `objects` by introspecting typescript class and trying to figure 
+some characteristics of objects such as types. This is why our _Domain Object_ implements interface `Deserializable` 
+for retrieving types.  You might also notice we have a `$proto() ` method there , this is something that we used before and it is still used on some places but it will be removed soon.
 
 
 ```ts
@@ -79,14 +78,14 @@ export class User implements Entity
 
 But to load rules from the files we use different method. All the OSS files needs to be compiled to the 
 TS class that are packaged along with the application. This is why we have in the `playground` or 
-in the `metaui-evolution` app file called `user-rules.ts` that references all the available rules and then 
+in the `metaui-evolution` app file called `user-rules.ts` which references all the available rules and then 
 inside our module we have this line:
 
 ```ts
     import * as userRules from './user-rules';
 ``` 
 
-whcih is registered within the `AppConfig` and `Rule engine` can then iterate over all the compiled rules, load, index and 
+which registers this within the `AppConfig` and `Rule engine` can then iterate over all the compiled rules, load, index and 
 store them locally.
 
 
@@ -118,12 +117,12 @@ key/values which result following _Stack_ push calls:
     
 ```
 
-Every `.set()` call pushes key /value property to the `Context`, where it is preprocessed, sent to the `Rule Engine`, 
+Every `.set()` call pushes key /value property onto the `Context`, where it is preprocessed, sent to the `Rule Engine`, 
 result is cached and properties are retrieved.
 
 Example of retrieved properties:
 
-```json
+```
         {
         'visible': true,
         'class_trait': 'fiveZones',
@@ -150,7 +149,7 @@ Example of retrieved properties:
 
 #### UI Generation
 
-Once rules are evaluated and list of properties are retrieved then the `MetaIncludeComponent`
+Once rules are evaluated and list of properties is retrieved then the `MetaIncludeComponent`
 will take care of the rest.
 
 Once again the same html lines. Here notice the second line `<m-include-component>` that read generated 
@@ -163,6 +162,27 @@ properties from wrapping `<m-context>` in order to render UI using `Angular` pro
 
 ```
 
+This gives you possibility to put in additional content from the one that is generated. For example: 
+
+
+```html
+   <m-context [object]="userObject" operation="edit" layout="Inspect">
+        
+        <h2> User Detail Page: </h2>
+    
+        <m-include-component></m-include-component>
+        
+        <user-org-chart [user]="userObject" ></aw-my-status-bar-with-buttons>
+   </m-context>
+
+```
+
+To render a UI we use Angular API (`ComponentFactoryResolver`, `ViewContainerRef`) and some DOM native manipulation.
+
+
+**Example**
+
+
 After short introduction, let's look at this old picture that takes us level down. Even I am not really _Michelangelo_
 I hope we can get some information out of it. 
 
@@ -171,21 +191,20 @@ I hope we can get some information out of it.
 
 Let's start from the top left corner:
 
-1. We push 3 assignments using ` <m-contex>` 
-2. Value is pre-processed and push one by one to the Stack
-3. Inside our Stack `(Context)`, we check and try to retrieve existing Activation which is sharable object
+1) We push 3 assignments using ` <m-contex>` 
+2) Value is pre-processed and push one by one to the Stack
+3) Inside our Stack `(Context)`, we check and try to retrieve existing Activation which is sharable object
 that holds Assignments hierarchy
-4. If it does not exists we initiate `match`
-5. Before it reaches Indexed KEYDATA, on its way it broacasts several notifications
-6. These notification are received by Observers that are responsible to pre-load and register
-new rules relevant to current data.
-7. `Rules Engine` gives back `Value Matches` which is at this point just pointers to RuleDB (not real properties)
-8. Assignment is created and its cached. If additional rule chaining needs to happen it is here, where certain
-properties are mirred and pushed again from #1
-9. If no father chaining is need we cache Activation for later  use #3
-10. Retrieve and convert match result to real properties that are used to render UI.
+4) If it does not exists we initiate `match`
+5) Before it reaches Indexed KEYDATA store, on its way it broacasts several notifications
+6) These notification are received by Observers that are responsible to pre-load and register
+new rules relevant to current data
+7) `Rules Engine` gives back `Value Matches` which is at this point just pointers to RuleDB (not real properties)
+8) Assignment is created and its cached. If additional rule chaining needs to happen it is here, where certain
+properties are mirrored and pushed again from (step #1)
+9) If no father chaining is needed we cache Activation for later use (step #3)
+10) Retrieve and convert match result to real properties that are used to render UI.
  
 
 ## MetaUI fundamentals
 
-This sections focuses on the OSS ...
