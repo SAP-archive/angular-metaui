@@ -21,7 +21,7 @@ from _UIContext_ and evaluate the best possible match and return set of properti
 render _User Interface_.  The same way you would expect any Internet Browser to work when parsing CSS. Simple right ?
 
 Rules are loaded from the `files` as well as from `objects` by introspecting typescript class and trying to figure 
-some characteristics of objects such as types. This is why our _Domain Object_ implements interface `Deserializable` 
+some info about the objects such as data types. This is why _Domain Object_ implements interface `Deserializable` 
 for retrieving types.  You might also notice we have a `$proto() ` method there , this is something that we used before and it is still used on some places but it will be removed soon.
 
 
@@ -76,8 +76,8 @@ export class User implements Entity
 ```
 
 
-But to load rules from the files we use different method. All the OSS files needs to be compiled to the 
-TS class that are packaged along with the application. This is why we have in the `playground` or 
+But to load rules from the files we use different method. OSS files are compiled to the 
+TS class and then are packaged along with the application. This is why we have in the `playground` or 
 in the `metaui-evolution` app file called `user-rules.ts` which references all the available rules and then 
 inside our module we have this line:
 
@@ -92,7 +92,7 @@ store them locally.
 
 #### UI Context
 
-`UI Context` is used to comunicate with the `Rule Engine` and to hold stack of current assignments those that 
+`UI Context` is used to communicate with the `Rule Engine` and to hold stack of current assignments those that 
 you push using `MetaContext` component.
 
 
@@ -104,8 +104,7 @@ you push using `MetaContext` component.
 
 ```
 
-When you use above HTML fragment it treats bindings as a list of
-key/values which result following _Stack_ push calls:
+When you use above HTML fragment it treats bindings as a list of key/values which result following calls:
 
 
 ```ts
@@ -117,7 +116,7 @@ key/values which result following _Stack_ push calls:
     
 ```
 
-Every `.set()` call pushes key /value property onto the `Context`, where it is preprocessed, sent to the `Rule Engine`, 
+Every `.set()` call pushes key /value property onto the Stack (`Context`), then sent to the `Rule Engine` and  
 result is cached and properties are retrieved.
 
 Example of retrieved properties:
@@ -152,8 +151,10 @@ Example of retrieved properties:
 Once rules are evaluated and list of properties is retrieved then the `MetaIncludeComponent`
 will take care of the rest.
 
-Once again the same html lines. Here notice the second line `<m-include-component>` that read generated 
-properties from wrapping `<m-context>` in order to render UI using `Angular` programatic API.
+Here you can notice the second line the `<m-include-component>` that reads generated properties. So wrapping element
+`<m-context>` is responsible for pushing and the `<m-include-component>` is here for collecting whatever is available 
+and rendering UI.
+ 
 
 ```html
    <m-context [object]="userObject" operation="edit" layout="Inspect">
@@ -162,9 +163,9 @@ properties from wrapping `<m-context>` in order to render UI using `Angular` pro
 
 ```
 
-This gives you possibility to put in additional content from the one that is generated. For example: 
+This gives you possibility to put in additional content around the `<m-include-component>`: 
 
-
+ex.:
 ```html
    <m-context [object]="userObject" operation="edit" layout="Inspect">
         
@@ -177,13 +178,13 @@ This gives you possibility to put in additional content from the one that is gen
 
 ```
 
-To render a UI we use Angular API (`ComponentFactoryResolver`, `ViewContainerRef`) and some DOM native manipulation.
+To render a UI we use Angular's API (`ComponentFactoryResolver`, `ViewContainerRef`) and some DOM native manipulation operations.
 
 
 **Example**
 
 
-After short introduction, let's look at this old picture that takes us level down. Even I am not really _Michelangelo_
+After a quick introduction, let's look at this old picture that takes us one level down. Even I am not really _Michelangelo_
 I hope we can get some information out of it. 
 
 
@@ -201,10 +202,224 @@ that holds Assignments hierarchy
 new rules relevant to current data
 7) `Rules Engine` gives back `Value Matches` which is at this point just pointers to RuleDB (not real properties)
 8) Assignment is created and its cached. If additional rule chaining needs to happen it is here, where certain
-properties are mirrored and pushed again from (step #1)
-9) If no father chaining is needed we cache Activation for later use (step #3)
+properties are mirrored and pushed again to (step #1)
+9) If no further chaining is needed we cache `Activation` for later use (step #3)
 10) Retrieve and convert match result to real properties that are used to render UI.
  
 
-## MetaUI fundamentals
+## Typescript specifics
+
+
+### Rule file loading
+
+As already mentioned above we can not simply load a rule file from the system since it's running inside 
+a browser but we do take the `OSS file` and compile it, it outputs `TS file`, which is then bundled as a part of the project.
+
+For example something like this:
+
+```js
+class=Order {
+     @field=title#derived {
+        type:String;
+        value:${"Purchase Order: " + object.name };
+        bindings:{
+            useNoLabelLayout:true;
+        }
+        wrapperComponent:GenericContainerComponent;
+        wrapperBindings: { tagName:h2; }
+    }
+
+    field=uniqueName {
+        label:"PO #"
+    }
+
+    field=description {
+        bindings: {
+            styleClass: 'u-description';
+        }
+    }
+    ...
+  }
+```
+
+is converted into something like this a Map-like format:
+
+```json
+/**
+ *  This is generated file. Do not edit !!
+ *
+ *  @formatter:off
+ *
+ */
+/* tslint:disable */
+export const OrderRule = {
+ 	oss:			[
+			  {
+			    '_selectors': [
+			      {
+			        '_key': 'class',
+			        '_value': 'Order',
+			        '_isDecl': false
+			      }
+			    ],
+			    '_rank': 0
+			  },
+			  {
+			    '_selectors': [
+			      {
+			        '_key': 'class',
+			        '_value': 'Order',
+			        '_isDecl': false
+			      },
+			      {
+			        '_key': 'field',
+			        '_value': 'title',
+			        '_isDecl': true
+			      }
+			    ],
+			    '_properties': {
+			      'wrapperComponent': 'GenericContainerComponent',
+			      'wrapperBindings': {
+			        'tagName': 'h2'
+			      },
+			      'bindings': {
+			        'useNoLabelLayout': true
+			      },
+			      'trait': 'derived',
+			      'type': 'String',
+			      'value': {
+			        't': 'Expr',
+			        'v': '"Purchase Order: " + object.name'
+			      }
+			    }
+            ..
+         }			    			    
+   ]
+
+```
+
+And this typescript content is then read by our special loader `RuleLoader` which registers them with the rule 
+ engine (the `Meta` class).
+ 
+```ts
+
+export interface RuleLoader
+{
+    loadRules (meta: Meta, source: any, module: string, onRule: (rule: Rule) => void): void;
+}
+
+```
+
+Therefore we are using following directory structure. Here we store `Rule files (.oss)`
+
+![alt text](../../../docs/img/meta/meta-1.2.png?size=small "Directory structure")
+
+and barrel `index.ts` that just exports all from this directory. It is worth to mentions that you can pick any structure 
+you want as long you can have 1 one file at the end like `user-rules.ts` that exports everything so it can be imported 
+and used in the app module. The rest is standard cli's project.
+
+Everytime you change rules, you just run a OSS compiler.
+
+_You can see how its used in the packages.json_
+
+```
+java -jar lib/meta-ui-parser.jar --gen --user ./packages/metaui/src/core ./modules/metaui-evolution/src/app/rules
+
+java -jar <PATH TO meta-ui-parser> --gen --user <PATH to the system rules> <DIRECTORY WITH YOUR USER FILES>
+
+if you are using it in your application then it will be probably something like: 
+
+    =>  <PATH TO meta-ui-parser> - node_modules/@aribaui/resources/tools/oss/meta-ui-parser.jar
+    
+    => <PATH to the system rules> -   node_modules/@aribaui/metaui/core
+
+    => <DIRECTORY WITH YOUR USER FILES> -   ~/<PATH TO YOUR PROJECT>/src/app/rules
+    
+ex: 
+
+java -jar node_modules/@aribaui/resources/tools/oss/meta-ui-parser.jar --gen --user node_modules/@aribaui/metaui/core ~/<PATH TO YOUR PROJECT>/src/app/rules
+    
+```
+
+Once you run this command it will create `ts` directory under the `<DIRECTORY WITH YOUR USER FILES>`
+
+
+`Note: Rules are loaded lazily so a specific rule file for example the  order.oss (order.ts) is loaded after you really push Order object to a stack`
+
+Even there is a activity in progress where I try to finish a parser in TS (there is a branch called compier) , but it does not go as fast as I 
+would like to. Maybe we will drop OSS completely and we will try to replace it somehow with TS support to define system level as well as user level 
+rules. 
+
+
+
+### Domain object introspection
+
+Just like in css world you define CSS selectors and you try to match against these selectors your HTML along with some other context properties the same 
+works here. So far we loaded and registered `OSS files (TS files) ` and now we need to introspect object to understand its internal structure so we 
+can match the best selector and retrieve right properties once a class, field or layout is being processed.
+
+Some example how we register rules for specific object:
+
+
+```ts
+
+// IntrospectionMetaProvider.ts
+
+private registerRulesForFields(object: any, className: string): void {
+        let fieldNames =...
+
+        let rank = 0;
+        for (let name of fieldNames) {
+            ...
+            let type = instance[name]. => GET TYPE
+            let properties = new Map<string, any>();
+
+            properties.set(ObjectMeta.KeyField, name);
+            properties.set(ObjectMeta.KeyType, type);
+            properties.set(ObjectMeta.KeyVisible, true);
+
+            // if we are dealing with array we need to know a type of actual element
+            if (isArray(instance[name])) {
+                ....
+                properties.set(ObjectMeta.KeyElementType, collectionElementType);                
+            }
+
+            // create programatically selector and proeprties
+            let selectorList: Array<Selector> = [
+                new Selector(ObjectMeta.KeyClass, className),
+                new Selector(ObjectMeta.KeyField, name),
+            ];            
+            properties.set(ObjectMeta.KeyRank, (rank++ + 1) * 10);
+            let rule: Rule = new Rule(selectorList, properties, ObjectMeta.ClassRulePriority);
+            this._meta.addRule(rule);
+        }
+    }
+}
+
+```
+
+This way we automatically pre-register additional rules for  an `Object` such as data type for class field.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
