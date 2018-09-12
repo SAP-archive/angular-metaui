@@ -172,7 +172,7 @@ This gives you possibility to put in additional content from the one that is gen
     
         <m-include-component></m-include-component>
         
-        <user-org-chart [user]="userObject" ></aw-my-status-bar-with-buttons>
+        <user-org-chart [user]="userObject" ></user-org-chart>
    </m-context>
 
 ```
