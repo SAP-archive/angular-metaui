@@ -45,17 +45,17 @@ Packages are organized into 3 main areas:
     * Error handling
     * Formatters
     * Dom Utilities
- * **Meta UI** is our biggest thing which can assemble UI for you using rules
-    
- 
-The rest of the sections are focused on the _MetaUI_ therefore it is recommended that you watch our online presentations that give
-you some ideas about Rule driven User Interface.
+ * **Meta UI** is framework for generating UI on the fly.
 
- - [Introduction declarative UI](https://www.youtube.com/watch?v=-Bv_ceUn1K8) ([Demo](https://sap.github.io/angular-metaui/))
- - [Longer MetaUI presentation](https://www.youtube.com/watch?v=F0BMw_Sxjig)
- 
-                    
-      
+`MetaUI` is now in its own github repository [@ngx-meta/rules][3] to make sure it gets the attentions and mainly to be able to take it to the 
+next level to support even more features such as JIT support and much more without breaking this existing project. 
+
+Both repositories will stay identical (compatible) for some time with a plan to slowly transition `@ngx-meta/rules` to be pure metaui module 
+without any dependencies to any specific UI component library. Any improvements and features made in new git repo will be
+propagated back to this repo.
+
+Therefore this library should be seen as a full stack framework where as MetaUI is only rule processing. 
+                     
 
 ### What is MetaUI
 **MetaUI** is set of API and components which uses your model (in this case _model_ is your domain object and meta data 
@@ -76,31 +76,21 @@ for every domain object and every situation extra user interface.
  
 
 ### What is our Goal
-Is to provide solution for generating fully functional UI application all only based MetaRules. Later on we are planing
- to be independent from actual component/widgets libraries. So the main goal is not trying to build reusable component (widgets) libraries 
-rather provide a solution to be able to plug-in anything you need and let the Rules generate UI for you. _We might want to also fork this 
-project that will represent just MetaUI framework without libraries_ so we can take to the next level. 
+Is to provide solution for generating fully functional UI application all only based rules declarativelly using new `@ngx-meta/rules`.
 
-* Like we are working on Javascript compilers
-* We might want to drop completly OSS Support and move fully to annotation/decorators so we can utilize better type checking
-and existing compiles and language support.
-  
-
+ 
 **What do we mean fully by functional UI application ?**
- + MetaUI should not only generate single page forms but whole application with top level navigation followed by 
+ + Rules should not only generate single page forms but whole application with top level navigation followed by 
  dashboards and different kinds of content 
  + Integrated angular's routing so we can dynamically transition between different pages without letting user to 
  specify routes manually in the code. 
- + Each application should have full support to read/write data from/to REST API  - all this needs to be integrated as part of MetaUI
- + MetaUI is a platform providing full stack for creating UI applications (e.g.: authentication, logging, capturing 
- current user state, and much more.)
+ + Each application should have full support to read/write data from/to REST API  - all this needs to be integrated as part of rule framework
   
  
 
 ### Project status
-MetaUI is still under active development, where we need to support full set of widgets and layouts. 
+Angular-metaui is still under active development, where we need to support full set of widgets and layouts. 
 
-+ We completly re-implemented MetaUI into Angular along with basic set of functionality and widget library.
 + We have basic set of widgets and layouts to build fully functional forms
 + Meta Rules supports (on oss level) advanced layout (still need to implement the actual angular based components)
 + We do support Modules concept, where we have Application.oss.
@@ -213,5 +203,6 @@ This file is licensed under the Apache Software License, v. 2 except as noted ot
  [1]: http://localhost:4200/play
  [2]: https://github.com/SAP/angular-metaui/blob/master/LICENSE
  [3]: https://github.com/SAP/angular-metaui/blob/master/lib/meta-ui-parser.md
+ [4]: https://github.com/ngx-meta/rules
  
  
