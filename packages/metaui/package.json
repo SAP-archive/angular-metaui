@@ -5,8 +5,8 @@
   "homepage": "https://github.com/SAP/angular-metaui.git",
   "license": "Apache-2.0",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/common": "~6.1.6",
+    "@angular/core": "~6.1.6",
     "@aribaui/core": "VERSION_PLACEHOLDER",
     "@aribaui/components": "VERSION_PLACEHOLDER"
   },
