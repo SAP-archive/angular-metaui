@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.2"></a>
+## [6.1.2](https://github.com/SAP/angular-metaui/compare/v6.1.1...v6.1.2) (2018-09-13)
+
+### Features
+
+* **package.json:** Bumped version to Angular 6.1.x for the packages ([ 5efe1e8](https://github.com/SAP/angular-metaui/commit/5efe1e897797ac1d15d3e8417e65e10979065e9b))
+
+
+
+
 <a name="6.1.1"></a>
 ## [6.1.1](https://github.com/SAP/angular-metaui/compare/v6.1.0...v6.1.1) (2018-09-09)
 
