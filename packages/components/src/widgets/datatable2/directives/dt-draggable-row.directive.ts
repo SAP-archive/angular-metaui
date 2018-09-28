@@ -26,7 +26,7 @@ import {
 import {Datatable2Component} from '../datatable2.component';
 import {DomUtilsService} from '../../../core/dom-utils.service';
 import {isPresent} from '@aribaui/core';
-import {DragDirection, DragEvents, DropPosition} from '../aw-datatable';
+import {DragRowDirection, DragEvents, DropPosition} from '../aw-datatable';
 
 
 /**
@@ -80,7 +80,7 @@ export class DTDraggableRowDirective implements OnInit, OnDestroy
      * that highlights the row at the top or bottom
      *
      */
-    private dragDir: DragDirection = DragDirection.None;
+    private dragDir: DragRowDirection = DragRowDirection.None;
 
     /**
      * Indicates that we dragged our row and stopped in the middle of the other row
@@ -233,9 +233,9 @@ export class DTDraggableRowDirective implements OnInit, OnDestroy
     {
         event.dataTransfer.dropEffect = 'move';
         if (this.dragY < event.pageY) {
-            this.dragDir = DragDirection.Down;
+            this.dragDir = DragRowDirection.Down;
         } else if (this.dragY > event.pageY) {
-            this.dragDir = DragDirection.Up;
+            this.dragDir = DragRowDirection.Up;
         }
         // dont set again unless its different
         if (this.dragY !== event.pageY) {
@@ -262,7 +262,7 @@ export class DTDraggableRowDirective implements OnInit, OnDestroy
 
         let origIndx = this.dt.env.getValue('dndId');
         let dropPos: DropPosition = this.inMiddle ? DropPosition.Into : (
-            this.dragDir === DragDirection.Up ? DropPosition.Before : DropPosition.After
+            this.dragDir === DragRowDirection.Up ? DropPosition.Before : DropPosition.After
         );
         this.dt.onDnDRowDrop(origIndx, this.dndRowIndex, dropPos);
 
@@ -341,7 +341,7 @@ export class DTDraggableRowDirective implements OnInit, OnDestroy
         }
 
         if (this.inMiddle) {
-            activeRow.classList.add(DragDirection.Middle);
+            activeRow.classList.add(DragRowDirection.Middle);
 
         } else {
             activeRow.classList.add(this.dragDir);
@@ -360,8 +360,8 @@ export class DTDraggableRowDirective implements OnInit, OnDestroy
         let siblingRow = this.dndRowIndex - origInx;
 
         return event.target.parentElement.tagName === 'TR' && this.dndRowIndex !== origInx &&
-            !(siblingRow === 1 && this.dragDir === DragDirection.Up) &&
-            !(siblingRow === -1 && this.dragDir === DragDirection.Down);
+            !(siblingRow === 1 && this.dragDir === DragRowDirection.Up) &&
+            !(siblingRow === -1 && this.dragDir === DragRowDirection.Down);
     }
 
 
@@ -383,9 +383,9 @@ export class DTDraggableRowDirective implements OnInit, OnDestroy
     private dragDirToString(): string
     {
         switch (this.dragDir) {
-            case DragDirection.Up:
+            case DragRowDirection.Up:
                 return 'Up';
-            case DragDirection.Down:
+            case DragRowDirection.Down:
                 return 'Down';
             default:
                 return 'Not Sure';

@@ -1,6 +1,6 @@
-<div [ngClass]="dt.styleClass" [class.dt-full-screen-mode]="isFullScreenMode"
-     [style.width]="dt.width"
->
+<div class="dt-wrapper"
+     [ngClass]="dt.styleClass" [class.dt-full-screen-mode]="isFullScreenMode"
+     [style.width]="dt.width" >
     <div class="dt-loading-overlay" *ngIf="dt.loading"></div>
     <div class="dt-loading-content" *ngIf="dt.loading">
         <i [class]="'sap-icon u-dt-spin-icon ' + dt.loadingIcon"></i>
@@ -87,13 +87,14 @@
 <ng-template #dtBody let-columns let-frozenColumns="frozenColumns">
 
     <div #dtContainer class="dt-body-wrapper"
+         [style.overflow-x]="tableOverflow(frozenColumns)"
          [style.width.px]="this.calculateFrozenWidth()"
          [class.dt-body-unfrozen]="dt.hasFrozenColumns() && !frozenColumns"
          [class.dt-body-frozen]="dt.hasFrozenColumns() && frozenColumns"
     >
 
         <table [ngClass]="dt.tableStyleClass"
-               [style.width]="frozenColumns ? null : dt.scrollWidth"
+               [style.width]="calculateWidth()"
                [class.dt-pivot-layout]="dt.pivotalLayout"
                [class.dt-plain-layout]="!dt.pivotalLayout && !dt.isOutline()">
 

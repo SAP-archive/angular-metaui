@@ -18,6 +18,10 @@
   }
 }
 
+.dt-wrapper {
+  width: 100%;
+}
+
 .dt-body-wrapper-view {
   position: relative;
 }
@@ -28,6 +32,7 @@
 
   &.dt-body-frozen {
     //border-right-color: transparent;
+    box-shadow: 5px 0 5px -5px #333;
   }
 
   &.dt-body-unfrozen {

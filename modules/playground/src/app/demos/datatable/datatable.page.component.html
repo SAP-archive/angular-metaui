@@ -1,9 +1,9 @@
-
 <h3 class="first">Tree format mode for outline</h3>
 
 <!-- save the reference #dt since we want to access outlinestate to ask if the item is expanded -->
 <aw-datatable2 #dtTree *ngIf="true" [list]="dataTree" [loading]="loading"
                [outlineFormat]="'tree'"
+               [dndColumnEnabled]="true"
                [selectionMode]="'cell'"
                [bodyClassFn]="calculatedClass"
                [isRowSelectable]="isRowSelectable"
@@ -11,6 +11,7 @@
                [showSubHeader]="true">
 
     <aw-dt-column2 key="title" label="" [styleClass]="'item-name-row-column'"
+                   [isDroppable]="false"
                    [useGlobalHeader]="false" [useGlobalSubHeader]="false" width="36%">
         <ng-template #body let-colum let-item="rowData">
             <aw-outline-control #outlineCtrl>
@@ -21,6 +22,7 @@
     </aw-dt-column2>
 
     <aw-dt-column2 key="qty" label="" width="32px" [styleClass]="'qty-row-column'"
+                   [isDroppable]="false"
                    [useGlobalHeader]="false" [useGlobalSubHeader]="false">
 
         <ng-template #body let-column let-rowData="rowData">
@@ -33,9 +35,125 @@
 
     </aw-dt-column2>
 
-    <aw-dt-column2 label="AJ Parts" [selectable]="true"></aw-dt-column2>
-    <aw-dt-column2 label="Blue Deck Solution" [selectable]="true"></aw-dt-column2>
-    <aw-dt-column2 label="LRK Parts and server" [selectable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="AJ Parts" [selectable]="true" [isDraggable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="Blue Deck Solution" [selectable]="true" [isDraggable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="LRK Parts and server" [selectable]="true" [isDraggable]="true"></aw-dt-column2>
+
+    <!-- Global templates for all columns, unless column defines its own body template -->
+    <ng-template #dtBody let-column let-rowData="rowData">
+        <ng-container *ngTemplateOutlet="dataTempl;
+                    context: {$implicit: column, rowData: rowData, query:dtTree.state.currentSearchQuery}">
+        </ng-container>
+    </ng-template>
+
+    <ng-template #dtHeader let-column let-rowData="rowData">
+        <ng-container *ngTemplateOutlet="headerTempl;
+                context: {$implicit: column, rowData: rowData, query:dtTree.state.currentSearchQuery}">
+        </ng-container>
+    </ng-template>
+
+    <ng-template #dtSubHeader let-column let-rowData="rowData">
+        <ng-container *ngTemplateOutlet="totalsTempl;
+                context: {$implicit: '$17,170,100.00', eprice: '$17.180.250.00', column:column, query:dtTree.state.currentSearchQuery}">
+        </ng-container>
+    </ng-template>
+
+    <ng-template #headerFilter let-column>
+        <ng-container *ngTemplateOutlet="filterTempl">
+        </ng-container>
+    </ng-template>
+</aw-datatable2>
+<hr/>
+
+
+<h3 class="first">Tree format mode with allot of columns scrolling horizontally - Rendering mode - Normal</h3>
+
+<!-- save the reference #dt since we want to access outlinestate to ask if the item is expanded -->
+<aw-datatable2 #dtTree *ngIf="true" [list]="dataTree" [loading]="loading"
+               [outlineFormat]="'tree'"
+               [dndColumnEnabled]="true"
+               [selectionMode]="'cell'"
+               [bodyClassFn]="calculatedClass"
+               [isRowSelectable]="isRowSelectable"
+               [scrollWidth]="'2200px'"
+               [pivotalLayout]="true"
+               [showSubHeader]="true">
+
+    <aw-dt-column2 key="title" label="" [styleClass]="'item-name-row-column'"
+                   [isDroppable]="false"
+                   [useGlobalHeader]="false" [useGlobalSubHeader]="false" width="350px">
+        <ng-template #body let-colum let-item="rowData">
+            <aw-outline-control #outlineCtrl>
+                <span
+                    [innerHTML]="item.title | highlightText:dtTree.state.currentSearchQuery"></span>
+            </aw-outline-control>
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 key="qty" label="" width="32px" [styleClass]="'qty-row-column'"
+                   [isDroppable]="false"
+                   [useGlobalHeader]="false" [useGlobalSubHeader]="false">
+
+        <ng-template #body let-column let-rowData="rowData">
+            <ng-template
+                [ngIf]="dtTree.outlineState.isExpanded(rowData) || rowData.type === 'item'">
+                <span
+                    [innerHTML]="rowData.qty | highlightText:dtTree.state.currentSearchQuery"></span>
+            </ng-template>
+        </ng-template>
+
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="AJ Parts" [selectable]="true" [isDraggable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="Blue Deck Solution" [selectable]="true" [isDraggable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="LRK Parts and server" [selectable]="true" [isDraggable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="Detail 1" [selectable]="true" [isDraggable]="true">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 2" [selectable]="true" [isDraggable]="true">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 3" [selectable]="true" [isDraggable]="true">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 4" [selectable]="true" [isDraggable]="true">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 5" [selectable]="true" [isDraggable]="true">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 6" [selectable]="true" [isDraggable]="true">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 7" [selectable]="true" [isDraggable]="true">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 8" [selectable]="true" [isDraggable]="true">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
 
     <!-- Global templates for all columns, unless column defines its own body template -->
     <ng-template #dtBody let-column let-rowData="rowData">
@@ -63,11 +181,14 @@
 </aw-datatable2>
 
 <hr/>
+
+<hr/>
 <h1> With detail row with single </h1>
 <hr/>
 <!--[showSelectionColumn]="false"-->
 <aw-datatable2 #dt2 *ngIf="true" [list]="data" [loading]="loading"
                [children]="children"
+               [dndColumnEnabled]="true"
                [context]="this"
                [selectionMode]="'single'"
                [bodyClassFn]="calculatedClass"
@@ -77,7 +198,7 @@
                (onRowSelectionChange)="onRowSelected($event)"
                [showSubHeader]="true">
 
-    <aw-dt-column2 key="itemDescr" label="" [styleClass]="'item-name-row-column'"
+    <aw-dt-column2 key="itemDescr" label="" [styleClass]="'item-name-row-column'" [isDroppable]="false"
                    [useGlobalHeader]="false" [useGlobalSubHeader]="false" width="36%">
         <ng-template #body let-colum let-item="rowData">
             <aw-outline-control #outlineCtrl [allowSelection]="false">
@@ -86,7 +207,7 @@
         </ng-template>
     </aw-dt-column2>
 
-    <aw-dt-column2 key="qty" label="" width="32px" [styleClass]="'qty-row-column'"
+    <aw-dt-column2 key="qty" label="" width="32px" [styleClass]="'qty-row-column'" [isDroppable]="false"
                    [useGlobalHeader]="false" [useGlobalSubHeader]="false">
 
         <ng-template #body let-column let-rowData="rowData">
@@ -97,8 +218,8 @@
 
     </aw-dt-column2>
 
-    <aw-dt-column2 label="AJ Parts" [selectable]="true"></aw-dt-column2>
-    <aw-dt-column2 label="Blue Deck Solution" [selectable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="AJ Parts" [selectable]="true" [isDraggable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="Blue Deck Solution" [selectable]="true" [isDraggable]="true"></aw-dt-column2>
     <aw-dt-column2 label="LRK Parts and server" [selectable]="true"></aw-dt-column2>
 
     <aw-dt-detail-column [isVisibleFn]="canRenderForType">
@@ -374,16 +495,18 @@
                [children]="children"
                [context]="this"
                [selectionMode]="'cell'"
-               [scrollWidth]="'1000px'"
                [bodyClassFn]="calculatedClass"
                [isRowSelectable]="isRowSelectable"
+               [dndColumnEnabled]="true"
                [pivotalLayout]="true"
                [showSubHeader]="true">
 
     <aw-dt-column2 key="itemDescr" label="" [styleClass]="'item-name-row-column'"
                    [frozen]="true"
-                   maxWidth="38%"
-                   [useGlobalHeader]="false" [useGlobalSubHeader]="false" width="400px">
+                   [isDroppable]="false"
+                   [isDraggable]="false"
+                   maxWidth="42%"
+                   [useGlobalHeader]="false" [useGlobalSubHeader]="false" width="600px">
         <ng-template #body let-colum let-item="rowData">
             <aw-outline-control #outlineCtrl>
                 This is some long text that goes long long {{item.itemDescr}}
@@ -393,6 +516,8 @@
 
     <aw-dt-column2 key="qty" label="" width="36px" [styleClass]="'qty-row-column'"
                    [frozen]="true"
+                   [isDroppable]="false"
+                   [isDraggable]="false"
                    [useGlobalHeader]="false" [useGlobalSubHeader]="false">
 
         <ng-template #body let-column let-rowData="rowData">
@@ -400,12 +525,72 @@
                 {{rowData.qty}}
             </ng-template>
         </ng-template>
-
     </aw-dt-column2>
 
-    <aw-dt-column2 label="AJ Parts" [selectable]="true"></aw-dt-column2>
-    <aw-dt-column2 label="Blue Deck Solution" [selectable]="true"></aw-dt-column2>
-    <aw-dt-column2 label="LRK Parts and server" [selectable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="Left 1" [frozen]="true" [selectable]="true" [isDraggable]="true" width="150px">
+        <ng-template #body let-column let-rowData="rowData">
+            11111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Left 2" [frozen]="true" [selectable]="true" [isDraggable]="true" width="150px">
+        <ng-template #body let-column let-rowData="rowData">
+            2222
+        </ng-template>
+    </aw-dt-column2>
+
+
+    <aw-dt-column2 label="AJ Parts" [selectable]="true" width="200px" [isDraggable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="Blue Deck Solution" [selectable]="true" width="200px" [isDraggable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="LRK Parts and server" [selectable]="true" width="200px" [isDraggable]="true"></aw-dt-column2>
+    <aw-dt-column2 label="Detail 1" [selectable]="true" [isDraggable]="true" [isDraggable]="true" width="200px">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 2" [selectable]="true" [isDraggable]="true" width="200px">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 3" [selectable]="true" [isDraggable]="true" width="200px">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 4" [selectable]="true" [isDraggable]="true" width="200px">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 5" [selectable]="true" [isDraggable]="true" width="200px">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 6" [selectable]="true" [isDraggable]="true" width="200px">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 7" [selectable]="true" [isDraggable]="true" width="200px">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
+    <aw-dt-column2 label="Detail 8" [selectable]="true" [isDraggable]="true" width="200px">
+        <ng-template #body let-column let-rowData="rowData">
+            1111
+        </ng-template>
+    </aw-dt-column2>
+
 
     <!-- Global templates for all columns, unless column defines its own body template -->
     <ng-template #dtBody let-column let-rowData="rowData">
@@ -431,7 +616,6 @@
         </ng-container>
     </ng-template>
 </aw-datatable2>
-
 
 
 <ng-template #headerTempl let-column let data="rowData" let-query="query">

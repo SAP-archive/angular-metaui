@@ -42,6 +42,7 @@ import {
 import {AWRadioButtonModule} from '../radio-button/radio-button.module';
 import {SetCellMaxWidthDirective} from './directives/dt-cell-directives';
 import {DTDraggableRowDirective} from './directives/dt-draggable-row.directive';
+import {DTDraggableColumnDirective} from './directives/dt-draggable-column.directive';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import {DTDraggableRowDirective} from './directives/dt-draggable-row.directive';
         DTMultiSelectColumnComponent,
         DTSingleSelectColumnComponent,
         DTDraggableRowDirective,
+        DTDraggableColumnDirective,
         SetCellMaxWidthDirective
     ],
     imports: [

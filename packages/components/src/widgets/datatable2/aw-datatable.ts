@@ -32,12 +32,20 @@ import {DTDetailRowComponent} from './column/detail-row/dt-detail-row.component'
 export const DragEvents: string[] = ['mousedown', 'dragstart', 'dragover', 'dragenter', 'dragleave',
     'drop', 'dragend'];
 
-export enum DragDirection
+export enum DragRowDirection
 {
     None = 'none',
     Up = 'dt-drag-row-top',
     Down = 'dt-drag-row-bottom',
     Middle = 'dt-drag-row-both'
+}
+
+
+export enum DragColumnDirection
+{
+    None = 'none',
+    Left = 'dt-drag-col-left',
+    Right = 'dt-drag-col-right',
 }
 
 
@@ -107,6 +115,13 @@ export interface AWDataTable
      * Identify if row or cell is selectable based on data
      */
     isRowSelectable: (item: any) => boolean;
+
+
+    /**
+     * Enables or disables column reordering
+     *
+     */
+    dndColumnEnabled: boolean;
 
 
     /**
@@ -278,6 +293,17 @@ export interface AWDataTable
      * outlineControl
      */
     onOutlineExpandChange(event: any): void;
+
+
+    /**
+     *
+     * Called by D&D column directive to reorder column. Functionality is similar like
+     * onDnDRowDrop
+     *
+     */
+    onDnDColumnDrop(origPos: number, newPos: number, dropPos: DropPosition,
+                    drop: DropPosition
+                    ): void;
 
 
     /**
