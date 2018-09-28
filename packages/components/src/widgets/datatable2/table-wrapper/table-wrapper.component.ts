@@ -216,9 +216,47 @@ export class DTWrapper extends BaseComponent implements AfterViewInit, AfterView
             } else {
                 fWidth += parseInt(col.width);
             }
+            fWidth += 2;
+        });
+        return fWidth;
+    }
+
+
+    /**
+     * Similar like frozen column calc. with difference this applies to regular
+     * table column content or right table of frozen column
+     *
+     */
+    calculateWidth(): number
+    {
+        if (this.dt.renderingMode === 'autofit') {
+            return null;
+        }
+
+        if (isPresent(this.dt.scrollWidth)) {
+            return this.dt.scrollWidth;
+        }
+
+        let fWidth = 0;
+        this.dt.columns.forEach((col: DTColumn2Component) =>
+        {
+            if (col.maxWidthPx > 0) {
+                fWidth += col.widestCell;
+            } else {
+                fWidth += parseInt(col.width);
+            }
 
         });
         return fWidth;
+    }
+
+
+    tableOverflow(frozen: boolean): string
+    {
+        if (this.dt.hasFrozenColumns() && frozen) {
+            return 'hidden';
+        }
+        return (this.dt.renderingMode === 'normal' ? 'auto' : 'hidden');
     }
 
 
@@ -267,7 +305,7 @@ export class DTWrapper extends BaseComponent implements AfterViewInit, AfterView
             frozenView.style.width = frozenWidth + 'px';
             if (isPresent(unFrozenView)) {
                 // include border and create indent effect by having 1px white space
-                unFrozenView.style.left = (frozenWidth + 2) + 'px';
+                unFrozenView.style.left = (frozenWidth + 3) + 'px';
                 unFrozenView.style.width = unFrozenView.parentElement.offsetWidth
                     - frozenView.offsetWidth + 'px';
 

@@ -48,13 +48,13 @@ export class DatatablePageComponent extends BaseComponent
 
     dataSource: DT2DataSource;
 
-    constructor (public env: Environment)
+    constructor(public env: Environment)
     {
         super(env);
     }
 
 
-    ngOnInit ()
+    ngOnInit()
     {
         super.ngOnInit();
         let myState = window.localStorage.getItem('dtState');
@@ -94,13 +94,13 @@ export class DatatablePageComponent extends BaseComponent
         }
     }
 
-    ngDoCheck (): void
+    ngDoCheck(): void
     {
         window.localStorage.setItem('dtState', Datatable2State.toJSON(this.dtState));
     }
 
 
-    private lookupChildren (item: Item): Item[]
+    private lookupChildren(item: Item): Item[]
     {
         return this.dataset.filter((val: Item) =>
         {
@@ -108,7 +108,7 @@ export class DatatablePageComponent extends BaseComponent
         });
     }
 
-    private lookupChildren2 (item: Item): Item[]
+    private lookupChildren2(item: Item): Item[]
     {
         return this.dataset2.filter((val: Item) =>
         {
@@ -117,13 +117,13 @@ export class DatatablePageComponent extends BaseComponent
     }
 
 
-    isRowSelectable (item: any): boolean
+    isRowSelectable(item: any): boolean
     {
         // ignore root section that has no parent
         return (item.type === 'section' && isPresent(item.parent)) || item.type === 'item';
     }
 
-    calculatedClass (col: DTColumn2Component, item: Item): string
+    calculatedClass(col: DTColumn2Component, item: Item): string
     {
         if (isBlank(item)) {
             return '';
@@ -136,7 +136,9 @@ export class DatatablePageComponent extends BaseComponent
             return 'app-dt-item-section ';
 
         } else if (item.type === 'item') {
-            if (col.selectable && item.valBySupplier[col.label].indexOf('350') !== -1) {
+            if (col.selectable && item.valBySupplier[col.label || col.key] &&
+                item.valBySupplier[col.label || col.key].indexOf('350') !== -1)
+            {
                 return 'app-dt-item-item dt-is-highlight';
             }
 
@@ -146,7 +148,7 @@ export class DatatablePageComponent extends BaseComponent
         return '';
     }
 
-    children (item: any): any[]
+    children(item: any): any[]
     {
         switch (item.type) {
             case 'section':
@@ -161,7 +163,7 @@ export class DatatablePageComponent extends BaseComponent
         return [];
     }
 
-    children2 (item: any): any[]
+    children2(item: any): any[]
     {
         switch (item.type) {
             case 'section':
@@ -177,19 +179,19 @@ export class DatatablePageComponent extends BaseComponent
     }
 
 
-    canRenderForType (col: DTColumn2Component, item: any): boolean
+    canRenderForType(col: DTColumn2Component, item: any): boolean
     {
         return item.type === 'item';
     }
 
 
-    onRowSelected (selection: any): void
+    onRowSelected(selection: any): void
     {
         console.log('table selection:', selection);
     }
 
 
-    createDynData (): Item[]
+    createDynData(): Item[]
     {
         let dyn: Item[] = [];
 
@@ -412,7 +414,7 @@ export class DatatablePageComponent extends BaseComponent
     }
 
 
-    populateTree (): void
+    populateTree(): void
     {
 
         let parent1 = new MySourcingEvent('1.0 Introduction', 'section');
@@ -555,7 +557,7 @@ export class MySourcingEvent implements Entity, OutlineNode
     // specific to this object
     valBySupplier: any;
 
-    constructor (public title: string, public type: string, public qty?: string)
+    constructor(public title: string, public type: string, public qty?: string)
     {
         this.valBySupplier = {
             'AJ Parts': '',
@@ -566,7 +568,7 @@ export class MySourcingEvent implements Entity, OutlineNode
 
     }
 
-    withValues (ajp: string, bluedesk: string, lrk: string): MySourcingEvent
+    withValues(ajp: string, bluedesk: string, lrk: string): MySourcingEvent
     {
         this.valBySupplier['AJ Parts'] = ajp;
         this.valBySupplier['Blue Deck Solution'] = bluedesk;
@@ -576,7 +578,7 @@ export class MySourcingEvent implements Entity, OutlineNode
     }
 
 
-    withTerms (name: string, ajp: string, bluedesk: string, lrk: string): MySourcingEvent
+    withTerms(name: string, ajp: string, bluedesk: string, lrk: string): MySourcingEvent
     {
 
         let mySourcingEvent = new MySourcingEvent(name, 'term')
@@ -587,19 +589,19 @@ export class MySourcingEvent implements Entity, OutlineNode
     }
 
 
-    addChild (item: MySourcingEvent): MySourcingEvent
+    addChild(item: MySourcingEvent): MySourcingEvent
     {
         this.children.push(item);
         item.parent = this;
         return this;
     }
 
-    identity (): string
+    identity(): string
     {
         return this.title;
     }
 
-    getTypes (): any
+    getTypes(): any
     {
         return {
             id: String,
@@ -607,7 +609,7 @@ export class MySourcingEvent implements Entity, OutlineNode
         };
     }
 
-    className (): string
+    className(): string
     {
         return 'MySourcingEvent';
     }

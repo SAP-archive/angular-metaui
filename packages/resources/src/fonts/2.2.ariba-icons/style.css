@@ -1,0 +1,497 @@
+
+@font-face {
+	font-family: 'Ariba_icon_library-Regular';
+	src: url('fonts/Ariba_icon_library-Regular.ttf'), url('fonts/Ariba_icon_library-Regular.woff'),
+     url('fonts/Ariba_icon_library-Regular.eot'); /* IE9+ */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'Ariba_icon_library-Regular';
+  content: attr(data-icon);
+  speak: none;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+.ariba-icon2[class*="icon-"],
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: 'Ariba_icon_library-Regular';
+  font-style: normal;
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-workspace:before {
+  content: "\eA01";
+}
+.icon-auction:before {
+  content: "\eA02";
+}
+.icon-table-angle:before {
+  content: "\eA03";
+}
+.icon-rfi-doc:before {
+  content: "\eA04";
+}
+.icon-rfp-doc:before {
+  content: "\eA05";
+}
+.icon-info:before {
+  content: "\eA06";
+}
+.icon-table-customization:before {
+  content: "\eA07";
+}
+.icon-rfx-doc:before {
+  content: "\eA08";
+}
+.icon-share:before {
+  content: "\eA09";
+}
+.icon-expand:before {
+  content: "\eA0a";
+}
+.icon-collapse:before {
+  content: "\eA0b";
+}
+.icon-function:before {
+  content: "\eA0c";
+}
+.icon-divide:before {
+  content: "\eA0d";
+}
+.icon-left-bracket:before {
+  content: "\eA0e";
+}
+.icon-right-bracket:before {
+  content: "\eA0f";
+}
+.icon-empty:before {
+  content: "\eA10";
+}
+.icon-grade:before {
+  content: "\eA11";
+}
+.icon-ms-project-doc:before {
+  content: "\eA12";
+}
+.icon-knowledge-project:before {
+  content: "\eA13";
+}
+.icon-notification1:before {
+  content: "\eA14";
+}
+.icon-contract:before {
+  content: "\eA15";
+}
+.icon-separator:before {
+  content: "\eA16";
+}
+.icon-template:before {
+  content: "\eA17";
+}
+.icon-notification2:before {
+  content: "\eA18";
+}
+.icon-live:before {
+  content: "\eA19";
+}
+.icon-rtl-table-angle:before {
+  content: "\eA1a";
+}
+.icon-rtl-in-progress:before {
+  content: "\eA1b";
+}
+.icon-rtl-pending:before {
+  content: "\eA1c";
+}
+.icon-rtl-child:before {
+  content: "\eA1d";
+}
+.icon-rtl-expand:before {
+  content: "\eA1e";
+}
+.icon-pin:before {
+  content: "\eA20";
+}
+.icon-ariba:before {
+  content: "\eA21";
+}
+.icon-sort-up:before {
+  content: "\eA22";
+}
+.icon-sort-down:before {
+  content: "\eA23";
+}
+.icon-pull-down:before {
+  content: "\eA24";
+}
+.icon-share2:before {
+  content: "\eA25";
+}
+.icon-home:before {
+  content: "\eA26";
+}
+.icon-analytics:before {
+  content: "\eA27";
+}
+.icon-reporting:before {
+  content: "\eA28";
+}
+.icon-notusing:before {
+  content: "\eA29";
+}
+.icon-pinned:before {
+  content: "\eA30";
+}
+.icon-hedge-oil:before {
+  content: "\eA31";
+}
+.icon-more:before {
+  content: "\eA32";
+}
+.icon-open-panel:before {
+  content: "\eA33";
+}
+.icon-add-non-catalog-item:before {
+  content: "\eA34";
+}
+.icon-adashboard:before {
+  content: "\eA35";
+}
+.icon-ms-in-progress:before {
+  content: "\eA36";
+}
+.icon-ms-complete:before {
+  content: "\eA37";
+}
+.icon-ms-cancel:before {
+  content: "\eA38";
+}
+.icon-ms-denied:before {
+  content: "\eA39";
+}
+.icon-cancelled:before {
+  content: "\eA40";
+}
+.icon-in-progress:before {
+  content: "\eA41";
+}
+.icon-pending:before {
+  content: "\eA42";
+}
+.icon-grab:before {
+  content: "\eA43";
+}
+.icon-lightening:before {
+  content: "\eA44";
+}
+.icon-under_construction:before {
+  content: "\eA45";
+}
+.icon-bid:before {
+  content: "\eA46";
+}
+.icon-best-bid:before {
+  content: "\eA47";
+}
+.icon-gate:before {
+  content: "\eA48";
+}
+.icon-gate-action:before {
+  content: "\eA49";
+}
+.icon-invoice-reconcile:before {
+  content: "\eA50";
+}
+.icon-purchase-order:before {
+  content: "\eA51";
+}
+.icon-kit:before {
+  content: "\eA52";
+}
+.icon-punch-out:before {
+  content: "\eA53";
+}
+.icon-currency:before {
+  content: "\eA54";
+}
+.icon-gold:before {
+  content: "\eA55";
+}
+.icon-platinum:before {
+  content: "\eA56";
+}
+.icon-silver:before {
+  content: "\eA57";
+}
+.icon-hazard:before {
+  content: "\eA58";
+}
+.icon-invoice:before {
+  content: "\eA59";
+}
+.icon-accounting-expand:before {
+  content: "\eA60";
+}
+.icon-revalidate:before {
+  content: "\eA61";
+}
+.icon-measure:before {
+  content: "\eA62";
+}
+.icon-summary:before {
+  content: "\eA63";
+}
+.icon-disable:before {
+  content: "\eA64";
+}
+.icon-saved-cart:before {
+  content: "\eA65";
+}
+.icon-new:before {
+  content: "\eA66";
+}
+.icon-add-message:before {
+  content: "\eA67";
+}
+.icon-message-composed:before {
+  content: "\eA68";
+}
+.icon-message-sent:before {
+  content: "\eA69";
+}
+.icon-incumbent:before {
+  content: "\eA70";
+}
+.icon-WS-contract:before {
+  content: "\eA71";
+}
+.icon-WS-dform:before {
+  content: "\eA72";
+}
+.icon-WS-personal:before {
+  content: "\eA73";
+}
+.icon-WS-supplier-management:before {
+  content: "document\eA74";
+}
+.icon-WS-resourcing:before {
+  content: "\eA75";
+}
+.icon-WS-supplier-performance-mngt:before {
+  content: "\eA76";
+}
+.icon-WS-knowledge-proj:before {
+  content: "\eA77";
+}
+.icon-women-owned:before {
+  content: "\eA78";
+}
+.icon-catalog:before {
+  content: "\eA79";
+}
+.icon-non-catalog-item:before {
+  content: "\eA80";
+}
+.icon-pull-up:before {
+  content: "\eA81";
+}
+.icon-add-comment:before {
+  content: "\eA82";
+}
+.icon-edit-comment:before {
+  content: "\eA83";
+}
+.icon-child:before {
+  content: "\eA84";
+}
+.icon-surrogate:before {
+  content: "\eA85";
+}
+.icon-commodity-map:before {
+  content: "\eA86";
+}
+.icon-CIF-unit-of-measure:before {
+  content: "\eA87";
+}
+.icon-toggle-yes:before {
+  content: "\eA88";
+}
+.icon-toggle-no:before {
+  content: "\eA89";
+}
+.icon-half-star:before {
+  content: "\eA90";
+}
+.icon-rfq-doc:before {
+  content: "\eA91";
+}
+.icon-inquiry:before {
+  content: "\eA92";
+}
+.icon-document-vsd:before {
+  content: "\eA93";
+}
+.icon-document-mpp:before {
+  content: "\eA94";
+}
+.icon-service-sheet:before {
+  content: "\eA95";
+}
+.icon-ship-notice:before {
+  content: "\eA96";
+}
+.icon-close-panel:before {
+  content: "\eA97";
+}
+.icon-like:before {
+  content: "\eA98";
+}
+.icon-customer-service:before {
+  content: "\eA99";
+}
+.icon-penalty:before {
+  content: "\eA9a";
+}
+.icon-flag2:before {
+  content: "\eA9b";
+}
+.icon-warning:before {
+  content: "\eA9c";
+}
+.icon-error:before {
+  content: "\eA9d";
+}
+.add-template:before {
+  content: "\eB01";
+}
+.end-point:before {
+  content: "\eB02";
+}
+.file-conveter:before {
+  content: "\eB03";
+}
+.file:before {
+  content: "\eB04";
+}
+.filter:before {
+  content: "\eB05";
+}
+.joiner:before {
+  content: "\eB06";
+}
+.mapper:before {
+  content: "\eB07";
+}
+.publisher:before {
+  content: "\eB08";
+}
+.refresh:before {
+  content: "\eB09";
+}
+.search:before {
+  content: "\eB10";
+}
+.settings:before {
+  content: "\eB11";
+}
+.share:before {
+  content: "\eB12";
+}
+.trash:before {
+  content: "\eB13";
+}
+.close:before {
+  content: "\eB14";
+}
+.start:before {
+  content: "\eB15";
+}
+.arrow-down:before {
+  content: "\eB16";
+}
+.automap:before {
+  content: "\eB17";
+}
+.portfolio:before {
+  content: "\eB18";
+}
+.discovery:before {
+  content: "\eB19";
+}
+.home:before {
+  content: "\eB20";
+}
+.learn:before {
+  content: "\eB21";
+}
+.admin:before {
+  content: "\eB22";
+}
+.menu:before {
+  content: "\eB23";
+}
+.register:before {
+  content: "\eB24";
+}
+.facebook:before {
+  content: "\eB25";
+}
+.twitter:before {
+  content: "\eB26";
+}
+.google-plus:before {
+  content: "\eB27";
+}
+.youtube:before {
+  content: "\eB28";
+}
+.linkedin:before {
+  content: "\eB29";
+}
+.discussion:before {
+  content: "\eB30";
+}
+.minus:before {
+  content: "\eB31";
+}
+.forms:before {
+  content: "\eB32";
+}
+.flows:before {
+  content: "\eB33";
+}
+.dashboards:before {
+  content: "\eB34";
+}
+.apps:before {
+  content: "\eB35";
+}
+.rtl-start:before {
+  content: "\eB36";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

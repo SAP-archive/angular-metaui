@@ -47,9 +47,9 @@
     <tr>
         <ng-template ngFor let-col [ngForOf]="colsToRender" let-lastCol="last"
                      let-columnIndex="index">
-
             <ng-container *ngTemplateOutlet="col.rendererTemplate;
                 context:{$implicit: true, isSubHeader:false,
+                localColumnIndex: columnIndex,
                 columnIndex:(frozen ? columnIndex: (columns.length + columnIndex))}">
             </ng-container>
         </ng-template>
@@ -151,7 +151,7 @@
         <ng-template ngFor let-col [ngForOf]="colsToRender" let-colIndex="index">
             <ng-container *ngTemplateOutlet="col.rendererTemplate;
                     context:{$implicit: false, data:rowData, rowIndex:rowIndex,
-                    nestingLevel:nestingLevel}">
+                    columnIndex: colIndex, nestingLevel:nestingLevel}">
             </ng-container>
         </ng-template>
     </tr>

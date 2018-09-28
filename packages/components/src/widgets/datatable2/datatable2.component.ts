@@ -75,9 +75,7 @@ import {DATA_SOURCE} from '../../core/data/data-source';
 import {DataProviders} from '../../core/data/data-providers';
 import {DataFinders, QueryType} from '../../core/data/data-finders';
 import {Datatable2State, DetailRowExpansionState, DT2DataSource} from './datatable2-data-source';
-import {
-    DTMultiSelectColumnComponent
-} from './column/multi-select/dt-multi-select-column.component';
+import {DTMultiSelectColumnComponent} from './column/multi-select/dt-multi-select-column.component';
 import {
     DTSingleSelectColumnComponent
 } from './column/single-select/dt-single-select-column.component';
@@ -85,6 +83,17 @@ import {ModelFormat} from '../outline/outline-for.component';
 
 
 export type SelectionMode = 'multi' | 'single' | 'cell' | 'none';
+
+/**
+ *
+ * Rendering mode goes side by side with scrollWidth if any is set.
+ *
+ * autofit - tries to show all the content with the 100% of the page
+ * normal - show overflowing content
+ * hidden - if content is larger than rendering area the overflowing content will be hidden
+ *
+ */
+export type RenderingMode = 'autofit' | 'normal' | 'hidden';
 
 /**
  * DT component that implements the data grid that shows tabular data. Even the basic
@@ -370,8 +379,9 @@ export class Datatable2Component extends BaseComponent implements AWDataTable, A
 
 
     /**
-     * In case frozen column are using we can specify on global level total width of the table the
-     * overflowing content or width for each column.
+     * In case of frozen columns you can specify on global level total width (the table's
+     * overflowing content) or width for each column. The same applies if you have allot of
+     * columns where their sum of width would be wider than table itself
      */
     @Input()
     scrollWidth: any;
@@ -383,6 +393,21 @@ export class Datatable2Component extends BaseComponent implements AWDataTable, A
      */
     @Input()
     dndRowEnabled: boolean = false;
+
+
+    /**
+     * See AWDataTable
+     *
+     */
+    @Input()
+    dndColumnEnabled: boolean = false;
+
+
+    /**
+     * See rendering mode type
+     */
+    @Input()
+    renderingMode: RenderingMode = 'normal';
 
     /**
      *
@@ -496,6 +521,14 @@ export class Datatable2Component extends BaseComponent implements AWDataTable, A
     @Output()
     valueChange: EventEmitter<any[]> = new EventEmitter<any[]>();
 
+
+    /**
+     *
+     * Triggers when items in the list are updated
+     *
+     */
+    @Output()
+    onColumnReorder: EventEmitter<any[]> = new EventEmitter<any[]>();
 
     @HostBinding('class')
     classList: string = 'w-datatable ';
@@ -1060,6 +1093,74 @@ export class Datatable2Component extends BaseComponent implements AWDataTable, A
             // console.log('Dropping row #: ', origPos + ' ' + dropPos + ' row #: ' + newPos);
             this.dataSource.reorderRows(origPos, newPos, dropPos);
         }
+    }
+
+    onDnDColumnDrop(origPos: number, newPos: number, dropPos: DropPosition): void
+    {
+        let source = this.env.getValue('dragSource');
+        let target = this.env.getValue('dragTarget');
+
+        if (source !== target) {
+            this.doHandleDndRowXRossTable(origPos, newPos, dropPos);
+
+        } else {
+            this.doHandleDndRowWithinTable(origPos, newPos, dropPos);
+        }
+
+        this.changeDetector.detectChanges();
+        this.onColumnReorder.emit(null);
+    }
+
+    doHandleDndRowXRossTable(origPos: number, newPos: number, dropPos: DropPosition): void
+    {
+        let source = this.env.getValue('dragSource');
+        let target = this.env.getValue('dragTarget');
+
+        if (source === 'left' && target === 'right') {
+
+            if (dropPos === DropPosition.After) {
+                newPos += 1;
+            }
+            let removedColumnLeft = this.frozenColumns.splice(origPos, 1);
+            this.columns.splice(newPos, 0, ...removedColumnLeft);
+        } else if (source === 'right' && target === 'left') {
+            if (dropPos === DropPosition.After) {
+                newPos += 1;
+            }
+
+            let removedColumnLeft = this.columns.splice(origPos, 1);
+            this.frozenColumns.splice(newPos, 0, ...removedColumnLeft);
+        }
+    }
+
+
+    doHandleDndRowWithinTable(origPos: number, newPos: number, dropPos: DropPosition): void
+    {
+        let source = this.env.getValue('dragSource');
+        let columnsList = this.columns;
+        if (this.hasFrozenColumns() && source === 'left') {
+            this.frozenColumns = this.doMoveColumns(this.frozenColumns, newPos, origPos, dropPos);
+        } else {
+            this.columns = this.doMoveColumns(this.columns, newPos, origPos, dropPos);
+        }
+    }
+
+
+    private doMoveColumns(list: DTColumn2Component[], newPos: number, origPos: number,
+                          dropPos: DropPosition)
+    {
+        let array: Array<any> = Array.from(list).slice();
+        // take something from left and drag&drop before
+        if (newPos > origPos && dropPos === DropPosition.Before && newPos < array.length) {
+            newPos -= 1;
+
+            // take something from right and drag&drop after
+        } else if (newPos < origPos && dropPos === DropPosition.After && newPos >= 0) {
+            newPos += 1;
+        }
+
+        array.splice(newPos, 0, ...array.splice(origPos, 1)[0]);
+        return array;
     }
 
     /**

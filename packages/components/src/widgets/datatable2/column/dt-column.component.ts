@@ -164,6 +164,25 @@ export class DTColumn2Component extends BaseComponent implements AfterContentIni
     selectable: boolean = false;
 
     /**
+     *
+     * Use to tell the main column header if we allow dragging by showing dragging handle
+     *
+     */
+    @Input()
+    isDraggable: boolean = false;
+
+
+    /**
+     *
+     * Since in pivotal like layout we might have hidden columns that could be style to be hidden
+     * so they blend in to other column we cannot allow dropping while dragging a column
+     *
+     */
+    @Input()
+    isDroppable: boolean = true;
+
+
+    /**
      * Use globally defined HEADER template for current column
      *
      */
@@ -313,6 +332,10 @@ export class DTColumn2Component extends BaseComponent implements AfterContentIni
      */
     handleHeaderClick(event: any, element: any): void
     {
+        if (event.target.classList.contains('icon-grab')) {
+            return;
+        }
+
         if (this.isHeaderSelectable()) {
             this.dt.onHeaderSelectionChange(element, this);
 

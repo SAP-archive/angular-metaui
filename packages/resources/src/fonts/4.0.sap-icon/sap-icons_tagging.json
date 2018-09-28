@@ -1,0 +1,4092 @@
+{
+
+    "accidental-leave": {
+        "Unicode": ["/e000"],
+        "Category": ["medical"],
+        "Tags": ["accidental", "leave", "medical", "cross", "plus", "emergency", "hospital"]
+},
+
+    "account": {
+        "Unicode": ["/e001"],
+        "Category": ["people"],
+        "Tags": ["user", "menu", "settings", "person", "account"]
+},
+
+    "wrench": {
+        "Unicode": ["/e002"],
+        "Category": ["actions"],
+        "Tags": ["wrench", "control", "configuration", "settings", "tool"]
+},
+
+    "windows-doors": {
+        "Unicode": ["/e003"],
+        "Category": ["objects"],
+        "Tags": ["window", "door", "entry"]
+},
+
+    "washing-machine": {
+        "Unicode": ["/e004"],
+        "Category": ["objects"],
+        "Tags": ["washing", "machine", "laundry", "clean", "wash", "purify"]
+},
+
+    "visits": {
+        "Unicode": ["/e005"],
+        "Category": ["actions", "arrows", "people"],
+        "Tags": ["user", "arrow", "door", "visit", "login", "entry"]
+},
+
+    "video": {
+        "Unicode": ["/e006"],
+        "Category": ["actions", "devices", "objects"],
+        "Tags": ["camera", "recorder", "video", "movie", "clip"]
+},
+
+    "travel-expense": {
+        "Unicode": ["/e007"],
+        "Category": ["money", "transport"],
+        "Tags": ["plane", "dollar", "money", "trip", "expense", "travel", "holiday", "flight", "budget", "billing", "invoice", "cost", "payments"]
+},
+
+    "temperature": {
+        "Unicode": ["/e008"],
+        "Category": ["objects", "charts", "medical"],
+        "Tags": ["temperature", "hot", "heat", "cold", "cool", "illness", "sickness", "health", "medical"]
+},
+
+    "task": {
+        "Unicode": ["/e009"],
+        "Category": ["clipboards"],
+        "Tags": ["clipboard", "task", "checkbox", "checklist", "list", "checkmark"]
+},
+
+    "synchronize": {
+        "Unicode": ["/e00a"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["synchronize", "reload", "refresh", "arrow"]
+},
+
+    "survey": {
+        "Unicode": ["/e00b"],
+        "Category": ["form"],
+        "Tags": ["survey", "form", "checklist", "list", "checkbox", "checkmark", "x"]
+},
+
+    "settings": {
+        "Unicode": ["/e00c"],
+        "Category": ["actions"],
+        "Tags": ["cogwheels", "configuration", "settings", "tools", "modify", "customize"]
+},
+
+    "search": {
+        "Unicode": ["/e00d"],
+        "Category": ["actions"],
+        "Tags": ["search", "magnifier", "glass"]
+},
+
+    "sales-document": {
+        "Unicode": ["/e00e"],
+        "Category": ["documents", "money"],
+        "Tags": ["document", "page", "file", "text", "sales", "money"]
+},
+
+    "retail-store": {
+        "Unicode": ["/e00f"],
+        "Category": ["shopping", "places"],
+        "Tags": ["shop", "store", "retail", "market"]
+},
+
+    "refresh": {
+        "Unicode": ["/e010"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["reload", "refresh", "arrow"]
+},
+
+    "product": {
+        "Unicode": ["/e011"],
+        "Category": ["objects"],
+        "Tags": ["product", "commodity", "goods", "stock", "merchandise", "package"]
+},
+
+    "present": {
+        "Unicode": ["/e012"],
+        "Category": ["time"],
+        "Tags": ["time", "clock", "star", "current", "present"]
+},
+
+    "ppt-attachment": {
+        "Unicode": ["/e013"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "ppt", "powerpoint"]
+},
+
+    "pool": {
+        "Unicode": ["/e014"],
+        "Category": ["objects", "places"],
+        "Tags": ["pool", "basin", "swim"]
+},
+
+    "pie-chart": {
+        "Unicode": ["/e015"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "pie", "segments"]
+},
+
+    "picture": {
+        "Unicode": ["/e016"],
+        "Category": ["objects"],
+        "Tags": ["picture", "photo", "photograph", "shot", "image"]
+},
+
+    "photo-voltaic": {
+        "Unicode": ["/e017"],
+        "Category": ["objects"],
+        "Tags": ["photovoltaic", "voltaic", "electricity", "power", "solar", "panel", "sun"]
+},
+
+    "phone": {
+        "Unicode": ["/e018"],
+        "Category": ["actions", "devices", "objects"],
+        "Tags": ["phone", "telephone", "landline", "number", "call", "dial"]
+},
+
+    "pending": {
+        "Unicode": ["/e019"],
+        "Category": ["time"],
+        "Tags": ["time", "clock", "pend", "pending", "awaiting", "unresolved", "unsettled"]
+},
+
+    "pdf-attachment": {
+        "Unicode": ["/e01a"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "pdf"]
+},
+
+    "past": {
+        "Unicode": ["/e01b"],
+        "Category": ["time"],
+        "Tags": ["time", "clock", "past", "bygone", "former", "late"]
+},
+
+    "outgoing-call": {
+        "Unicode": ["/e01c"],
+        "Category": ["actions"],
+        "Tags": ["call", "communicate", "phone", "telephone", "outgoing", "arrow"]
+},
+
+    "opportunity": {
+        "Unicode": ["/e01d"],
+        "Category": ["objects"],
+        "Tags": ["chart", "line", "star", "opportunity", "stock", "market", "exchange", "trade"]
+},
+
+    "opportunities": {
+        "Unicode": ["/e01e"],
+        "Category": ["people"],
+        "Tags": ["user", "person", "dollar", "equal to", "opportunity"]
+},
+
+    "notes": {
+        "Unicode": ["/e01f"],
+        "Category": ["actions"],
+        "Tags": ["notes", "marks", "info", "draft"]
+},
+
+    "money-bills": {
+        "Unicode": ["/e020"],
+        "Category": ["money"],
+        "Tags": ["money", "cash", "payment", "bills", "dollar"]
+},
+
+    "map": {
+        "Unicode": ["/e021"],
+        "Category": ["objects", "places"],
+        "Tags": ["map", "pin", "loaction", "place", "area"]
+},
+
+    "log": {
+        "Unicode": ["/e022"],
+        "Category": ["actions"],
+        "Tags": ["log", "logout", "log on", "log off"]
+},
+
+    "line-charts": {
+        "Unicode": ["/e023"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data"]
+},
+
+    "lightbulb": {
+        "Unicode": ["/e024"],
+        "Category": ["objects"],
+        "Tags": ["lightbulb", "light", "lamp", "idea"]
+},
+
+    "leads": {
+        "Unicode": ["/e025"],
+        "Category": ["people"],
+        "Tags": ["user", "person", "leads", "star", "equal to"]
+},
+
+    "lead": {
+        "Unicode": ["/e026"],
+        "Category": ["money"],
+        "Tags": ["money", "dollar", "currency", "payment"]
+},
+
+    "laptop": {
+        "Unicode": ["/e027"],
+        "Category": ["devices", "objects"],
+        "Tags": ["laptop", "device", "computer"]
+},
+
+    "kpi-managing-my-area": {
+        "Unicode": ["/e028"],
+        "Category": ["people"],
+        "Tags": ["user", "person", "kpi", "checkmark", "equal to"]
+},
+
+    "kpi-corporate-performance": {
+        "Unicode": ["/e029"],
+        "Category": ["objects"],
+        "Tags": ["chart", "line", "kpi", "checkmark", "performance"]
+},
+
+    "incoming-call": {
+        "Unicode": ["/e02a"],
+        "Category": ["actions"],
+        "Tags": ["call", "communicate", "incoming", "phone", "telephone", "arrow"]
+},
+
+    "inbox": {
+        "Unicode": ["/e02b"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["inbox", "in", "arrow"]
+},
+
+    "horizontal-bar-chart": {
+        "Unicode": ["/e02c"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "bar", "horizontal"]
+},
+
+    "history": {
+        "Unicode": ["/e02d"],
+        "Category": ["time"],
+        "Tags": ["time", "clock", "history", "past", "chronicle"]
+},
+
+    "heating-cooling": {
+        "Unicode": ["/e02e"],
+        "Category": ["objects"],
+        "Tags": ["temperature", "air conditioning", "ac", "heat", "cold", "sun", "snowflake"]
+},
+
+    "gantt-bars": {
+        "Unicode": ["/e02f"],
+        "Category": ["calendars", "objects"],
+        "Tags": ["calendar", "gantt", "bars", "gantt bars", "chart", "schedule"]
+},
+
+    "future": {
+        "Unicode": ["/e030"],
+        "Category": ["time"],
+        "Tags": ["time", "clock", "arrow", "future", "hereafter"]
+},
+
+    "fridge": {
+        "Unicode": ["/e031"],
+        "Category": ["objects"],
+        "Tags": ["fridge", "refrigerator", "icebox", "freezer", "cooler", "appliance"]
+},
+
+    "fallback": {
+        "Unicode": ["/e032"],
+        "Category": ["folder"],
+        "Tags": ["folder", "fallback", "marked", "object", "directory", "library"]
+},
+
+    "expense-report": {
+        "Unicode": ["/e033"],
+        "Category": ["documents", "money"],
+        "Tags": ["expense", "report", "documents", "money", "dollar"]
+},
+
+    "excel-attachment": {
+        "Unicode": ["/e034"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "excel", "spreadsheet", "accounting"]
+},
+
+    "energy-saving-lightbulb": {
+        "Unicode": ["/e035"],
+        "Category": ["objects"],
+        "Tags": ["lightbulb", "light", "lamp", "idea", "eco", "energy saving"]
+},
+
+    "employee": {
+        "Unicode": ["/e036"],
+        "Category": ["people"],
+        "Tags": ["user", "person", "employee", "member", "operator", "representative"]
+},
+
+    "email": {
+        "Unicode": ["/e037"],
+        "Category": ["actions", "objects"],
+        "Tags": ["envelope", "email", "e-mail", "electronic mail", "mail", "correspondence" ]
+},
+
+    "edit": {
+        "Unicode": ["/e038"],
+        "Category": ["actions"],
+        "Tags": ["pencil", "pen", "write", "edit", "modify", "text"]
+},
+
+    "duplicate": {
+        "Unicode": ["/e039"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["duplicate", "objects", "arrow"]
+},
+
+    "download": {
+        "Unicode": ["/e03a"],
+        "Category": ["arrows"],
+        "Tags": ["download", "arrow"]
+},
+
+    "doc-attachment": {
+        "Unicode": ["/e03b"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "word", "text"]
+},
+
+    "dishwasher": {
+        "Unicode": ["/e03c"],
+        "Category": ["objects"],
+        "Tags": ["dishwasher", "dish", "wash", "appliance"]
+},
+
+    "delete": {
+        "Unicode": ["/e03d"],
+        "Category": ["actions"],
+        "Tags": ["bin", "trash can", "rubbish", "delete"]
+},
+
+    "decline": {
+        "Unicode": ["/e03e"],
+        "Category": ["actions"],
+        "Tags": ["reject", "close", "remove", "cancel", "x"]
+},
+
+    "complete": {
+        "Unicode": ["/e03f"],
+        "Category": ["actions"],
+        "Tags": ["complete", "checkmark", "tick", "affirmative", "enter", "finish"]
+},
+
+    "competitor": {
+        "Unicode": ["/e040"],
+        "Category": ["objects"],
+        "Tags": ["competitor", "winner", "prize", "award", "trophy", "cup"]
+},
+
+    "collections-management": {
+        "Unicode": ["/e041"],
+        "Category": ["money", "objects"],
+        "Tags": ["calculator", "counting", "simulate", "collections management", "total", "accounting"]
+},
+
+    "chalkboard": {
+        "Unicode": ["/e042"],
+        "Category": ["objects"],
+        "Tags": ["chalkboard", "education", "teaching", "learning", "classroom", "school", "college"]
+},
+
+    "cart": {
+        "Unicode": ["/e043"],
+        "Category": ["shopping"],
+        "Tags": ["cart", "trolley", "basket", "shopping"]
+},
+
+    "card": {
+        "Unicode": ["/e044"],
+        "Category": ["objects"],
+        "Tags": ["image", "placeholder", "picture", "hills", "mountains", "sun", "card"]
+},
+
+    "camera": {
+        "Unicode": ["/e045"],
+        "Category": ["actions", "objects"],
+        "Tags": ["camera", "photograph", "device", "image", "snap shot"]
+},
+
+    "calendar": {
+        "Unicode": ["/e046"],
+        "Category": ["calendars"],
+        "Tags": ["calendar"]
+},
+
+    "begin": {
+        "Unicode": ["/e047"],
+        "Category": ["arrows"],
+        "Tags": ["begin", "start", "arrows"]
+},
+
+    "basket": {
+        "Unicode": ["/e048"],
+        "Category": ["shopping"],
+        "Tags": ["basket", "shopping"]
+},
+
+    "bar-chart": {
+        "Unicode": ["/e049"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "column"]
+},
+
+    "attachment": {
+        "Unicode": ["/e04a"],
+        "Category": ["actions"],
+        "Tags": ["attach", "file", "paper clip"]
+},
+
+    "arrow-top": {
+        "Unicode": ["/e04b"],
+        "Category": ["arrows"],
+        "Tags": ["arrow top", "up"]
+},
+
+    "arrow-right": {
+        "Unicode": ["/e04c"],
+        "Category": ["arrows"],
+        "Tags": ["arrow right"]
+},
+
+    "arrow-left": {
+        "Unicode": ["/e04d"],
+        "Category": ["arrows"],
+        "Tags": ["arrow left"]
+},
+
+    "arrow-bottom": {
+        "Unicode": ["/e04e"],
+        "Category": ["arrows"],
+        "Tags": ["arrow bottom", "down"]
+},
+
+    "approvals": {
+        "Unicode": ["/e04f"],
+        "Category": ["form"],
+        "Tags": ["form", "details", "text", "approvals", "accepted", "checkmark"]
+},
+
+    "appointment": {
+        "Unicode": ["/e050"],
+        "Category": ["calendars"],
+        "Tags": ["date picker", "calendar", "month", "week", "day", "appointment"]
+},
+
+    "alphabetical-order": {
+        "Unicode": ["/e051"],
+        "Category": ["actions"],
+        "Tags": ["function", "alphabet", "letters", "a to z", "descending", "sorting", "order"]
+},
+
+    "along-stacked-chart": {
+        "Unicode": ["/e052"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "bar"]
+},
+
+    "alert": {
+        "Unicode": ["/e053"],
+        "Category": ["status"],
+        "Tags": ["message", "warning", "critical", "notifications", "status"]
+},
+
+    "addresses": {
+        "Unicode": ["/e054"],
+        "Category": ["objects"],
+        "Tags": ["customers", "contacts", "addresses", "email", "e-mail", "directory", "companies", "houses", "homes"]
+},
+
+    "address-book": {
+        "Unicode": ["/e055"],
+        "Category": ["objects"],
+        "Tags": ["customers", "contacts", "addresses", "email", "e-mail", "directory", "companies", "@", "at"]
+},
+
+    "add-filter": {
+        "Unicode": ["/e056"],
+        "Category": ["actions"],
+        "Tags": ["filter", "organise", "aggregate", "data", "add", "plus", "additional", "another", "more"]
+},
+
+    "add-favorite": {
+        "Unicode": ["/e057"],
+        "Category": ["actions"],
+        "Tags": ["favorite", "favourite", "star", "add", "plus", "additional", "another", "more"]
+},
+
+    "add": {
+        "Unicode": ["/e058"],
+        "Category": ["actions"],
+        "Tags": ["add", "plus", "additional", "another", "more", "add row", "add object", "add item"]
+},
+
+    "activities": {
+        "Unicode": ["/e059"],
+        "Category": ["actions"],
+        "Tags": ["activities", "tasks", "to do", "list"]
+},
+
+    "action": {
+        "Unicode": ["/e05a"],
+        "Category": ["actions"],
+        "Tags": ["actions", "collection", "share options", "forward actions", "more actions", "arrow"]
+},
+
+    "accept": {
+        "Unicode": ["/e05b"],
+        "Category": ["actions"],
+        "Tags": ["accept", "approve", "correct", "checkmark", "tick", "affirmative"]
+},
+
+    "hint": {
+        "Unicode": ["/e05c"],
+        "Category": ["actions", "text"],
+        "Tags": ["information", "hint", "about", "details"]
+},
+
+    "group": {
+        "Unicode": ["/e05d"],
+        "Category": ["people"],
+        "Tags": ["group", "team", "people", "communication", "collaborate", "teamwork", "peer to peer", "design thinking", "work", "together", "project", "customers", "audience", "category"]
+},
+
+    "check-availability": {
+        "Unicode": ["/e05e"],
+        "Category": ["calendars"],
+        "Tags": ["date picker", "calendar", "month", "week", "day", "appointment", "search", "look up", "check", "availability", "find"]
+},
+
+    "weather-proofing": {
+        "Unicode": ["/e05f"],
+        "Category": ["objects"],
+        "Tags": ["weather", "proofing", "protection"]
+},
+
+    "payment-approval": {
+        "Unicode": ["/e060"],
+        "Category": ["actions", "money"],
+        "Tags": ["sales", "simple payment", "money", "bill", "details", "quote", "accept", "approval", "checkmark"]
+},
+
+    "batch-payments": {
+        "Unicode": ["/e061"],
+        "Category": ["folder", "money"],
+        "Tags": ["folder", "open", "money", "documents", "payments", "bills"]
+},
+
+    "bed": {
+        "Unicode": ["/e062"],
+        "Category": ["objects"],
+        "Tags": ["bed", "sleep", "ill", "hospital", "sick", "medical", "tired", "snooze", "night"]
+},
+
+    "arobase": {
+        "Unicode": ["/e063"],
+        "Category": ["objects"],
+        "Tags": ["at", "@", "email", "address"]
+},
+
+    "family-care": {
+        "Unicode": ["/e064"],
+        "Category": ["people"],
+        "Tags": ["family", "protection", "people", "family"]
+},
+
+    "favorite": {
+        "Unicode": ["/e065"],
+        "Category": ["actions"],
+        "Tags": ["favorite", "favourite", "star", "full", "filled", "starred"]
+},
+
+    "navigation-right-arrow": {
+        "Unicode": ["/e066"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["navigation", "right", "expand", "collapsed tree", "tree arrow", "arrow"]
+},
+
+    "navigation-left-arrow": {
+        "Unicode": ["/e067"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["navigation", "left", "arrow"]
+},
+
+    "e-care": {
+        "Unicode": ["/e068"],
+        "Category": ["objects"],
+        "Tags": ["e care", "digital customer care", "service", "electronic", "leaf", "leaves", "nature", "organic", "health", "environment"]
+},
+
+    "less": {
+        "Unicode": ["/e069"],
+        "Category": ["actions"],
+        "Tags": ["less", "minus", "subract"]
+},
+
+    "lateness": {
+        "Unicode": ["/e06a"],
+        "Category": ["objects"],
+        "Tags": ["time", "timer", "waiting", "lateness", "loading", "hour glass", "sand", "out of time"]
+},
+
+    "lab": {
+        "Unicode": ["/e06b"],
+        "Category": ["objects"],
+        "Tags": ["lab", "chemicals", "liquid", "mixture", "chemistry", "science", "laboratory"]
+},
+
+    "internet-browser": {
+        "Unicode": ["/e06c"],
+        "Category": ["objects"],
+        "Tags": ["screen", "internet", "website", "browser", "web app", "globe", "www", "html"]
+},
+
+    "instance": {
+        "Unicode": ["/e06d"],
+        "Category": ["time"],
+        "Tags": ["instance", "process", "clock", "chevron"]
+},
+
+    "inspection": {
+        "Unicode": ["/e06e"],
+        "Category": ["actions", "documents"],
+        "Tags": ["search", "document", "inspect"]
+},
+
+    "image-viewer": {
+        "Unicode": ["/e06f"],
+        "Category": ["actions", "objects"],
+        "Tags": ["image", "placeholder", "picture", "hills", "mountains", "sun", "viewer", "carousel", "lightbox"]
+},
+
+    "home": {
+        "Unicode": ["/e070"],
+        "Category": ["actions", "places"],
+        "Tags": ["home", "house", "index", "landing page", "start", "main"]
+},
+
+    "grid": {
+        "Unicode": ["/e071"],
+        "Category": ["objects"],
+        "Tags": ["grid", "layout", "boxes", "sqaures", "modular"]
+},
+
+    "goalseek": {
+        "Unicode": ["/e072"],
+        "Category": ["objects"],
+        "Tags": ["goal", "goalseek", "target", "result", "objective", "aim"]
+},
+
+    "general-leave-request": {
+        "Unicode": ["/e073"],
+        "Category": ["actions", "places"],
+        "Tags": ["holiday", "vacation", "leave", "request", "deck", "chair", "sun", "create"]
+},
+
+    "create-leave-request": {
+        "Unicode": ["/e074"],
+        "Category": ["actions", "places"],
+        "Tags": ["holiday", "vacation", "leave", "request", "deck chair", "sun", "create", "add", "plus", "additional", "another", "more"]
+},
+
+    "flight": {
+        "Unicode": ["/e075"],
+        "Category": ["transport"],
+        "Tags": ["plane", "trip", "travel", "holiday", "flight", "Aeroplane", "transit", "shipment"]
+},
+
+    "filter": {
+        "Unicode": ["/e076"],
+        "Category": ["actions"],
+        "Tags": ["filter", "organise", "aggregate", "data"]
+},
+
+    "favorite-list": {
+        "Unicode": ["/e077"],
+        "Category": ["actions"],
+        "Tags": ["favorite", "favourite", "star", "menu", "list"]
+},
+
+    "factory": {
+        "Unicode": ["/e078"],
+        "Category": ["objects", "places"],
+        "Tags": ["factory", "production", "supplier", "manufacturing"]
+},
+
+    "endoscopy": {
+        "Unicode": ["/e079"],
+        "Category": ["medical", "objects"],
+        "Tags": ["endoscopy", "medical", "procedure"]
+},
+
+    "employee-pane": {
+        "Unicode": ["/e07a"],
+        "Category": ["people"],
+        "Tags": ["user", "person", "employee", "member", "operator", "representative", "profile", "me"]
+},
+
+    "employee-approvals": {
+        "Unicode": ["/e07b"],
+        "Category": ["people", "status"],
+        "Tags": ["person", "accept", "approval", "employee", "hr", "human resources"]
+},
+
+    "email-read": {
+        "Unicode": ["/e07c"],
+        "Category": ["actions"],
+        "Tags": ["mail", "letter", "e-mail", "envelope", "open", "read"]
+},
+
+    "electrocardiogram": {
+        "Unicode": ["/e07d"],
+        "Category": ["medical"],
+        "Tags": ["electrocardiogram", "heart", "scan", "monitor", "medical"]
+},
+
+    "documents": {
+        "Unicode": ["/e07e"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "documents"]
+},
+
+    "decision": {
+        "Unicode": ["/e07f"],
+        "Category": ["people"],
+        "Tags": ["hand shake", "decision", "hands", "agreement", "colleagues", "contract"]
+},
+
+    "database": {
+        "Unicode": ["/e080"],
+        "Category": ["objects"],
+        "Tags": ["database", "big data", "cube", "complex", "complicated", "simple", "information", "backend"]
+},
+
+    "customer-history": {
+        "Unicode": ["/e081"],
+        "Category": ["people"],
+        "Tags": ["person", "history", "customer", "user", "clock", "account"]
+},
+
+    "customer": {
+        "Unicode": ["/e082"],
+        "Category": ["people"],
+        "Tags": ["person", "individual", "user", "customer", "human", "circle", "profile", "me"]
+},
+
+    "credit-card": {
+        "Unicode": ["/e083"],
+        "Category": ["objects"],
+        "Tags": ["credit card", "master-card", "money", "debit", "order", "buy", "purchase", "shopping", "book online"]
+},
+
+    "create-entry-time": {
+        "Unicode": ["/e084"],
+        "Category": ["actions", "documents"],
+        "Tags": ["document", "page", "file", "attachment", "timesheet", "clock", "hours", "days", "workday", "create entry time", "add", "plus", "additional", "another", "more"]
+},
+
+    "contacts": {
+        "Unicode": ["/e085"],
+        "Category": ["objects"],
+        "Tags": ["customers", "contacts", "address", "email", "e-mail", "phone book", "directory", "phone numbers", "companies"]
+},
+
+    "compare": {
+        "Unicode": ["/e086"],
+        "Category": ["objects"],
+        "Tags": ["compare", "law", "legal", "justice", "scale", "measure", "weight", "balance", "compare", "comparison"]
+},
+
+    "clinical-order": {
+        "Unicode": ["/e087"],
+        "Category": ["documents", "medical"],
+        "Tags": ["document", "page", "file", "text", "medical", "clinical"]
+},
+
+    "chain-link": {
+        "Unicode": ["/e088"],
+        "Category": ["actions"],
+        "Tags": ["link", "chain", "hyperlink"]
+},
+
+    "pull-down": {
+        "Unicode": ["/e089"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["navigation", "pull down", "refresh", "arrow"]
+},
+
+    "cargo-train": {
+        "Unicode": ["/e08a"],
+        "Category": ["transport"],
+        "Tags": ["train", "cargo", "delivery", "transit"]
+},
+
+    "car-rental": {
+        "Unicode": ["/e08b"],
+        "Category": ["transport"],
+        "Tags": ["car", "auto", "rental", "company car", "hire", "vehicle", "transportation"]
+},
+
+    "business-card": {
+        "Unicode": ["/e08c"],
+        "Category": ["objects", "people"],
+        "Tags": ["business card", "contact", "networking", "colleague", "person", "address", "identification", "details", "profile"]
+},
+
+    "bar-code": {
+        "Unicode": ["/e08d"],
+        "Category": ["documents", "objects"],
+        "Tags": ["bar code", "document", "file", "scan", "verify"]
+},
+
+    "folder-blank": {
+        "Unicode": ["/e08e"],
+        "Category": ["folder"],
+        "Tags": ["folder", "directory", "directory", "library"]
+},
+
+    "passenger-train": {
+        "Unicode": ["/e08f"],
+        "Category": ["transport"],
+        "Tags": ["train", "public transportation", "passenger"]
+},
+
+    "question-mark": {
+        "Unicode": ["/e090"],
+        "Category": ["status"],
+        "Tags": ["message", "question mark", "neutral", "notifications", "status"]
+},
+
+    "world": {
+        "Unicode": ["/e091"],
+        "Category": ["objects", "places"],
+        "Tags": ["globe", "world", "goegraphical", "earth", "planet", "international", "global"]
+},
+
+    "iphone": {
+        "Unicode": ["/e092"],
+        "Category": ["devices", "objects"],
+        "Tags": ["iphone", "phone", "smart phone", "portrait", "tablet", "mobile", "responsive", "cozy"]
+},
+
+    "ipad": {
+        "Unicode": ["/e093"],
+        "Category": ["devices", "objects"],
+        "Tags": ["ipad", "tablet", "portrait", "mobile", "responsive", "cozy"]
+},
+
+    "warning": {
+        "Unicode": ["/e094"],
+        "Category": ["status"],
+        "Tags": ["warning", "exclamation mark", "indicator", "information"]
+},
+
+    "sort": {
+        "Unicode": ["/e095"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["sort", "aggregate", "ascending", "descending", "arrow"]
+},
+
+    "course-book": {
+        "Unicode": ["/e096"],
+        "Category": ["objects"],
+        "Tags": ["education", "course", "learning", "e book", "bookmark", "open", "knowledge", "course book", "program"]
+},
+
+    "course-program": {
+        "Unicode": ["/e097"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "course", "education", "course", "learning", "e book", "bookmark", "open", "knowledge", "coursebook", "program"]
+},
+
+    "add-coursebook": {
+        "Unicode": ["/e098"],
+        "Category": ["actions", "objects"],
+        "Tags": ["education", "course", "learning", "e book", "bookmark", "open", "knowledge", "course book", "program", "add", "plus", "additional", "another", "more"]
+},
+
+    "print": {
+        "Unicode": ["/e099"],
+        "Category": ["actions", "devices", "objects"],
+        "Tags": ["print", "printer", "send to print", "hard copy", "output", "paper", "document", "file"]
+},
+
+    "save": {
+        "Unicode": ["/e09a"],
+        "Category": ["actions", "objects"],
+        "Tags": ["save", "diskette", "floppy disc", "local disc", "hard disc"]
+},
+
+    "play": {
+        "Unicode": ["/e09b"],
+        "Category": ["actions"],
+        "Tags": ["play"]
+},
+
+    "pause": {
+        "Unicode": ["/e09c"],
+        "Category": ["actions"],
+        "Tags": ["pause"]
+},
+
+    "record": {
+        "Unicode": ["/e09d"],
+        "Category": ["actions"],
+        "Tags": ["record"]
+},
+
+    "response": {
+        "Unicode": ["/e09e"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["reply", "response", "arrow"]
+},
+
+    "pushpin-on": {
+        "Unicode": ["/e09f"],
+        "Category": ["actions", "documents"],
+        "Tags": ["document", "page", "file", "attachment", "pin", "pushpin", "stick", "unstick", "snap", "remove pin", "unpin", "off", "on"]
+},
+
+    "pushpin-off": {
+        "Unicode": ["/e0a0"],
+        "Category": ["actions", "objects"],
+        "Tags": ["pin", "pushpin", "stick", "unstick", "snap", "remove pin", "unpin", "off", "on"]
+},
+
+    "unfavorite": {
+        "Unicode": ["/e0a1"],
+        "Category": ["actions"],
+        "Tags": ["removed", "not starred", "empty", "no favorite", "add to favorite", "not favorite at the moment"]
+},
+
+    "learning-assistant": {
+        "Unicode": ["/e0a2"],
+        "Category": ["people"],
+        "Tags": ["education", "course", "learning", "e book", "bookmark", "open", "knowledge", "school", "college", "help", "tutor", "assistant", "teacher", "professor"]
+},
+
+    "timesheet": {
+        "Unicode": ["/e0a3"],
+        "Category": ["documents", "time"],
+        "Tags": ["document", "page", "file", "attachment", "timesheet", "clock", "hours", "days", "workday"]
+},
+
+    "time-entry-request": {
+        "Unicode": ["/e0a4"],
+        "Category": ["time"],
+        "Tags": ["time", "entry", "request", "clock", "list"]
+},
+
+    "list": {
+        "Unicode": ["/e0a5"],
+        "Category": ["actions"],
+        "Tags": ["list", "text", "ordered"]
+},
+
+    "action-settings": {
+        "Unicode": ["/e0a6"],
+        "Category": ["actions"],
+        "Tags": ["settings", "cogwheel", "configuration", "tools", "modify", "customize"]
+},
+
+    "share": {
+        "Unicode": ["/e0a7"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["share", "reshare", "distribute", "arrow"]
+},
+
+    "feed": {
+        "Unicode": ["/e0a8"],
+        "Category": ["actions"],
+        "Tags": ["feed", "messages", "input", "news", "updates", "latest", "real-time"]
+},
+
+    "role": {
+        "Unicode": ["/e0a9"],
+        "Category": ["people", "status"],
+        "Tags": ["person", "individual", "user", "customer", "permission", "access", "granted", "open", "restrictions", "unlocked"]
+},
+
+    "flag": {
+        "Unicode": ["/e0aa"],
+        "Category": ["actions"],
+        "Tags": ["flag", "mark", "marker", "important"]
+},
+
+    "post": {
+        "Unicode": ["/e0ab"],
+        "Category": ["actions", "callout"],
+        "Tags": ["speech", "bubble", "comment", "post"]
+},
+
+    "inspect": {
+        "Unicode": ["/e0ac"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["inspect", "dialog", "popup", "popout", "arrow"]
+},
+
+    "inspect-down": {
+        "Unicode": ["/e0ad"],
+        "Category": ["actions"],
+        "Tags": ["cancel", "x", "close", "dialog", "popup"]
+},
+
+    "appointment-2": {
+        "Unicode": ["/e0ae"],
+        "Category": ["calendars"],
+        "Tags": ["date picker", "calendar", "month", "week", "day", "appointment"]
+},
+
+    "target-group": {
+        "Unicode": ["/e0af"],
+        "Category": ["objects"],
+        "Tags": ["arrow", "dart", "dartboard", "target group", "goal", "audience", "specific"]
+},
+
+    "marketing-campaign": {
+        "Unicode": ["/e0b0"],
+        "Category": ["objects"],
+        "Tags": ["marketing campaign", "loud speaker", "megaphone", "notify", "announcenment", "public address"]
+},
+
+    "message-error": {
+        "Unicode": ["/e0b1"],
+        "Category": ["status"],
+        "Tags": ["message", "error", "negative", "notifications", "status"]
+},
+
+    "comment": {
+        "Unicode": ["/e0b2"],
+        "Category": ["callout"],
+        "Tags": ["speech", "bubble", "comment", "discussion"]
+},
+
+    "shipping-status": {
+        "Unicode": ["/e0b3"],
+        "Category": ["transport"],
+        "Tags": ["shipping status", "truck", "products", "delivery", "supplier", "transit", "lorry", "van", "shipment"]
+},
+
+    "collaborate": {
+        "Unicode": ["/e0b4"],
+        "Category": ["people"],
+        "Tags": ["group", "team", "people", "colleagues", "communication", "collaborate", "teamwork", "peer to peer", "design thinking", "work", "together", "project"]
+},
+
+    "shortcut": {
+        "Unicode": ["/e0b5"],
+        "Category": ["arrows"],
+        "Tags": ["shortcut", "redirect", "arrow"]
+},
+
+    "lead-outdated": {
+        "Unicode": ["/e0b6"],
+        "Category": ["money"],
+        "Tags": ["lead outdated", "circle", "dollar"]
+},
+
+    "tools-opportunity": {
+        "Unicode": ["/e0b7"],
+        "Category": ["charts", "objects"],
+        "Tags": ["analytics", "chart", "display", "data", "overview", "map", "org", "tree"]
+},
+
+    "permission": {
+        "Unicode": ["/e0b8"],
+        "Category": ["documents", "status"],
+        "Tags": ["document", "page", "file", "permission", "access", "granted", "open", "restrictions", "unlocked"]
+},
+
+    "supplier": {
+        "Unicode": ["/e0b9"],
+        "Category": ["people"],
+        "Tags": ["supplier", "package", "product", "satisfaction", "returns", "deliveries", "warehouse", "person", "seller", "buyer", "inventory"]
+},
+
+    "table-view": {
+        "Unicode": ["/e0ba"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "table", "grid", "view", "columns", "rows"]
+},
+
+    "table-chart": {
+        "Unicode": ["/e0bb"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "table", "columns", "rows", "grid", "view"]
+},
+
+    "switch-views": {
+        "Unicode": ["/e0bc"],
+        "Category": ["actions"],
+        "Tags": ["switch", "views", "objects", "arrange"]
+},
+
+    "e-learning": {
+        "Unicode": ["/e0bd"],
+        "Category": ["objects"],
+        "Tags": ["education", "course", "e learning", "e book", "bookmark", "open", "knowledge", "school", "college", "computer", "screen"]
+},
+
+    "manager": {
+        "Unicode": ["/e0be"],
+        "Category": ["people"],
+        "Tags": ["manager", "company", "overview", "inform", "board", "leader", "conference", "meeting", "keynote", "speech", "presentation"]
+},
+
+    "switch-classes": {
+        "Unicode": ["/e0bf"],
+        "Category": ["actions", "people"],
+        "Tags": ["switch", "views", "objects", "arrange", "classes"]
+},
+
+    "simple-payment": {
+        "Unicode": ["/e0c0"],
+        "Category": ["money"],
+        "Tags": ["sales", "simple payment", "money", "bill", "details", "quote"]
+},
+
+    "signature": {
+        "Unicode": ["/e0c1"],
+        "Category": ["actions"],
+        "Tags": ["pencil", "pen", "signature", "sign"]
+},
+
+    "sales-order-item": {
+        "Unicode": ["/e0c2"],
+        "Category": ["documents", "money"],
+        "Tags": ["document", "page", "file", "sales order item", "money", "bill", "details", "quote"]
+},
+
+    "sales-order": {
+        "Unicode": ["/e0c3"],
+        "Category": ["documents", "money"],
+        "Tags": ["document", "page", "file", "sales order", "money", "bill", "details", "quote"]
+},
+
+    "request": {
+        "Unicode": ["/e0c4"],
+        "Category": ["actions", "documents"],
+        "Tags": ["document", "page", "file", "text", "edit", "write", "new", "pencil", "pen", "request"]
+},
+
+    "receipt": {
+        "Unicode": ["/e0c5"],
+        "Category": ["actions", "form", "money"],
+        "Tags": ["money", "bill", "details", "proof", "sale", "receipt"]
+},
+
+    "puzzle": {
+        "Unicode": ["/e0c6"],
+        "Category": ["objects"],
+        "Tags": ["puzzle", "pieces", "fit", "together", "jigsaw", "thinking", "objects", "challenge"]
+},
+
+    "process": {
+        "Unicode": ["/e0c7"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["process", "flow", "arrow", "chevron"]
+},
+
+    "private": {
+        "Unicode": ["/e0c8"],
+        "Category": ["people", "status"],
+        "Tags": ["person", "individual", "user", "customer", "human", "locked", "in use", "occupied", "restricted", "private", "forbidden"]
+},
+
+    "popup-window": {
+        "Unicode": ["/e0c9"],
+        "Category": ["actions", "devices"],
+        "Tags": ["computer", "dialog", "popup", "window", "screen", "popout"]
+},
+
+    "person-placeholder": {
+        "Unicode": ["/e0ca"],
+        "Category": ["people"],
+        "Tags": ["person", "individual", "user", "customer", "human", "profile", "me"]
+},
+
+    "per-diem": {
+        "Unicode": ["/e0cb"],
+        "Category": ["calendars", "money"],
+        "Tags": ["euro", "time", "per diem", "calendar"]
+},
+
+    "paper-plane": {
+        "Unicode": ["/e0cc"],
+        "Category": ["actions", "objects"],
+        "Tags": ["send", "flight", "paper", "plane", "fly", "message", "note", "folded"]
+},
+
+    "paid-leave": {
+        "Unicode": ["/e0cd"],
+        "Category": ["money"],
+        "Tags": ["paid leave", "money", "dollar", "bill", "approved"]
+},
+
+    "pdf-reader": {
+        "Unicode": ["/e0ce"],
+        "Category": ["actions", "documents"],
+        "Tags": ["pdf reader", "document", "display", "file"]
+},
+
+    "overview-chart": {
+        "Unicode": ["/e0cf"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "overview", "map", "org"]
+},
+
+    "overlay": {
+        "Unicode": ["/e0d0"],
+        "Category": ["objects"],
+        "Tags": ["overlay", "circle", "dot"]
+},
+
+    "org-chart": {
+        "Unicode": ["/e0d1"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "overview", "map", "org", "tree"]
+},
+
+    "number-sign": {
+        "Unicode": ["/e0d2"],
+        "Category": ["objects"],
+        "Tags": ["number sign", "hash", "#'"]
+},
+
+    "notification-2": {
+        "Unicode": ["/e0d3"],
+        "Category": ["actions", "callout"],
+        "Tags": ["speech", "bubble", "comment", "discussion", "notification"]
+},
+
+    "my-sales-order": {
+        "Unicode": ["/e0d4"],
+        "Category": ["documents", "people"],
+        "Tags": ["document", "page", "sales", "order", "money", "bill", "details", "quote", "invoice"]
+},
+
+    "meal": {
+        "Unicode": ["/e0d5"],
+        "Category": ["objects"],
+        "Tags": ["meal", "knife and fork", "dinner", "lunch", "eating", "dine", "expenses" ]
+},
+
+    "loan": {
+        "Unicode": ["/e0d6"],
+        "Category": ["objects"],
+        "Tags": ["money bag", "bank", "dollar", "tag"]
+},
+
+    "order-status": {
+        "Unicode": ["/e0d7"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "order", "status" ]
+},
+
+    "customer-order-entry": {
+        "Unicode": ["/e0d8"],
+        "Category": ["form"],
+        "Tags": ["sign", "signature", "order", "entry", "customer", "contract", "agreement"]
+},
+
+    "performance": {
+        "Unicode": ["/e0d9"],
+        "Category": ["objects"],
+        "Tags": ["gauge", "measure", "speed", "monitor", "performance"]
+},
+
+    "menu": {
+        "Unicode": ["/e0da"],
+        "Category": ["actions"],
+        "Tags": ["menu", "list"]
+},
+
+    "employee-lookup": {
+        "Unicode": ["/e0db"],
+        "Category": ["people"],
+        "Tags": ["customer", "user", "person", "individual", "contacts", "look up", "find", "search"]
+},
+
+    "education": {
+        "Unicode": ["/e0dc"],
+        "Category": ["objects"],
+        "Tags": ["education", "course", "learning", "e book", "bookmark", "open", "knowledge", "school", "college"]
+},
+
+    "customer-briefing": {
+        "Unicode": ["/e0dd"],
+        "Category": ["people"],
+        "Tags": ["customer", "user", "person", "individual", "contacts", "address", "email", "e-mail", "briefing"]
+},
+
+    "customer-and-contacts": {
+        "Unicode": ["/e0de"],
+        "Category": ["people"],
+        "Tags": ["customer", "user", "person", "individual", "contacts", "address", "email", "e-mail"]
+},
+
+    "my-view": {
+        "Unicode": ["/e0df"],
+        "Category": ["actions", "objects", "people"],
+        "Tags": ["my view", "person", "profile", "tv", "monitor", "video call", "individual", "cutomer", "user"]
+},
+
+    "accelerated": {
+        "Unicode": ["/e0e0"],
+        "Category": ["calendars"],
+        "Tags": ["calendar", "time", "speed"]
+},
+
+    "to-be-reviewed": {
+        "Unicode": ["/e0e1"],
+        "Category": ["status"],
+        "Tags": ["to be reviewed", "indicator", "information"]
+},
+
+    "warning2": {
+        "Unicode": ["/e0e2"],
+        "Category": ["status"],
+        "Tags": ["warning", "to be reviewed", "indicator", "information"]
+},
+
+    "feeder-arrow": {
+        "Unicode": ["/e0e3"],
+        "Category": ["arrows"],
+        "Tags": ["feeder", "arrow", "input", "enter text", "execute", "send"]
+},
+
+    "quality-issue": {
+        "Unicode": ["/e0e4"],
+        "Category": ["status"],
+        "Tags": ["quality issue", "warning", "problem", "attention", "status", "details"]
+},
+
+    "workflow-tasks": {
+        "Unicode": ["/e0e5"],
+        "Category": ["actions", "calendars"],
+        "Tags": ["calendar", "workflow", "task", "process", "steps", "project"]
+},
+
+    "create": {
+        "Unicode": ["/e0e6"],
+        "Category": ["actions", "documents"],
+        "Tags": ["document", "page", "file", "attachment", "create", "new"]
+},
+
+    "home-share": {
+        "Unicode": ["/e0e7"],
+        "Category": ["actions", "places"],
+        "Tags": ["globe", "world", "goegraphical", "earth", "planet", "share", "global distribution", "arrow"]
+},
+
+    "globe": {
+        "Unicode": ["/e0e8"],
+        "Category": ["objects", "places"],
+        "Tags": ["globe", "world", "goegraphical", "earth", "planet", "international", "global"]
+},
+
+    "tags": {
+        "Unicode": ["/e0e9"],
+        "Category": ["actions", "objects"],
+        "Tags": ["tag", "label", "marker", "indicator", "detail"]
+},
+
+    "work-history": {
+        "Unicode": ["/e0ea"],
+        "Category": ["folder"],
+        "Tags": ["folder", "person", "work history"]
+},
+
+    "x-ray": {
+        "Unicode": ["/e0eb"],
+        "Category": ["medical"],
+        "Tags": ["x ray", "procedure", "scan", "medical"]
+},
+
+    "wounds-doc": {
+        "Unicode": ["/e0ec"],
+        "Category": ["medical", "people"],
+        "Tags": ["wounds", "doc", "injury", "accident", "hospital", "patient", "emergency", "health", "illness", "cross"]
+},
+
+    "web-cam": {
+        "Unicode": ["/e0ed"],
+        "Category": ["actions", "devices", "objects"],
+        "Tags": ["web cam", "camera", "live", "video", "visual"]
+},
+
+    "waiver": {
+        "Unicode": ["/e0ee"],
+        "Category": ["money"],
+        "Tags": ["waiver", "money bag", "percentage"]
+},
+
+    "vertical-bar-chart": {
+        "Unicode": ["/e0ef"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "bar", "vertical", "column"]
+},
+
+    "upstacked-chart": {
+        "Unicode": ["/e0f0"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "upstacked", "vertical", "column"]
+},
+
+    "trip-report": {
+        "Unicode": ["/e0f1"],
+        "Category": ["charts", "status", "transport"],
+        "Tags": ["analytics", "chart", "display", "data", "suitcase", "trip", "report", "business trip"]
+},
+
+    "microphone": {
+        "Unicode": ["/e0f2"],
+        "Category": ["actions", "objects"],
+        "Tags": ["microphone", "mic", "keynote", "announcement", "speech", "talk", "audio", "dictate", "record"]
+},
+
+    "unpaid-leave": {
+        "Unicode": ["/e0f3"],
+        "Category": ["money"],
+        "Tags": ["unpaid leave", "money", "dollar", "bill", "rejected"]
+},
+
+    "tree": {
+        "Unicode": ["/e0f4"],
+        "Category": ["charts", "objects"],
+        "Tags": ["analytics", "chart", "display", "data", "overview", "map", "org", "tree"]
+},
+
+    "toaster-up": {
+        "Unicode": ["/e0f5"],
+        "Category": ["actions", "objects"],
+        "Tags": ["toaster", "up", "details"]
+},
+
+    "toaster-top": {
+        "Unicode": ["/e0f6"],
+        "Category": ["objects"],
+        "Tags": ["toaster", "top", "details"]
+},
+
+    "toaster-down": {
+        "Unicode": ["/e0f7"],
+        "Category": ["actions", "objects"],
+        "Tags": ["toaster", "down", "details"]
+},
+
+    "time-account": {
+        "Unicode": ["/e0f8"],
+        "Category": ["time"],
+        "Tags": ["time", "account", "clock", "list"]
+},
+
+    "theater": {
+        "Unicode": ["/e0f9"],
+        "Category": ["objects"],
+        "Tags": ["theater", "show", "play", "masks"]
+},
+
+    "taxi": {
+        "Unicode": ["/e0fa"],
+        "Category": ["transport"],
+        "Tags": ["car", "taxi", "cab", "transportation"]
+},
+
+    "subway-train": {
+        "Unicode": ["/e0fb"],
+        "Category": ["transport"],
+        "Tags": ["subway train", "underground", "tube"]
+},
+
+    "study-leave": {
+        "Unicode": ["/e0fc"],
+        "Category": ["objects"],
+        "Tags": ["study", "education", "graduate", "school", "college", "student", "qualification"]
+},
+
+    "stethoscope": {
+        "Unicode": ["/e0fd"],
+        "Category": ["medical"],
+        "Tags": ["stethoscope", "medical", "health", "doctor", "hospital", "nurse"]
+},
+
+    "step": {
+        "Unicode": ["/e0fe"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["process", "flow", "step", "arrow"]
+},
+
+    "sonography": {
+        "Unicode": ["/e0ff"],
+        "Category": ["medical"],
+        "Tags": ["sonography", "medical", "ultrasound", "ultrasonography"]
+},
+
+    "soccor": {
+        "Unicode": ["/e100"],
+        "Category": ["objects"],
+        "Tags": ["soccer", "ball", "football", "world cup"]
+},
+
+    "physical-activity": {
+        "Unicode": ["/e101"],
+        "Category": ["medical", "people"],
+        "Tags": ["physical activity", "runing", "run", "jogging"]
+},
+
+    "pharmacy": {
+        "Unicode": ["/e102"],
+        "Category": ["medical"],
+        "Tags": ["medicine", "pills", "drugs", "pharmacy", "pain", "medication"]
+},
+
+    "official-service": {
+        "Unicode": ["/e103"],
+        "Category": ["objects", "places"],
+        "Tags": ["official", "service", "government", "court house", "law", "legal", "authority", "official"]
+},
+
+    "offsite-work": {
+        "Unicode": ["/e104"],
+        "Category": ["objects", "places"],
+        "Tags": ["offsite work", "external", "company", "office", "outside"]
+},
+
+    "nutrition-activity": {
+        "Unicode": ["/e105"],
+        "Category": ["medical", "objects"],
+        "Tags": ["apple", "nutrition", "activity", "health", "fruit"]
+},
+
+    "newspaper": {
+        "Unicode": ["/e106"],
+        "Category": ["objects"],
+        "Tags": ["newspaper", "headlines", "latest", "updates"]
+},
+
+    "monitor-payments": {
+        "Unicode": ["/e107"],
+        "Category": ["money", "people"],
+        "Tags": ["report", "bill", "billing", "sales", "expense", "quote", "envelope", "invoice", "dollar", "money", "monitor payments"]
+},
+
+    "map-2": {
+        "Unicode": ["/e108"],
+        "Category": ["objects", "places"],
+        "Tags": ["map", "card", "navigation", "hunt", "destination", "location"]
+},
+
+    "machine": {
+        "Unicode": ["/e109"],
+        "Category": ["objects"],
+        "Tags": ["machine", "factory", "production", "supplier", "technical"]
+},
+
+    "mri-scan": {
+        "Unicode": ["/e10a"],
+        "Category": ["medical"],
+        "Tags": ["mri", "scan", "medical"]
+},
+
+    "end-user-experience-monitoring": {
+        "Unicode": ["/e10b"],
+        "Category": ["objects"],
+        "Tags": ["end user experience monitoring", "gauge", "measure", "speed", "monitor"]
+},
+
+    "unwired": {
+        "Unicode": ["/e10c"],
+        "Category": ["objects"],
+        "Tags": ["unwired", "gauge", "measure", "speed", "monitor", "performance"]
+},
+
+    "customer-financial-fact-sheet": {
+        "Unicode": ["/e10d"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "customer", "financial", "fact sheet", "money"]
+},
+
+    "retail-store-manager": {
+        "Unicode": ["/e10e"],
+        "Category": ["shopping"],
+        "Tags": ["retail store manager"]
+},
+
+    "Netweaver-business-client": {
+        "Unicode": ["/e10f"],
+        "Category": ["objects"],
+        "Tags": ["netweaver business client", "bird"]
+},
+
+    "electronic-medical-record": {
+        "Unicode": ["/e110"],
+        "Category": ["medical", "objects"],
+        "Tags": ["electronic medical record", "medical", "cross", "emergency", "hospital"]
+},
+
+    "eam-work-order": {
+        "Unicode": ["/e111"],
+        "Category": ["objects"],
+        "Tags": ["enterprise asset management", "work", "order", "hard hat", "check", "tick mark"]
+},
+
+    "customer-view": {
+        "Unicode": ["/e112"],
+        "Category": ["objects"],
+        "Tags": ["customer", "view", "analytics", "overview"]
+},
+
+    "crm-service-manager": {
+        "Unicode": ["/e113"],
+        "Category": ["clipboards"],
+        "Tags": ["crm service manager", "task", "dropdown", "list"]
+},
+
+    "crm-sales": {
+        "Unicode": ["/e114"],
+        "Category": ["objects"],
+        "Tags": ["crm sales", "customer", "relationship", "management", "person", "star", "money", "list"]
+},
+
+    "widgets": {
+        "Unicode": ["/e115"],
+        "Category": ["objects"],
+        "Tags": ["widgets", "random", "star", "dollar", "plane", "music", "apps"]
+},
+
+    "commission-check": {
+        "Unicode": ["/e116"],
+        "Category": ["money"],
+        "Tags": ["commission check", "coins", "stack", "search", "percentage", "money"]
+},
+
+    "collections-insight": {
+        "Unicode": ["/e117"],
+        "Category": ["money"],
+        "Tags": ["collections", "insight", "report", "bill", "billing", "sales", "expense", "quote", "envelope", "invoice", "dollar", "money"]
+},
+
+    "clinical-tast-tracker": {
+        "Unicode": ["/e118"],
+        "Category": ["clipboards", "medical"],
+        "Tags": ["clinical", "task", "tracker", "clipboard", "medical", "checklist", "check boxes"]
+},
+
+    "citizen-connect": {
+        "Unicode": ["/e119"],
+        "Category": ["people"],
+        "Tags": ["citizen connect", "people", "colleagues", "communication", "collaborate", "teamwork", "peer to peer", "design thinking", "work", "together", "project"]
+},
+
+    "cart-approval": {
+        "Unicode": ["/e11a"],
+        "Category": ["shopping"],
+        "Tags": ["cart", "trolley", "basket", "shopping", "item", "approve", "approval", "accept", "check"]
+},
+
+    "capital-projects": {
+        "Unicode": ["/e11b"],
+        "Category": ["money", "objects", "places"],
+        "Tags": ["capital projects", "building", "dollar", "money"]
+},
+
+    "bo-strategy-management": {
+        "Unicode": ["/e11c"],
+        "Category": ["objects"],
+        "Tags": ["bo strategy management", "business", "object", "circle"]
+},
+
+    "business-objects-mobile": {
+        "Unicode": ["/e11d"],
+        "Category": ["objects"],
+        "Tags": ["business objects mobile", "analytics", "chart", "display", "data"]
+},
+
+    "business-objects-explorer": {
+        "Unicode": ["/e11e"],
+        "Category": ["objects"],
+        "Tags": ["business objects explorer", "compass"]
+},
+
+    "business-objects-experience": {
+        "Unicode": ["/e11f"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "business objects experience", "combination", "line-chart", "column", "bar", "vertical"]
+},
+
+    "bbyd-dashboard": {
+        "Unicode": ["/e120"],
+        "Category": ["objects"],
+        "Tags": ["business by design", "dashboard"]
+},
+
+    "bbyd-active-sales": {
+        "Unicode": ["/e121"],
+        "Category": ["objects"],
+        "Tags": ["business by design", "active", "sales", "search", "approvals", "check", "book" ]
+},
+
+    "business-by-design": {
+        "Unicode": ["/e122"],
+        "Category": ["objects"],
+        "Tags": ["business by design"]
+},
+
+    "business-one": {
+        "Unicode": ["/e123"],
+        "Category": ["objects"],
+        "Tags": ["business one"]
+},
+
+    "sap-box": {
+        "Unicode": ["/e124"],
+        "Category": ["objects"],
+        "Tags": ["container", "box", "work load", "collection", "documents", "files", "filing", "directory", "storage"]
+},
+
+    "manager-insight": {
+        "Unicode": ["/e125"],
+        "Category": ["objects"],
+        "Tags": ["manager", "insight", "company", "overview", "analyse", "inform", "board", "report"]
+},
+
+    "accounting-document-verification": {
+        "Unicode": ["/e126"],
+        "Category": ["documents"],
+        "Tags": ["document", "approve", "verify", "accounting", "money", "coins"]
+},
+
+    "hr-approval": {
+        "Unicode": ["/e127"],
+        "Category": ["people", "status"],
+        "Tags": ["person", "accept", "approval", "employee", "hr", "human resources"]
+},
+
+    "idea-wall": {
+        "Unicode": ["/e128"],
+        "Category": ["people"],
+        "Tags": ["idea", "wall", "collaborate", "teamwork", "peer to peer", "design thinking", "work", "together", "project", "improve"]
+},
+
+    "Chart-Tree-Map": {
+        "Unicode": ["/e129"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data"]
+},
+
+    "cart-5": {
+        "Unicode": ["/e12a"],
+        "Category": ["shopping"],
+        "Tags": ["cart", "trolley", "basket", "shopping", "item", "sap"]
+},
+
+    "cart-4": {
+        "Unicode": ["/e12b"],
+        "Category": ["shopping"],
+        "Tags": ["cart", "trolley", "basket", "shopping", "item", "add", "put in", "insert", "add", "plus", "additional", "another", "more"]
+},
+
+    "wallet": {
+        "Unicode": ["/e12c"],
+        "Category": ["objects", "money"],
+        "Tags": ["money", "wallet", "purse", "coins", "bank", "allowance", "worth", "wealth", "cash", "notes"]
+},
+
+    "vehicle-repair": {
+        "Unicode": ["/e12d"],
+        "Category": ["transport"],
+        "Tags": ["car", "crash", "accident", "damage", "repair", "fix", "garage", "vehicle"]
+},
+
+    "upload": {
+        "Unicode": ["/e12e"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["upload", "arrow"]
+},
+
+    "unlocked": {
+        "Unicode": ["/e12f"],
+        "Category": ["actions", "objects", "status"],
+        "Tags": ["unlocked", "open padlock", "open", "status", "available", "access", "unrestricted"]
+},
+
+    "umbrella": {
+        "Unicode": ["/e130"],
+        "Category": ["objects"],
+        "Tags": ["rain", "umbrella", "brolly", "shelter", "keep dry"]
+},
+
+    "travel-request": {
+        "Unicode": ["/e131"],
+        "Category": ["callout", "status", "transport"],
+        "Tags": ["bubble", "question", "exclamation", "notifications", "status", "help"]
+},
+
+    "travel-expense-report": {
+        "Unicode": ["/e132"],
+        "Category": ["money", "transport"],
+        "Tags": ["report", "bill", "billing", "sales", "travel", "expense", "quote", "envelope", "invoice"]
+},
+
+    "travel-itinerary": {
+        "Unicode": ["/e133"],
+        "Category": ["transport"],
+        "Tags": ["travel", "airplane", "plane", "car", "itinerary", "schedule", "plan", "flight", "drive"]
+},
+
+    "time-overtime": {
+        "Unicode": ["/e134"],
+        "Category": ["money", "time"],
+        "Tags": ["time", "overtime", "clock", "money", "hours"]
+},
+
+    "thing-type": {
+        "Unicode": ["/e135"],
+        "Category": ["callout"],
+        "Tags": ["popup", "speech", "bubble", "thing-type"]
+},
+
+    "technical-object": {
+        "Unicode": ["/e136"],
+        "Category": ["objects"],
+        "Tags": ["technical", "object", "wrench", "tool", "fine tune", "tweak", "fix", "work", "component"]
+},
+
+    "tag": {
+        "Unicode": ["/e137"],
+        "Category": ["actions", "objects"],
+        "Tags": ["tag", "label", "marker", "indicator", "detail"]
+},
+
+    "syringe": {
+        "Unicode": ["/e138"],
+        "Category": ["actions", "medical"],
+        "Tags": ["medical", "emergency", "hospital", "syringe", "needle", "shot", "injection"]
+},
+
+    "syntax": {
+        "Unicode": ["/e139"],
+        "Category": ["actions", "text"],
+        "Tags": ["source", "code", "develop", "write", "syntax"]
+},
+
+    "suitcase": {
+        "Unicode": ["/e13a"],
+        "Category": ["objects", "travel"],
+        "Tags": ["travel", "suitcase", "business trip", "personal", "possessions", "articles", "items", "collection"]
+},
+
+    "simulate": {
+        "Unicode": ["/e13b"],
+        "Category": ["actions", "devices", "objects"],
+        "Tags": ["calculator", "calculate", "count", "numbers", "counting", "simulate", "divide", "calculation", "tot up", "digits", "algorithm", "mathematician", "mathematics"]
+},
+
+    "shield": {
+        "Unicode": ["/e13c"],
+        "Category": ["objects"],
+        "Tags": ["authority", "legitimate", "official", "important", "protection", "defense", "security"]
+},
+
+    "share-2": {
+        "Unicode": ["/e13d"],
+        "Category": ["actions"],
+        "Tags": ["share", "distribute", "share with connections"]
+},
+
+    "sales-quote": {
+        "Unicode": ["/e13e"],
+        "Category": ["documents", "money"],
+        "Tags": ["document", "page", "file", "text", "sales", "money", "bill", "details", "quote"]
+},
+
+    "repost": {
+        "Unicode": ["/e13f"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["post again", "circulate"]
+},
+
+    "provision": {
+        "Unicode": ["/e140"],
+        "Category": ["charts", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "table", "columns", "rows", "grid", "settings", "modify", "customize"]
+},
+
+    "projector": {
+        "Unicode": ["/e141"],
+        "Category": ["actions", "devices", "objects"],
+        "Tags": ["beamer", "projector", "show", "movie", "presentation", "keynote"]
+},
+
+    "add-product": {
+        "Unicode": ["/e142"],
+        "Category": ["actions", "objects"],
+        "Tags": ["product", "box", "package", "unit", "inventory", "add", "plus", "additional", "another", "more"]
+},
+
+    "pipeline-analysis": {
+        "Unicode": ["/e143"],
+        "Category": ["charts", "objects"],
+        "Tags": ["analytics", "chart", "display", "data", "kebab"]
+},
+
+    "add-photo": {
+        "Unicode": ["/e144"],
+        "Category": ["actions", "objects"],
+        "Tags": ["camera", "photograph", "device", "image", "snap shot", "add", "plus", "additional", "another", "more"]
+},
+
+    "palette": {
+        "Unicode": ["/e145"],
+        "Category": ["objects"],
+        "Tags": ["palette", "paint", "color", "spot", "mixing", "artist", "theme", "design" ]
+},
+
+    "nurse": {
+        "Unicode": ["/e146"],
+        "Category": ["medical", "people"],
+        "Tags": ["nurse", "medical", "cross", "emergency", "hospital"]
+},
+
+    "sales-notification": {
+        "Unicode": ["/e147"],
+        "Category": ["callout", "money"],
+        "Tags": ["bubble", "sales", "notification"]
+},
+
+    "mileage": {
+        "Unicode": ["/e148"],
+        "Category": ["objects"],
+        "Tags": ["mileage", "tank", "petrol", "fuel", "fill up", "gas", "station"]
+},
+
+    "meeting-room": {
+        "Unicode": ["/e149"],
+        "Category": ["people"],
+        "Tags": ["meeting", "room", "collaborate", "colleagues", "teamwork", "peer to peer"]
+},
+
+    "media-forward": {
+        "Unicode": ["/e14a"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["forward", "media", "arrow", "end", "finish"]
+},
+
+    "media-play": {
+        "Unicode": ["/e14b"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["play", "media", "arrow"]
+},
+
+    "media-pause": {
+        "Unicode": ["/e14c"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["pause", "media", "arrow"]
+},
+
+    "media-reverse": {
+        "Unicode": ["/e14d"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["reverse", "media", "arrow"]
+},
+
+    "media-rewind": {
+        "Unicode": ["/e14e"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["rewind", "media", "arrow", "start", "back"]
+},
+
+    "measurement-document": {
+        "Unicode": ["/e14f"],
+        "Category": ["objects"],
+        "Tags": ["measure", "weight", "scale", "precision", "technical", "calibrate", "calibration", "calculation"]
+},
+
+    "measuring-point": {
+        "Unicode": ["/e150"],
+        "Category": ["objects"],
+        "Tags": ["measure", "point", "scale", "precision", "arrow"]
+},
+
+    "measure": {
+        "Unicode": ["/e151"],
+        "Category": ["objects"],
+        "Tags": ["measure", "weight", "scale", "precision", "technical", "calibrate", "calibration", "calculation"]
+},
+
+    "map-3": {
+        "Unicode": ["/e152"],
+        "Category": ["objects", "places"],
+        "Tags": ["map", "card", "x marks the spot", "treasure", "navigation", "hunt", "find", "destination", "location"]
+},
+
+    "locked": {
+        "Unicode": ["/e153"],
+        "Category": ["actions", "objects", "status"],
+        "Tags": ["locked", "padlock", "private", "status", "in use", "forbidden", "restricted", "safe"]
+},
+
+    "letter": {
+        "Unicode": ["/e154"],
+        "Category": ["objects"],
+        "Tags": ["letter", "mail", "post", "postal", "envelope", "address", "contact", "correspondence"]
+},
+
+    "journey-arrive": {
+        "Unicode": ["/e155"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["journey", "arrive", "arrow", "placement"]
+},
+
+    "journey-change": {
+        "Unicode": ["/e156"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["journey", "change", "direction", "arrow", "placement"]
+},
+
+    "journey-depart": {
+        "Unicode": ["/e157"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["journey", "depart", "arrow", "move", "placement"]
+},
+
+    "it-system": {
+        "Unicode": ["/e158"],
+        "Category": ["devices", "objects"],
+        "Tags": ["server", "it", "machine", "computer", "technology", "device", "system"]
+},
+
+    "it-instance": {
+        "Unicode": ["/e159"],
+        "Category": ["devices", "objects"],
+        "Tags": ["server", "it", "machine", "computer", "technology", "device", "instance"]
+},
+
+    "it-host": {
+        "Unicode": ["/e15a"],
+        "Category": ["devices", "objects"],
+        "Tags": [ "server", "it", "machine", "computer", "technology", "device", "host"]
+},
+
+    "iphone-2": {
+        "Unicode": ["/e15b"],
+        "Category": ["devices", "objects"],
+        "Tags": ["iphone", "phone", "smart phone", "landscape", "tablet", "mobile", "responsive", "cozy"]
+},
+
+    "ipad-2": {
+        "Unicode": ["/e15c"],
+        "Category": ["devices", "objects"],
+        "Tags": ["ipad", "landscape", "tablet", "mobile", "responsive", "cozy"]
+},
+
+    "inventory": {
+        "Unicode": ["/e15d"],
+        "Category": ["transport"],
+        "Tags": ["inventory", "truck", "wrench", "tools"]
+},
+
+    "insurance-house": {
+        "Unicode": ["/e15e"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "insurance", "house"]
+},
+
+    "insurance-life": {
+        "Unicode": ["/e15f"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "insurance", "life"]
+},
+
+    "insurance-car": {
+        "Unicode": ["/e160"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "insurance", "car"]
+},
+
+    "initiative": {
+        "Unicode": ["/e161"],
+        "Category": ["arrows", "objects"],
+        "Tags": ["initiative", "initiate", "begin", "enter", "right", "arrow", "circle"]
+},
+
+    "incident": {
+        "Unicode": ["/e162"],
+        "Category": ["status"],
+        "Tags": ["incident", "question", "message"]
+},
+
+    "group-2": {
+        "Unicode": ["/e163"],
+        "Category": ["actions"],
+        "Tags": ["group", "data", "aggregate", "list", "table"]
+},
+
+    "goal": {
+        "Unicode": ["/e164"],
+        "Category": ["objects"],
+        "Tags": ["goal", "target", "result", "objective", "aim"]
+},
+
+    "functional-location": {
+        "Unicode": ["/e165"],
+        "Category": ["objects"],
+        "Tags": ["arrow", "locate", "me", "map", "location", "pointer", "navigation", "functional"]
+},
+
+    "full-screen": {
+        "Unicode": ["/e166"],
+        "Category": ["actions"],
+        "Tags": ["full", "screen", "arrow"]
+},
+
+    "form": {
+        "Unicode": ["/e167"],
+        "Category": ["form"],
+        "Tags": ["form", "details", "text"]
+},
+
+    "fob-watch": {
+        "Unicode": ["/e168"],
+        "Category": ["objects"],
+        "Tags": ["fob watch", "time", "stop watch", "timer", "countdown"]
+},
+
+    "blank-tag": {
+        "Unicode": ["/e169"],
+        "Category": ["objects"],
+        "Tags": ["tag", "label", "marker", "indicator", "blank"]
+},
+
+    "family-protection": {
+        "Unicode": ["/e16a"],
+        "Category": ["people"],
+        "Tags": ["family", "protection", "people", "house", "roof", "family"]
+},
+
+    "folder": {
+        "Unicode": ["/e16b"],
+        "Category": ["folder"],
+        "Tags": ["folder", "details", "directory", "library"]
+
+},
+
+    "fax-machine": {
+        "Unicode": ["/e16c"],
+        "Category": ["actions", "devices"],
+        "Tags": ["fax", "machine", "communicate"]
+},
+
+    "example": {
+        "Unicode": ["/e16d"],
+        "Category": ["objects"],
+        "Tags": ["example", "dots", "cicles", "individual", "odd"]
+},
+
+    "eraser": {
+        "Unicode": ["/e16e"],
+        "Category": ["actions"],
+        "Tags": ["pencil", "pen", "erase", "remove", "undo", "text"]
+},
+
+    "employee-rejections": {
+        "Unicode": ["/e16f"],
+        "Category": ["people", "status"],
+        "Tags": ["person", "x", "rejections", "employee", "hr", "human resources"]
+},
+
+    "drop-down-list": {
+        "Unicode": ["/e170"],
+        "Category": ["actions", "arrows", "tables"],
+        "Tags": ["dropdown", "list", "arrow", "drop down", "view", "view settings", "view-settings", "table", "list", "sort", "filter", "group", "settings"]
+},
+
+    "draw-rectangle": {
+        "Unicode": ["/e171"],
+        "Category": ["actions", "objects"],
+        "Tags": ["draw", "rectangle", "resize", "shape", "create"]
+},
+
+    "document": {
+        "Unicode": ["/e172"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "blank", "new"]
+},
+
+    "doctor": {
+        "Unicode": ["/e173"],
+        "Category": ["medical", "people"],
+        "Tags": ["doctor", "medical", "cross", "emergency", "hospital"]
+},
+
+    "discussion-2": {
+        "Unicode": ["/e174"],
+        "Category": ["callout"],
+        "Tags": ["speech", "bubble", "comment", "discussion", "text"]
+},
+
+    "discussion": {
+        "Unicode": ["/e175"],
+        "Category": ["callout"],
+        "Tags": ["speech", "bubble", "comment", "discussion", "blank"]
+},
+
+    "dimension": {
+        "Unicode": ["/e176"],
+        "Category": ["objects"],
+        "Tags": ["dimension", "layers", "stacked"]
+},
+
+    "customer-and-supplier": {
+        "Unicode": ["/e177"],
+        "Category": ["people"],
+        "Tags": ["customer and supplier", "package", "product", "satisfaction", "returns", "warehouse", "person", "seller", "buyer", "inventory"]
+},
+
+    "crop": {
+        "Unicode": ["/e178"],
+        "Category": ["actions"],
+        "Tags": ["crop", "clip", "snip", "cut", "picture", "image", "shape", "obect"]
+},
+
+    "add-contact": {
+        "Unicode": ["/e179"],
+        "Category": ["people"],
+        "Tags": ["person", "contact", "business card", "customer", "details", "address", "information", "add", "plus", "additional", "another", "more"]
+},
+
+    "compare-2": {
+        "Unicode": ["/e17a"],
+        "Category": ["actions", "objects"],
+        "Tags": ["compare", "law", "legal", "justice", "scale", "measure", "weight", "balance", "compare", "comparison"]
+},
+
+    "color-fill": {
+        "Unicode": ["/e17b"],
+        "Category": ["objects"],
+        "Tags": ["square", "filled", "color"]
+},
+
+    "collision": {
+        "Unicode": ["/e17c"],
+        "Category": ["objects", "transport"],
+        "Tags": ["car", "crash", "accident", "damage"]
+},
+
+    "curriculum": {
+        "Unicode": ["/e17d"],
+        "Category": ["folder"],
+        "Tags": ["folder", "curriculum", "learning", "documents", "content"]
+},
+
+    "chart-axis": {
+        "Unicode": ["/e17e"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "chart axis", "arrows", "directions"]
+},
+
+    "full-stacked-chart": {
+        "Unicode": ["/e17f"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "full stacked chart"]
+},
+
+    "full-stacked-column-chart": {
+        "Unicode": ["/e180"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "full stacked column chart"]
+},
+
+    "vertical-bar-chart-2": {
+        "Unicode": ["/e181"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "vertical bar chart", "column"]
+},
+
+    "horizontal-bar-chart-2": {
+        "Unicode": ["/e182"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "horizontal bar chart"]
+},
+
+    "horizontal-stacked-chart": {
+        "Unicode": ["/e183"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "horizontal stacked chart"]
+},
+
+    "vertical-stacked-chart": {
+        "Unicode": ["/e184"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "vertical stacked chart"]
+},
+
+    "choropleth-chart": {
+        "Unicode": ["/e185"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "choropleth chart", "geographic", "map", "world"]
+},
+
+    "geographic-bubble-chart": {
+        "Unicode": ["/e186"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "geographic", "bubble", "map", "world"]
+},
+
+    "multiple-radar-chart": {
+        "Unicode": ["/e187"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "multiple radar chart"]
+},
+
+    "radar-chart": {
+        "Unicode": ["/e188"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "radar-chart"]
+},
+
+    "crossed-line-chart": {
+        "Unicode": ["/e189"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "crossed line chart"]
+},
+
+    "multiple-line-chart": {
+        "Unicode": ["/e18a"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "multiple line chart"]
+},
+
+    "multiple-bar-chart": {
+        "Unicode": ["/e18b"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "multiple bar chart"]
+},
+
+    "line-chart": {
+        "Unicode": ["/e18c"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "line chart"]
+},
+
+    "line-chart-dual-axis": {
+        "Unicode": ["/e18d"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "line chart", "dual axis"]
+},
+
+    "bubble-chart": {
+        "Unicode": ["/e18e"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "bubble chart"]
+},
+
+    "scatter-chart": {
+        "Unicode": ["/e18f"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "scatter chart"]
+},
+
+    "multiple-pie-chart": {
+        "Unicode": ["/e190"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "multiple", "pie chart"]
+},
+
+    "column-chart-dual-axis": {
+        "Unicode": ["/e191"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "column", "dual axis"]
+},
+
+    "tag-cloud-chart": {
+        "Unicode": ["/e192"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "speech", "tag", "cloud"]
+},
+
+    "area-chart": {
+        "Unicode": ["/e193"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "area"]
+},
+
+    "cause": {
+        "Unicode": ["/e194"],
+        "Category": ["actions"],
+        "Tags": ["get", "reason", "incoming", "arrow", "relocate", "take"]
+},
+
+    "cart-3": {
+        "Unicode": ["/e195"],
+        "Category": ["shopping"],
+        "Tags": ["cart", "trolley", "basket", "shopping", "item", "add", "put in", "insert", "down", "arrow"]
+},
+
+    "cart-2": {
+        "Unicode": ["/e196"],
+        "Category": ["shopping"],
+        "Tags": ["cart", "trolley", "basket", "shopping", "empty", "remove", "take out", "clear", "up", "arrow"]
+},
+
+    "bus-public-transport": {
+        "Unicode": ["/e197"],
+        "Category": ["transport"],
+        "Tags": ["bus", "public", "traffic", "vehicle"]
+},
+
+    "burglary": {
+        "Unicode": ["/e198"],
+        "Category": ["objects"],
+        "Tags": ["money", "thief", "loss", "theft", "safe", "unsafe", "burglary", "robbery", "bank"]
+},
+
+    "building": {
+        "Unicode": ["/e199"],
+        "Category": ["objects", "places"],
+        "Tags": ["building", "company", "firm", "factory", "office"]
+},
+
+    "border": {
+        "Unicode": ["/e19a"],
+        "Category": ["objects"],
+        "Tags": ["border", "square", "outline"]
+},
+
+    "bookmark": {
+        "Unicode": ["/e19b"],
+        "Category": ["actions"],
+        "Tags": ["bookmark", "later", "marker", "save"]
+},
+
+    "badge": {
+        "Unicode": ["/e19c"],
+        "Category": ["objects"],
+        "Tags": ["badge", "insignia", "star", "service", "identity", "authority", "legitimate", "coat of arms", "membership", "award", "rank"]
+},
+
+    "attachment-audio": {
+        "Unicode": ["/e19d"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "audio", "sound"]
+},
+
+    "attachment-video": {
+        "Unicode": ["/e19e"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "video", "film", "movie"]
+},
+
+    "attachment-html": {
+        "Unicode": ["/e19f"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "html", "web", "website"]
+},
+
+    "attachment-photo": {
+        "Unicode": ["/e1a0"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "attachment", "photo", "image"]
+},
+
+    "attachment-e-pub": {
+        "Unicode": ["/e1a1"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "e pub", "electronic publication", "e book"]
+},
+
+    "attachment-zip-file": {
+        "Unicode": ["/e1a2"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "zip", "compressed"]
+},
+
+    "attachment-text-file": {
+        "Unicode": ["/e1a3"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "text"]
+},
+
+    "add-equipment": {
+        "Unicode": ["/e1a4"],
+        "Category": ["actions"],
+        "Tags": ["wrench", "control", "configuration", "settings", "tool", "add", "plus", "additional", "another", "more"]
+},
+
+    "add-activity": {
+        "Unicode": ["/e1a5"],
+        "Category": ["actions"],
+        "Tags": ["activity", "activities", "tasks", "to do", "list", "add", "plus", "additional", "another", "more"]
+},
+
+    "activity-individual": {
+        "Unicode": ["/e1a6"],
+        "Category": ["clipboards"],
+        "Tags": ["activity", "activities", "tasks", "to do", "list", "individual", "person"]
+},
+
+    "activity-2": {
+        "Unicode": ["/e1a7"],
+        "Category": ["clipboards"],
+        "Tags": ["activity", "activities", "tasks", "to do", "list", "check list", "correct", "success", "tick mark"]
+},
+
+    "add-activity-2": {
+        "Unicode": ["/e1a8"],
+        "Category": ["clipboards"],
+        "Tags": ["activity", "activities", "tasks", "to do", "list", "check list", "correct", "success", "tick mark", "add", "plus", "additional", "another", "more"]
+},
+
+    "activity-items": {
+        "Unicode": ["/e1a9"],
+        "Category": ["clipboards"],
+        "Tags": ["activity", "activities", "tasks", "to do", "list", "items"]
+},
+
+    "activity-assigned-to-goal": {
+        "Unicode": ["/e1aa"],
+        "Category": ["clipboards"],
+        "Tags": ["activity", "activities", "tasks", "to do", "assigned to goal", "target", "objective"]
+},
+
+    "status-positive": {
+        "Unicode": ["/e1ab"],
+        "Category": ["status"],
+        "Tags": ["positive", "completed", "on track", "led", "traffic lights", "street sign", "lifecycle"]
+},
+
+    "status-negative": {
+        "Unicode": ["/e1ac"],
+        "Category": ["status"],
+        "Tags": ["negative", "attention", "led", "traffic lights", "street sign", "lifecycle"]
+},
+
+    "status-inactive": {
+        "Unicode": ["/e1ad"],
+        "Category": ["status"],
+        "Tags": ["inactive", "neutral", "information", "led", "traffic lights", "street sign", "lifecycle"]
+},
+
+    "status-critical": {
+        "Unicode": ["/e1ae"],
+        "Category": ["status"],
+        "Tags": ["critical", "in process", "warning", "led", "traffic lights", "street sign", "lifecycle"]
+},
+
+    "blank-tag-2": {
+        "Unicode": ["/e1af"],
+        "Category": ["objects"],
+        "Tags": ["tag", "label", "marker", "indicator", "blank"]
+},
+
+    "cart-full": {
+        "Unicode": ["/e1b0"],
+        "Category": ["shopping"],
+        "Tags": ["cart", "trolley", "basket", "shopping", "full", "capacity", "load"]
+},
+
+    "locate-me": {
+        "Unicode": ["/e1b1"],
+        "Category": ["actions", "places"],
+        "Tags": ["arrow", "locate", "me", "map", "location", "pointer", "navigation"]
+},
+
+    "paging": {
+        "Unicode": ["/e1b2"],
+        "Category": ["actions"],
+        "Tags": ["paging", "navigation"]
+},
+
+    "company-view": {
+        "Unicode": ["/e1b3"],
+        "Category": ["people"],
+        "Tags": ["view", "group", "company", "personnel", "firm", "overview"]
+},
+
+    "document-text": {
+        "Unicode": ["/e1b4"],
+        "Category": ["documents"],
+        "Tags": ["document", "page", "file", "text"]
+},
+
+    "explorer": {
+        "Unicode": ["/e1b5"],
+        "Category": ["objects"],
+        "Tags": ["explorer", "compass"]
+},
+
+    "personnel-view": {
+        "Unicode": ["/e1b6"],
+        "Category": ["people"],
+        "Tags": ["view", "person", "profile", "personnel", "overview"]
+},
+
+    "sorting-ranking": {
+        "Unicode": ["/e1b7"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["sort", "ranking", "ascending", "descending", "arrow"]
+},
+
+    "drill-down": {
+        "Unicode": ["/e1b8"],
+        "Category": ["arrows"],
+        "Tags": ["drill down", "arrow", "detail", "hierarchy", "level"]
+},
+
+    "drill-up": {
+        "Unicode": ["/e1b9"],
+        "Category": ["arrows"],
+        "Tags": ["drill up", "arrow", "detail", "hierarchy", "level"]
+},
+
+    "vds-file": {
+        "Unicode": ["/e1ba"],
+        "Category": ["documnets"],
+        "Tags": ["document", "page", "file", "text", "attachment", "Visual Design Stream", "vds"]
+},
+
+    "sap-logo-shape": {
+        "Unicode": ["/e1bb"],
+        "Category": ["objects"],
+        "Tags": ["sap", "logo", "shape"]
+},
+
+
+    "folder-full": {
+        "Unicode": ["/e1bc"],
+        "Category": ["folder"],
+        "Tags": ["folder", "full", "directory", "library", "contents"]
+},
+
+
+    "system-exit": {
+        "Unicode": ["/e1bd"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["system", "exit"]
+},
+
+
+    "system-exit-2": {
+        "Unicode": ["/e1be"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["system", "exit"]
+},
+
+
+    "close-command-field": {
+        "Unicode": ["/e1bf"],
+        "Category": ["arrows"],
+        "Tags": ["close command field", "navigation", "left", "page left", "previous", "arrow"]
+},
+
+
+    "open-command-field": {
+        "Unicode": ["/e1c0"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["open command field", "navigation", "right", "page right", "next", "arrow"]
+},
+
+
+    "sys-enter-2": {
+        "Unicode": ["/e1c1"],
+        "Category": ["actions", "status"],
+        "Tags": ["system", "enter", "correct", "tick", "affirmative", "available", "online", "present", "me", "check", "checkmark"]
+},
+
+
+    "sys-enter": {
+        "Unicode": ["/e1c2"],
+        "Category": ["actions"],
+        "Tags": ["system", "enter", "correct", "tick", "affirmative", "check", "checkmark"]
+},
+
+
+    "sys-help-2": {
+        "Unicode": ["/e1c3"],
+        "Category": ["actions", "status"],
+        "Tags": ["system", "help", "circle", "question"]
+},
+
+
+    "sys-help": {
+        "Unicode": ["/e1c4"],
+        "Category": ["actions", "status"],
+        "Tags": ["system", "help", "circle", "question"]
+},
+
+
+    "sys-back": {
+        "Unicode": ["/e1c5"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["system", "back", "arrows"]
+},
+
+
+    "sys-back-2": {
+        "Unicode": ["/e1c6"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["system", "back", "arrows"]
+},
+
+
+    "sys-cancel": {
+        "Unicode": ["/e1c7"],
+        "Category": ["actions"],
+        "Tags": ["clear", "remove", "cancel", "x"]
+},
+
+
+    "sys-cancel-2": {
+        "Unicode": ["/e1c8"],
+        "Category": ["actions"],
+        "Tags": ["clear", "remove", "cancel", "x"]
+},
+
+
+    "open-folder": {
+        "Unicode": ["/e1c9"],
+        "Category": ["folder"],
+        "Tags": ["folder", "open"]
+},
+
+
+    "sys-find-next": {
+        "Unicode": ["/e1ca"],
+        "Category": ["actions"],
+        "Tags": ["find", "binoculars", "look up", "add", "plus", "additional", "another", "more"]
+},
+
+
+    "sys-find": {
+        "Unicode": ["/e1cb"],
+        "Category": ["actions"],
+        "Tags": ["find", "binoculars", "look up"]
+},
+
+
+    "sys-monitor": {
+        "Unicode": ["/e1cc"],
+        "Category": ["devices", "objects"],
+        "Tags": ["screen", "monitor", "tv"]
+},
+
+
+    "sys-prev-page": {
+        "Unicode": ["/e1cd"],
+        "Category": ["actions", "documents"],
+        "Tags": ["system", "previous", "page", "up", "arrows"]
+},
+
+
+    "sys-first-page": {
+        "Unicode": ["/e1ce"],
+        "Category": ["actions", "documents"],
+        "Tags": ["system", "first", "page", "up", "top", "arrows"]
+},
+
+
+    "sys-next-page": {
+        "Unicode": ["/e1cf"],
+        "Category": ["actions", "documents"],
+        "Tags": ["system", "next", "page", "down", "arrows"]
+},
+
+
+    "sys-last-page": {
+        "Unicode": ["/e1d0"],
+        "Category": ["actions", "documents"],
+        "Tags": ["system", "last", "page", "down", "bottom", "arrows"]
+},
+
+
+    "generate-shortcut": {
+        "Unicode": ["/e1d1"],
+        "Category": ["actions"],
+        "Tags": ["generate", "shortcut", "arrow"]
+},
+
+
+    "create-session": {
+        "Unicode": ["/e1d2"],
+        "Category": ["actions"],
+        "Tags": ["create", "session"]
+},
+
+
+    "display-more": {
+        "Unicode": ["/e1d3"],
+        "Category": ["actions"],
+        "Tags": ["display", "details", "more", "arrow"]
+},
+
+
+    "enter-more": {
+        "Unicode": ["/e1d4"],
+        "Category": ["actions"],
+        "Tags": ["enter", "details", "more", "arrow"]
+},
+
+
+    "zoom-in": {
+        "Unicode": ["/e1d5"],
+        "Category": ["actions"],
+        "Tags": ["zoom", "in", "magnify", "glass", "plus", "enlarge", "bigger"]
+},
+
+
+    "zoom-out": {
+        "Unicode": ["/e1d6"],
+        "Category": ["actions"],
+        "Tags": ["zoom", "out", "glass", "minus", "reduce", "smaller"]
+},
+
+
+    "header": {
+        "Unicode": ["/e1d7"],
+        "Category": ["objects"],
+        "Tags": ["maximize", "header", "screen"]
+},
+
+
+    "detail-view": {
+        "Unicode": ["/e1d8"],
+        "Category": ["actions", "form"],
+        "Tags": ["search", "form", "look up", "find", "view", "detial"]
+},
+
+
+    "collapse": {
+        "Unicode": ["/e1d9"],
+        "Category": ["actions"],
+        "Tags": ["collapse all", "minus", "ungroup all", "arrow"]
+},
+
+
+    "expand": {
+        "Unicode": ["/e1da"],
+        "Category": ["actions"],
+        "Tags": ["expand all", "plus", "group all", "arrow"]
+},
+
+
+    "positive": {
+        "Unicode": ["/e1db"],
+        "Category": ["actions"],
+        "Tags": ["plus", "positive"]
+},
+
+
+    "negative": {
+        "Unicode": ["/e1dc"],
+        "Category": ["actions"],
+        "Tags": ["minus", "remove", "subtract", "negative"]
+},
+
+
+    "display": {
+        "Unicode": ["/e1dd"],
+        "Category": ["actions"],
+        "Tags": ["display", "details", "inspect", "spectacles", "glasses"]
+},
+
+
+    "menu2": {
+        "Unicode": ["/e1de"],
+        "Category": ["actions"],
+        "Tags": ["menu", "hamburger menu", "main menu"]
+},
+
+
+    "redo": {
+        "Unicode": ["/e1df"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["redo", "arrow", "previous state", "history", "forwards"]
+},
+
+
+    "undo": {
+        "Unicode": ["/e1e0"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["undo", "arrow", "previous state", "history", "backwards"]
+},
+
+
+
+    "navigation-up-arrow": {
+        "Unicode": ["/e1e1"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["navigation", "up", "arrow"]
+},
+
+
+
+    "navigation-down-arrow": {
+        "Unicode": ["/e1e2"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["navigation", "down", "collapse", "expanded tree", "tree arrow", "arrow"]
+},
+
+
+
+    "down": {
+        "Unicode": ["/e1e3"],
+        "Category": ["arrows"],
+        "Tags": ["down", "triangle"]
+},
+
+
+
+    "up": {
+        "Unicode": ["/e1e4"],
+        "Category": ["arrows"],
+        "Tags": ["up", "triangle"]
+},
+
+
+
+    "shelf": {
+        "Unicode": ["/e1e5"],
+        "Category": ["objects"],
+        "Tags": ["shelf", "storage", "drawers", "compartments"]
+},
+
+
+
+    "background": {
+        "Unicode": ["/e1e6"],
+        "Category": ["objects"],
+        "Tags": ["image", "placeholder", "picture", "hills", "mountains", "sun"]
+},
+
+
+
+    "resize": {
+        "Unicode": ["/e1e7"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["resize", "bigger", "smaller"]
+},
+
+
+
+    "move": {
+        "Unicode": ["/e1e8"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["move", "relocate", "left", "right", "up", "down"]
+},
+
+
+
+    "show": {
+        "Unicode": ["/e1e9"],
+        "Category": ["actions"],
+        "Tags": ["show", "eye"]
+},
+
+
+
+    "hide": {
+        "Unicode": ["/e1ea"],
+        "Category": ["actions"],
+        "Tags": ["hide", "eye"]
+},
+
+
+    "nav-back": {
+        "Unicode": ["/e1eb"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["navigation", "back", "previous", "arrow"]
+},
+
+
+    "error": {
+        "Unicode": ["/e1ec"],
+        "Category": ["status"],
+        "Tags": ["message", "error", "negative", "notifications", "status", "solid"]
+},
+
+
+    "slim-arrow-right": {
+        "Unicode": ["/e1ed"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["slim", "thin", "skinny", "arrow", "right", "scroll right"]
+},
+
+
+    "slim-arrow-left": {
+        "Unicode": ["/e1ee"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["slim", "thin", "skinny", "arrow", "left", "scroll left"]
+},
+
+
+    "slim-arrow-down": {
+        "Unicode": ["/e1ef"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["slim", "thin", "skinny", "arrow", "down", "select navigation", "combobox", "multi combobox"]
+},
+
+
+    "slim-arrow-up": {
+        "Unicode": ["/e1f0"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["slim", "thin", "skinny", "arrow", "up"]
+},
+
+
+    "forward": {
+        "Unicode": ["/e1f1"],
+        "Category": ["arrows"],
+        "Tags": ["forward", "arrow"]
+},
+
+
+    "overflow": {
+        "Unicode": ["/e1f2"],
+        "Category": ["actions"],
+        "Tags": ["overflow", "dots", "ellipsis", "more"]
+},
+
+
+    "value-help": {
+        "Unicode": ["/e1f3"],
+        "Category": ["actions"],
+        "Tags": ["value", "help", "popup", "assistance", "multi input"]
+},
+
+
+    "multiselect": {
+        "Unicode": ["/e1f4"],
+        "Category": ["actions"],
+        "Tags": ["multi select", "list", "table", "data"]
+},
+
+
+    "exitfullscreen": {
+        "Unicode": ["/e1f5"],
+        "Category": ["actions"],
+        "Tags": ["exit", "fullscreen", "arrow"]
+},
+
+
+    "sys-add": {
+        "Unicode": ["/e1f6"],
+        "Category": ["actions"],
+        "Tags": ["add", "plus", "additional", "another", "more", "add row", "add object", "add item"]
+},
+
+
+
+    "sys-minus": {
+        "Unicode": ["/e1f7"],
+        "Category": ["actions"],
+        "Tags": ["minus", "remove", "subtract"]
+},
+
+
+    "dropdown": {
+        "Unicode": ["/e1f8"],
+        "Category": ["arrows"],
+        "Tags": ["dropdown", "menu", "menu button", "arrow"]
+},
+
+
+
+    "expand-group": {
+        "Unicode": ["/e1f9"],
+        "Category": ["arrows"],
+        "Tags": ["expand", "group", "move to bottom", "arrow"]
+},
+
+
+    "vertical-grip": {
+        "Unicode": ["/e1fa"],
+        "Category": ["actions", "objects"],
+        "Tags": ["vertical", "grip", "move left", "move right", "splitter"]
+},
+
+
+    "horizontal-grip": {
+        "Unicode": ["/e1fb"],
+        "Category": ["actions", "objects"],
+        "Tags": ["horizontal", "grip", "move up", "move down", "splitter"]
+},
+
+
+    "sort-descending": {
+        "Unicode": ["/e1fc"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["sort", "descending", "down", "table", "aggregate"]
+},
+
+
+    "sort-ascending": {
+        "Unicode": ["/e1fd"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["sort", "ascending", "up", "table", "aggregate"]
+},
+
+
+    "arrow-down": {
+        "Unicode": ["/e1fe"],
+        "Category": ["arrows"],
+        "Tags": ["arrow", "circle", "down", "variant", "management", "selection", "options"]
+},
+
+
+    "legend": {
+        "Unicode": ["/e1ff"],
+        "Category": ["actions", "objects"],
+        "Tags": ["legend", "description", "colors", "charts", "table", "planning", "calendar"]
+},
+
+
+    "collapse-group": {
+        "Unicode": ["/e200"],
+        "Category": ["arrows"],
+        "Tags": ["collapse", "group", "move to top", "arrow"]
+},
+
+
+    "message-warning": {
+        "Unicode": ["/e201"],
+        "Category": ["status"],
+        "Tags": ["message", "warning", "critical", "notifications", "status"]
+},
+
+
+
+    "message-information": {
+        "Unicode": ["/e202"],
+        "Category": ["status"],
+        "Tags": ["message", "information", "neutral", "notifications", "status"]
+},
+
+
+
+    "message-success": {
+        "Unicode": ["/e203"],
+        "Category": ["status"],
+        "Tags": ["message", "success", "positive", "notifications", "status"]
+},
+
+
+    "restart": {
+        "Unicode": ["/e204"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["restart", "process", "play"]
+},
+
+
+    "stop": {
+        "Unicode": ["/e205"],
+        "Category": ["actions"],
+        "Tags": ["stop", "process", "play"]
+},
+
+
+    "add-process": {
+        "Unicode": ["/e206"],
+        "Category": ["actions", "objects"],
+        "Tags": ["process", "add", "plus", "additional", "another", "more"]
+},
+
+
+    "cancel-maintenance": {
+        "Unicode": ["/e207"],
+        "Category": ["actions", "status"],
+        "Tags": ["wrench", "control", "configuration", "settings", "tool", "cancel maintenance"]
+},
+
+
+    "activate": {
+        "Unicode": ["/e208"],
+        "Category": ["actions"],
+        "Tags": ["activate", "ignite", "initiate", "magic", "wand", "spark"]
+},
+
+
+    "resize-horizontal": {
+        "Unicode": ["/e209"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["resize", "horizontal", "column", "screen", "bigger", "smaller", "enlarge", "reduce", "arrows", "lines", "side to side"]
+},
+
+
+    "resize-vertical": {
+        "Unicode": ["/e20a"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["resize", "vertical", "row", "screen", "bigger", "smaller", "enlarge", "reduce", "arrows", "lines", "up and down"]
+},
+
+
+    "connected": {
+        "Unicode": ["/e20b"],
+        "Category": ["status"],
+        "Tags": ["plug", "connected", "on", "state"]
+},
+
+
+    "disconnected": {
+        "Unicode": ["/e20c"],
+        "Category": ["actions"],
+        "Tags": ["plug", "disconnected", "unplug", "state"]
+},
+
+
+    "edit-outside": {
+        "Unicode": ["/e20d"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["pencil", "pen", "write", "edit", "modify", "text", "outside", "arrow"]
+},
+
+
+    "key": {
+        "Unicode": ["/e20e"],
+        "Category": ["objects"],
+        "Tags": ["key", "foreign", "data", "lock", "important"]
+},
+
+
+    "minimize": {
+        "Unicode": ["/e20f"],
+        "Category": ["actions", "objects"],
+        "Tags": ["minimize", "screen", "window", "reduce", "hide"]
+},
+
+
+    "back-to-top": {
+        "Unicode": ["/e210"],
+        "Category": ["arrows"],
+        "Tags": ["back to top", "jump", "beginning", "arrow", "up"]
+},
+
+
+    "hello-world": {
+        "Unicode": ["/e211"],
+        "Category": ["callout", "objects"],
+        "Tags": ["bubble", "ui5", "hello", "world"]
+},
+
+
+    "outbox": {
+        "Unicode": ["/e212"],
+        "Category": ["actions"],
+        "Tags": ["outbox", "out", "arrow"]
+},
+
+
+    "donut-chart": {
+        "Unicode": ["/e213"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data"]
+},
+
+
+    "heatmap-chart": {
+        "Unicode": ["/e214"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data"]
+},
+
+
+
+    "horizontal-bullet-chart": {
+        "Unicode": ["/e215"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data"]
+},
+
+
+
+    "vertical-bullet-chart": {
+        "Unicode": ["/e216"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data"]
+},
+
+
+
+    "call": {
+        "Unicode": ["/e217"],
+        "Category": ["actions"],
+        "Tags": ["call", "communicate", "phone", "telephone"]
+},
+
+
+
+    "download-from-cloud": {
+        "Unicode": ["/e218"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["download", "cloud", "arrow"]
+},
+
+
+
+    "upload-to-cloud": {
+        "Unicode": ["/e219"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["save", "upload", "cloud", "arrow"]
+},
+
+
+
+    "jam": {
+        "Unicode": ["/e21a"],
+        "Category": ["objects", "places"],
+        "Tags": ["sap", "logo", "jam", "social", "collaborate", "share"]
+},
+
+
+
+    "sap-ui5": {
+        "Unicode": ["/e21b"],
+        "Category": ["objects"],
+        "Tags": ["ui5", "framework", "development", "sap"]
+},
+
+
+
+    "message-popup": {
+        "Unicode": ["/e21c"],
+        "Category": ["callout", "status"],
+        "Tags": ["message", "popup", "speech", "bubble", "exclamation", "notifications", "status"]
+},
+
+
+
+    "cloud": {
+        "Unicode": ["/e21d"],
+        "Category": ["objects", "place"],
+        "Tags": ["cloud", "platform", "storage", "big data", "sap"]
+},
+
+
+    "horizontal-waterfall-chart": {
+        "Unicode": ["/e21e"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data"]
+},
+
+
+    "vertical-waterfall-chart": {
+        "Unicode": ["/e21f"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data"]
+},
+
+
+    "broken-link": {
+        "Unicode": ["/e220"],
+        "Category": ["objects", "status"],
+        "Tags": ["unlink", "broken", "chain", "hyperlink"]
+},
+
+
+    "headset": {
+        "Unicode": ["/e221"],
+        "Category": ["objects"],
+        "Tags": ["headset", "call", "help", "support", "talk", "mic", "listen"]
+},
+
+
+    "thumb-up": {
+        "Unicode": ["/e222"],
+        "Category": ["actions"],
+        "Tags": ["thumbs", "up", "like", "appreciate", "positive"]
+},
+
+
+
+    "thumb-down": {
+        "Unicode": ["/e223"],
+        "Category": ["actions"],
+        "Tags": ["thumbs", "down", "dislike", "negative"]
+},
+
+
+
+    "multiselect-all": {
+        "Unicode": ["/e224"],
+        "Category": ["actions"],
+        "Tags": ["multi select", "list", "table", "data", "all", "selected"]
+},
+
+
+
+    "multiselect-none": {
+        "Unicode": ["/e225"],
+        "Category": ["actions"],
+        "Tags": ["multi select", "list", "table", "data", "none", "deselected"]
+},
+
+
+
+    "scissors": {
+        "Unicode": ["/e226"],
+        "Category": ["actions", "objects"],
+        "Tags": ["cut", "scissors", "document", "clipboards", "file", "text"]
+},
+
+
+
+    "sound": {
+        "Unicode": ["/e227"],
+        "Category": ["actions", "objects"],
+        "Tags": ["sound", "audio", "audio", "speaker"]
+},
+
+
+
+    "sound-loud": {
+        "Unicode": ["/e228"],
+        "Category": ["actions", "objects"],
+        "Tags": ["sound", "audio", "audio", "speaker", "loud", "louder"]
+},
+
+
+    "sound-off": {
+        "Unicode": ["/e229"],
+        "Category": ["actions", "objects"],
+        "Tags": ["sound", "audio", "off", "mute", "quiet", "speaker", "cancel"]
+},
+
+
+    "date-time": {
+        "Unicode": ["/e22a"],
+        "Category": ["calendars"],
+        "Tags": ["date", "time"]
+},
+
+
+    "user-settings": {
+        "Unicode": ["/e22b"],
+        "Category": ["actions", "people"],
+        "Tags": ["settings", "cogwheel", "configuration", "settings", "tools", "modify", "customize", "person", "user", "runtime authoring"]
+},
+
+
+    "key-user-settings": {
+        "Unicode": ["/e23c"],
+        "Category": ["actions"],
+        "Tags": ["settings", "cogwheel", "configuration", "settings", "tools", "modify", "customize", "administrator", "key user", "runtime authoring"]
+},
+
+
+    "developer-settings": {
+        "Unicode": ["/e22d"],
+        "Category": ["actions"],
+        "Tags": ["settings", "cogwheel", "configuration", "settings", "tools", "modify", "customize", "developer", "runtime authoring"]
+},
+
+
+    "text-formatting": {
+        "Unicode": ["/e22e"],
+        "Category": ["actions", "text"],
+        "Tags": ["customize", "text", "format", "options", "text decoration", "text edit", "rich-text"]
+},
+
+
+    "bold-text": {
+        "Unicode": ["/e22f"],
+        "Category": ["actions", "text"],
+        "Tags": ["bold", "fat", "bulk", "weight", "text", "format", "text decoration", "text edit", "rich-text"]
+},
+
+
+    "italic-text": {
+        "Unicode": ["/e230"],
+        "Category": ["actions", "text"],
+        "Tags": ["itlalic", "slanted", "leaning", "text", "format", "text decoration", "text edit", "rich-text"]
+},
+
+
+    "underline-text": {
+        "Unicode": ["/e231"],
+        "Category": ["actions", "text"],
+        "Tags": ["underline", "text", "format", "text decoration", "text edit", "rich-text"]
+},
+
+
+
+    "text-align-justified": {
+        "Unicode": ["/e232"],
+        "Category": ["actions", "text"],
+        "Tags": ["align", "text", "justified", "text edit", "rich-text"]
+},
+
+
+
+    "text-align-left": {
+        "Unicode": ["/e233"],
+        "Category": ["actions", "text"],
+        "Tags": ["align", "text", "left", "text edit", "rich-text"]
+},
+
+
+
+    "text-align-center": {
+        "Unicode": ["/e234"],
+        "Category": ["actions", "text"],
+        "Tags": ["align", "text", "center", "text edit", "rich-text"]
+},
+
+
+
+    "text-align-right": {
+        "Unicode": ["/e235"],
+        "Category": ["actions", "text"],
+        "Tags": ["align", "text", "right", "text edit", "rich-text"]
+},
+
+
+
+    "bullet-text": {
+        "Unicode": ["/e236"],
+        "Category": ["actions", "text"],
+        "Tags": ["bullet", "text", "dots", "text edit", "rich-text"]
+},
+
+
+    "numbered-text": {
+        "Unicode": ["/e237"],
+        "Category": ["actions", "text"],
+        "Tags": ["numbered", "text", "1, 2, 3", "text edit", "rich-text"]
+},
+
+
+    "co": {
+        "Unicode": ["/e238"],
+        "Category": ["objects"],
+        "Tags": ["co pilot", "mnemonics", "assistant", "launchpad"]
+},
+
+
+    "ui-notifications": {
+        "Unicode": ["/e239"],
+        "Category": ["actions", "callout"],
+        "Tags": ["notify", "ui", "notifications", "alerts", "launchpad"]
+},
+
+
+    "bell": {
+        "Unicode": ["/e23a"],
+        "Category": ["objects"],
+        "Tags": ["bell", "alarm", "notify", "alerts"]
+},
+
+
+    "cancel-share": {
+        "Unicode": ["/e23b"],
+        "Category": ["actions", "status"],
+        "Tags": ["cancel share", "cancel distribution", "do not share with connections"]
+},
+
+
+    "write-new-document": {
+        "Unicode": ["/e23c"],
+        "Category": ["actions", "documents"],
+        "Tags": ["document", "page", "file", "text", "edit", "write", "new", "pencil", "pen"]
+},
+
+
+    "write-new": {
+        "Unicode": ["/e23d"],
+        "Category": ["actions"],
+        "Tags": ["write", "new", "create", "pencil", "pen"]
+},
+
+
+    "cancel": {
+        "Unicode": ["/e23e"],
+        "Category": ["actions", "status"],
+        "Tags": ["unable", "forbidden", "do not", "cancel", "not allowed", "not allowed"]
+},
+
+
+    "screen-split-one": {
+        "Unicode": ["/e23f"],
+        "Category": ["objects"],
+        "Tags": ["screen", "split", "two", "master", "detail", "split app"]
+},
+
+
+    "screen-split-two": {
+        "Unicode": ["/e240"],
+        "Category": ["objects"],
+        "Tags": ["screen", "split", "two", "half"]
+},
+
+
+    "screen-split-three": {
+        "Unicode": ["/e241"],
+        "Category": ["objects"],
+        "Tags": ["screen", "split", "three", "columns"]
+},
+
+
+    "customize": {
+        "Unicode": ["/e242"],
+        "Category": ["actions"],
+        "Tags": ["settings", "configuration", "settings", "modify", "customize", "equaliser", "fine tune"]
+},
+
+
+
+    "user-edit": {
+        "Unicode": ["/e243"],
+        "Category": ["actions", "people"],
+        "Tags": ["user", "edit", "person", "pencil", "pen"]
+},
+
+
+    "source-code": {
+        "Unicode": ["/e244"],
+        "Category": ["arrows"],
+        "Tags": ["source", "code", "develop", "write", "syntax"]
+},
+
+
+    "copy": {
+        "Unicode": ["/e245"],
+        "Category": ["actions"],
+        "Tags": ["copy", "document", "file", "duplicate", "text"]
+},
+
+
+    "paste": {
+        "Unicode": ["/e246"],
+        "Category": ["actions", "clipboards"],
+        "Tags": ["paste", "document", "clipboards", "file", "text"]
+},
+
+
+    "line-chart-time-axis": {
+        "Unicode": ["/e247"],
+        "Category": ["charts", "time"],
+        "Tags": ["chart", "line", "time", "axis"]
+},
+
+
+    "clear-filter": {
+        "Unicode": ["/e248"],
+        "Category": ["actions"],
+        "Tags": ["filter", "organise", "aggregate", "data", "clear", "delete", "remove", "cancel"]
+},
+
+
+    "reset": {
+        "Unicode": ["/e249"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["reset", "x", "cancel"]
+},
+
+
+    "trend-up": {
+        "Unicode": ["/e24a"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["trend", "up", "diagonal", "increase", "improve", "arrow"]
+},
+
+
+    "trend-down": {
+        "Unicode": ["/e24b"],
+        "Category": ["actions", "arrows"],
+        "Tags": ["trend", "down", "diagonal", "decrease", "decline", "arrow"]
+},
+
+
+    "cursor": {
+        "Unicode": ["/e24c"],
+        "Category": ["actions", "objects", "text"],
+        "Tags": ["cursor", "arrow", "mouse", "pointer", "select"]
+},
+
+
+    "add-document": {
+        "Unicode": ["/e24d"],
+        "Category": ["actions", "document"],
+        "Tags": ["document", "page", "file", "text", "new", "add", "plus", "additional", "another", "more"]
+},
+
+
+    "create-form": {
+        "Unicode": ["/e24e"],
+        "Category": ["actions", "form"],
+        "Tags": ["create", "form", "new", "add", "plus", "additional", "another", "more"]
+},
+
+
+    "resize-corner": {
+        "Unicode": ["/e24f"],
+        "Category": ["actions"],
+        "Tags": ["resize", "dialog", "corner"]
+},
+
+
+    "chevron-phase": {
+        "Unicode": ["/e250"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "chevron", "phase"]
+},
+
+
+    "chevron-phase-2": {
+        "Unicode": ["/e251"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "chevron", "phase"]
+},
+
+
+    "rhombus-milestone": {
+        "Unicode": ["/e252"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "rhombus", "milestone"]
+},
+
+
+    "rhombus-milestone-2": {
+        "Unicode": ["/e253"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "rhombus", "milestone"]
+},
+
+
+    "circle-task": {
+        "Unicode": ["/e254"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "circle", "task"]
+},
+
+
+    "circle-task-2": {
+        "Unicode": ["/e255"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "circle", "task"]
+},
+
+
+    "project-definition-triangle": {
+        "Unicode": ["/e256"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "triangle", "project", "definition"]
+},
+
+
+    "project-definition-triangle-2": {
+        "Unicode": ["/e257"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "triangle", "project", "definition"]
+},
+
+
+    "master-task-triangle": {
+        "Unicode": ["/e258"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "triangle", "task", "master"]
+},
+
+
+    "master-task-triangle-2": {
+        "Unicode": ["/e259"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "triangle", "task", "master"]
+},
+
+
+    "program-triangles": {
+        "Unicode": ["/e25a"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "triangle", "program"]
+},
+
+
+    "program-triangles-2": {
+        "Unicode": ["/e25b"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "triangle", "program"]
+},
+
+
+    "mirrored-task-circle": {
+        "Unicode": ["/e25c"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "mirrored", "circle", "task"]
+},
+
+
+    "mirrored-task-circle-2": {
+        "Unicode": ["/e25d"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "mirrored", "circle", "task"]
+},
+
+
+    "checklist-item": {
+        "Unicode": ["/e25e"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "checklist", "item"]
+},
+
+
+    "checklist-item-2": {
+        "Unicode": ["/e25f"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "checklist", "item"]
+},
+
+
+    "checklist": {
+        "Unicode": ["/e260"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "checklist"]
+},
+
+
+    "checklist-2": {
+        "Unicode": ["/e261"],
+        "Category": ["charts", "objects", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "gantt", "shape", "checklist"]
+},
+
+
+    "chart-table-view": {
+        "Unicode": ["/e262"],
+        "Category": ["charts", "tables"],
+        "Tags": ["analytics", "chart", "display", "data", "table", "columns", "rows", "grid", "view"]
+},
+
+
+    "filter-analytics": {
+        "Unicode": ["/e263"],
+        "Category": ["charts", "objects"],
+        "Tags": ["analytics", "filter", "organise", "chart", "customize", "display", "data"]
+},
+
+
+    "filter-facets": {
+        "Unicode": ["/e264"],
+        "Category": ["objects"],
+        "Tags": ["analytics", "filter", "organise", "chart", "customize", "display", "data"]
+},
+
+
+    "filter-fields": {
+        "Unicode": ["/e265"],
+        "Category": ["objects"],
+        "Tags": ["analytics", "filter", "organise", "chart", "customize", "display", "data"]
+},
+
+
+    "indent": {
+        "Unicode": ["/e266"],
+        "Category": ["actions", "text"],
+        "Tags": ["indent", "paragraph", "move right", "align", "text edit", "spacing", "rich-text", "arrows"]
+},
+
+
+    "outdent": {
+        "Unicode": ["/e267"],
+        "Category": ["actions", "text"],
+        "Tags": ["outdent", "paragraph", "move left", "align", "text edit", "spacing", "rich-text", "arrows"]
+},
+
+
+    "heading-1": {
+        "Unicode": ["/e268"],
+        "Category": ["actions", "text"],
+        "Tags": ["heading", "header", "h1", "large text", "title", "level 1", "text edit", "rich-text"]
+},
+
+
+
+    "heading-2": {
+        "Unicode": ["/e269"],
+        "Category": ["actions", "text"],
+        "Tags": ["heading", "header", "h2", "large text", "title", "level 2", "text edit", "rich-text"]
+},
+
+
+
+    "heading-3": {
+        "Unicode": ["/e26a"],
+        "Category": ["actions", "text"],
+        "Tags": ["heading", "header", "h3", "large text", "title", "level 3", "text edit", "rich-text"]
+},
+
+
+
+    "decrease-line-height": {
+        "Unicode": ["/e26b"],
+        "Category": ["actions", "text"],
+        "Tags": ["decrease", "line height", "leading", "text edit", "spacing", "rich-text", "less space", "reduce", "compress", "arrows"]
+},
+
+
+
+    "increase-line-height": {
+        "Unicode": ["/e26c"],
+        "Category": ["actions", "text"],
+        "Tags": ["increase", "line height", "leading", "text edit", "spacing", "rich-text", "more space", "enlarge", "expand", "arrows"]
+},
+
+
+    "fx": {
+        "Unicode": ["/e26d"],
+        "Category": ["actions", "text"],
+        "Tags": ["function", "formula", "effects", "fx", "calculation", "mathematics", "sum", "letters", "conditions"]
+},
+
+    "add-folder": {
+        "Unicode": ["/e26e"],
+        "Category": ["action", "folder"],
+        "Tags": ["folder", "add", "directory", "additional", "library"]
+},
+
+    "away": {
+        "Unicode": ["/e26f"],
+        "Category": ["status"],
+        "Tags": ["time", "clock", "away", "availability", "chronicle", "be right back", "appear away", "off work", "me"]
+},
+
+    "busy": {
+        "Unicode": ["/e270"],
+        "Category": ["status"],
+        "Tags": ["busy", "unavailable", "not responsive", "blocked", "circle", "dot", "me", "working"]
+},
+
+    "appear-offline": {
+        "Unicode": ["/e271"],
+        "Category": ["status"],
+        "Tags": ["appear-offline", "offline", "hide", "blocked", "circle", "me"]
+},
+
+    "blur": {
+        "Unicode": ["/e272"],
+        "Category": ["action"],
+        "Tags": ["blur", "tool", "screenshot", "image", "edit", "modify", "distort", "smudge", "blurry", "filter", "effects"]
+},
+
+    "pixelate": {
+        "Unicode": ["/e273"],
+        "Category": ["action"],
+        "Tags": ["pixel", "tool", "screenshot", "image", "edit", "modify", "distort", "pixelate", "sqaures", "dots", "resolution", "noise"]
+},
+
+    "horizontal-combination-chart": {
+        "Unicode": ["/e274"],
+        "Category": ["charts"],
+        "Tags": ["analytics", "chart", "display", "data", "combination", "line-chart", "bar", "horizontal"]
+},
+
+    "add-employee": {
+        "Unicode": ["/e275"],
+        "Category": ["action", "people"],
+        "Tags": ["customer", "user", "person", "individual", "contacts", "add", "additional", "employee", "hr", "human resources", "plus"]
+},
+
+    "text-color": {
+        "Unicode": ["/e276"],
+        "Category": ["text"],
+        "Tags": ["color", "formatting", "edit", "colour", "letters", "rich", "rich-text", "options"]
+},
+
+    "browse-folder": {
+        "Unicode": ["/e277"],
+        "Category": ["folder"],
+        "Tags": ["browse folder", "search", "look up", "folder", "browse", "directory", "library", "find"]
+},
+
+    "primary-key": {
+        "Unicode": ["/e278"],
+        "Category": ["objects"],
+        "Tags": ["key", "primary", "data", "lock", "important"]
+},
+
+    "two-keys": {
+        "Unicode": ["/e279"],
+        "Category": ["objects"],
+        "Tags": ["key", "primary", "foreign", "data", "lock", "important"]
+},
+
+    "strikethrough": {
+        "Unicode": ["/e27a"],
+        "Category": ["text"],
+        "Tags": ["strike", "formatting", "edit", "cross out", "letters", "rich", "rich-text", "options", "review"]
+},
+
+    "text": {
+        "Unicode": ["/e27b"],
+        "Category": ["text"],
+        "Tags": ["text", "formatting", "edit", "input", "letters", "rich", "rich-text"]
+},
+
+    "responsive": {
+        "Unicode": ["/e27c"],
+        "Category": ["devices"],
+        "Tags": ["desktop", "tablet", "mobile", "phone", "adaptive", "cozy", "compact", "web app"]
+},
+
+    "desktop-mobile": {
+        "Unicode": ["/e27d"],
+        "Category": ["devices"],
+        "Tags": ["desktop", "tablet", "mobile", "phone", "adaptive", "cozy", "compact", "web app", "responsive", "adaptive"]
+},
+
+    "table-row": {
+        "Unicode": ["/e27e"],
+        "Category": ["objects", "tables"],
+        "Tags": ["display", "data", "table", "table row", "grid", "view", "rows"]
+},
+
+    "table-column": {
+        "Unicode": ["/e27f"],
+        "Category": ["objects", "tables"],
+        "Tags": ["display", "data", "table", "table column", "grid", "view", "columns"]
+},
+
+    "validate": {
+        "Unicode": ["/e280"],
+        "Category": ["status", "action"],
+        "Tags": ["message", "check", "validate", "security", "status", "approve", "reject", "decision", "certify"]
+},
+
+    "keyboard-and-mouse": {
+        "Unicode": ["/e281"],
+        "Category": ["objects", "action"],
+        "Tags": ["mouse", "desktop", "click", "keyboard", "compact", "condensed", "controls", "devices"]
+},
+
+    "touch": {
+        "Unicode": ["/e282"],
+        "Category": ["objects", "action"],
+        "Tags": ["finger", "mobile", "press", "touch", "cozy", "comfortable", "controls", "devices"]
+},
+
+    "expand-all": {
+        "Unicode": ["/e283"],
+        "Category": ["arrows"],
+        "Tags": ["expand", "all", "open", "open all", "expand all", "arrow", "table", "tree", "list"]
+},
+
+    "collapse-all": {
+        "Unicode": ["/e284"],
+        "Category": ["arrows"],
+        "Tags": ["collapse", "all", "close", "close all", "collapse all", "arrow", "table", "tree", "list"]
+},
+
+
+}

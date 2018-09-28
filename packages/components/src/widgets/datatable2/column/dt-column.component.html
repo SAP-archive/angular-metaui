@@ -13,20 +13,24 @@
     todo: We have SingleSelect, Multiselect rendering template that is Added programatically
     todo: We have pivotal rendering template
 
+    columnIndex - ordinal number including left table in case of frozen column
+    localColumnIndex - ordinal number within one table
 
 -->
 <ng-template #renderingTemplate let-isHeader let-isSubHeader="isSubHeader" let-column="column"
              let-dataToRender="data"
+             let-localColumnIndex="localColumnIndex"
              let-columnIndex="columnIndex"
              let-rowIndex="rowIndex">
 
     <ng-template *ngIf="isHeader" [ngTemplateOutlet]="colHeader"
-                 [ngTemplateOutletContext]="{$implicit: isSubHeader, columnIndex:columnIndex, data: dataToRender,
+                 [ngTemplateOutletContext]="{$implicit: isSubHeader, localColumnIndex: localColumnIndex,
+                 columnIndex:columnIndex, data: dataToRender,
                  rowIndex:rowIndex}">
     </ng-template>
 
     <ng-template *ngIf="!isHeader" [ngTemplateOutlet]="colBody"
-                 [ngTemplateOutletContext]="{$implicit: column, data:dataToRender,rowIndex:rowIndex}">
+                 [ngTemplateOutletContext]="{$implicit: column, data:dataToRender, columnIndex:columnIndex, rowIndex:rowIndex}">
     </ng-template>
 </ng-template>
 
@@ -45,20 +49,27 @@
 
 
 -->
-<ng-template #colHeader let-isSubHeader let-columnIndex="columnIndex" let-data="data" let-rowIndex="rowIndex">
+<ng-template #colHeader let-isSubHeader let-columnIndex="columnIndex" let-localColumnIndex="localColumnIndex"
+             let-data="data" let-rowIndex="rowIndex">
 
-    <th #headerCell1 [class]="headerStyleClass||styleClass" *ngIf="!isSubHeader"
+    <th #headerCell1 dtDraggableCol
+        [dndIndex]="localColumnIndex"
+        [class]="headerStyleClass||styleClass" *ngIf="!isSubHeader"
         (click)="handleHeaderClick($event, headerCell1)"
         [ngClass]="{'dt-is-default dt-u-unselectable-text' :true,
                     'dt-cell-def': dt.selectionMode !== 'cell' || (!dt.isOutline() || !dt.pivotalLayout),
                     'dt-u-sortable': sortable,
                     'dt-is-active': isSorted(),
+                    'dt-col-draggable': dt.dndColumnEnabled && isDraggable,
                     'dt-is-hidden': !isVisible}"
         [attr.width]="width"
         [attr.align]="align"
         [attr.tabindex]="sortable ? 1 : null"
-        [dtMaxWidth]="maxWidthPx"
-    >
+        [dtMaxWidth]="maxWidthPx">
+
+        <div class="w-hdrt-icon-container">
+            <span class="ariba-icon icon-grab" *ngIf="dt.dndColumnEnabled && isDraggable"></span>
+        </div>
 
         <ng-template [ngIf]="dt.headerFilterTemplate && columnIndex === 0 ">
             <ng-container *ngTemplateOutlet="dt.headerFilterTemplate">

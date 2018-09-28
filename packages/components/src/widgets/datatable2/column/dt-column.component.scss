@@ -100,7 +100,6 @@ tbody .dt-drag-row-bottom {
 
 tbody .dt-drag-row-both {
   > td {
-
     //border-bottom: 1px solid #0271d2;
     background: linear-gradient(0deg, rgba(2, 113, 210, 1) 0%, rgba(255, 255, 255, 1) 3%, rgba(255, 255, 255, 1) 97%, rgba(2, 113, 210, 1) 100%);
   }
@@ -119,4 +118,48 @@ tbody .dt-row-dragging {
     opacity: 0.5;
     cursor: not-allowed;
   }
+}
+
+// Drag columns
+
+// Top header icon container that layouts icon in the top part of the column
+.w-hdrt-icon-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .ariba-icon {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    display: inline-block;
+
+    &:hover {
+      cursor: grab;
+
+    }
+
+  }
+}
+
+tbody .dt-col-dragging {
+  background-color: #ececec;
+  color: #b9b9b9;
+}
+
+thead .dt-drag-col-left {
+  background: linear-gradient(90deg, #7bbaf9 2px, #f2f2f2 2px);
+}
+
+thead .dt-drag-col-right {
+  background: linear-gradient(270deg, #7BBAF9 2px, #f2f2f2 2px);
 }
