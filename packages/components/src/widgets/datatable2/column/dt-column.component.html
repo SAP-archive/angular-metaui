@@ -93,7 +93,7 @@
     <th #headerCell2 [class]="headerStyleClass||styleClass" *ngIf="isSubHeader"
         [attr.width]="width"
         [attr.align]="align"
-        [ngClass]="{'dt-is-default dt-cell-def dt-sub-header dt-u-unselectable-text':true}"
+        [ngClass]="{'dt-is-default dt-cell-def dt-sub-header dt-u-unselectable-text':true, 'dt-is-hidden': !isVisible}"
         [dtMaxWidth]="maxWidthPx">
 
         <span class="dt-col-title" *ngIf="dt.showSubHeader && subHeaderTemplate">

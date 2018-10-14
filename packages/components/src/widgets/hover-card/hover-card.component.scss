@@ -12,6 +12,10 @@
 
   }
 }
+// default Overlay content padding
+::ng-deep .ui-overlaypanel .ui-overlaypanel-content {
+  padding: 4em 0.5em .6em 1.43em;
+}
 
 /* Common styles for the card Arrow */
 ::ng-deep .w-hc-panel-arrow {

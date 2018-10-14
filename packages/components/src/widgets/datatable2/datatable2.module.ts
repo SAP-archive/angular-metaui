@@ -43,6 +43,9 @@ import {AWRadioButtonModule} from '../radio-button/radio-button.module';
 import {SetCellMaxWidthDirective} from './directives/dt-cell-directives';
 import {DTDraggableRowDirective} from './directives/dt-draggable-row.directive';
 import {DTDraggableColumnDirective} from './directives/dt-draggable-column.directive';
+import {DTActionButtonComponent} from './buttons/action-button/action-button.component';
+import {AWHoverCardModule} from '../hover-card/hover-card.module';
+import {AWListModule} from '../list/list.module';
 
 
 @NgModule({
@@ -57,7 +60,8 @@ import {DTDraggableColumnDirective} from './directives/dt-draggable-column.direc
         DTSingleSelectColumnComponent,
         DTDraggableRowDirective,
         DTDraggableColumnDirective,
-        SetCellMaxWidthDirective
+        SetCellMaxWidthDirective,
+        DTActionButtonComponent
     ],
     imports: [
         CommonModule,
@@ -66,7 +70,9 @@ import {DTDraggableColumnDirective} from './directives/dt-draggable-column.direc
         AWCheckBoxModule,
         AWOutlineForModule,
         AWRadioButtonModule,
-        AWInputFieldModule
+        AWInputFieldModule,
+        AWHoverCardModule,
+        AWListModule
     ],
     entryComponents: [
         DTDetailRowExpanderComponent,

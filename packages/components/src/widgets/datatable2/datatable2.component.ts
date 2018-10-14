@@ -903,6 +903,42 @@ export class Datatable2Component extends BaseComponent implements AWDataTable, A
     }
 
     /**
+     * Return list of columns that are shown in the show/hide popup menu
+     */
+    toggleableColumns(): DTColumn2Component[]
+    {
+
+        let cols: DTColumn2Component[] = [];
+
+        if (this.hasFrozenColumns()) {
+            this.frozenColumns.forEach((col: DTColumn2Component) =>
+            {
+                if (col.isValueColumn() && isPresent(col.label) && col.label.length > 0) {
+                    cols.push(col);
+                }
+            });
+        }
+
+        this.columns.forEach((col: DTColumn2Component) =>
+        {
+            if (col.isValueColumn() && isPresent(col.label) && col.label.length > 0) {
+                cols.push(col);
+            }
+        });
+        return cols;
+    }
+
+
+    /**
+     * This is more internal as we need to to have number of invisible columns for the
+     * action button's badge
+     */
+    numberOfInvisibleColumns(): number
+    {
+        return this.toggleableColumns().filter(col => !col.isVisible).length;
+    }
+
+    /**
      * See AWDataTable
      *
      */
@@ -1417,7 +1453,7 @@ export class Datatable2Component extends BaseComponent implements AWDataTable, A
      * When dealing with detail column (detail row) and outline all together we need have a
      * mechanism to tell to the outline "don't render the next level of items" and use detail row.
      * So certain item type needs to be skipped.
-     *
+     *f
      * The way we skip those item is we use isVisibleFn condition of the detail row and look ahead
      * if we should skip next level.
      *

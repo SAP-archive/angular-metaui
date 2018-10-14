@@ -1,8 +1,11 @@
 
 @font-face {
 	font-family: 'SAP-icons';
-	src: url('fonts/SAP-icons.ttf'), url('fonts/SAP-icons.woff'), url('fonts/SAP-icons.woff2'),
-     url('fonts/SAP-icons.eot'); /* IE9+ */
+    src: url('./sap-icons.eot');
+    src: url('./sap-icons.eot?#iefix') format('embedded-opentype'),
+    url('./sap-icons.woff') format('woff'),
+    url('./sap-icons.ttf') format('truetype');
+
 	font-weight: normal;
 	font-style: normal;
 }
@@ -14,9 +17,7 @@
   speak: none;
 }
 /* Use the following CSS code if you want to have a class per icon */
-.sap-icon4[class*="icon-"],
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
+.sap-icons[class*="icon-"] {
   font-family: 'SAP-icons';
   font-style: normal;
   speak: none;

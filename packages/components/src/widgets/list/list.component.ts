@@ -161,6 +161,14 @@ export class ListComponent extends BaseFormComponent
     @Input()
     borderless: boolean = false;
 
+
+    /**
+     * Support PrimeNG readOnly options as there are situations where want to want to highlight
+     * items
+     */
+    @Input()
+    readOnly: boolean = false;
+
     /**
      * Triggered when we double click on the list Item
      *
@@ -174,6 +182,14 @@ export class ListComponent extends BaseFormComponent
      */
     @Output()
     onSelection: EventEmitter<any> = new EventEmitter();
+
+
+    /**
+     * There are situation where we want to broadcast also current clicked item for disabled or
+     * readonly mode
+     */
+    @Output()
+    onItemClicked: EventEmitter<any> = new EventEmitter();
 
 
     /**
@@ -211,7 +227,7 @@ export class ListComponent extends BaseFormComponent
      */
     internalList: SelectItem[];
 
-    listStyle: {[name: string]: any} = {};
+    listStyle: { [name: string]: any } = {};
 
     isMultiple: boolean = false;
     showCheckbox: boolean = false;
@@ -277,7 +293,7 @@ export class ListComponent extends BaseFormComponent
     itemClicked(event: any, item: any, checkbox: CheckboxComponent): void
     {
         this.pListBox.onOptionClick(event, item);
-
+        this.onItemClicked.emit(item);
         event.stopPropagation();
         event.preventDefault();
     }
@@ -313,7 +329,6 @@ export class ListComponent extends BaseFormComponent
         if (isBlank(event.value)) {
             return;
         }
-
         this.onSelection.emit(event.value);
         if (this.isStandalone) {
             this.formControl.setValue(event.value, {emitEvent: true});

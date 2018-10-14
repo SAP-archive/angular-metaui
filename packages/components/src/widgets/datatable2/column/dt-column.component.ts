@@ -536,6 +536,11 @@ export class DTColumn2Component extends BaseComponent implements AfterContentIni
     }
 
 
+    toggleVisibility(): void
+    {
+        this.isVisible = !this.isVisible;
+    }
+
     /**
      *
      * Internal
@@ -553,6 +558,12 @@ export class DTColumn2Component extends BaseComponent implements AfterContentIni
         }
 
         return px;
+    }
+
+
+    toString(): string
+    {
+        return this.label;
     }
 }
 

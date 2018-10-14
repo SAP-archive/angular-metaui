@@ -18,7 +18,15 @@
  *
  *
  */
-import {ChangeDetectorRef, Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {
+    ChangeDetectorRef,
+    Component,
+    ContentChild,
+    ElementRef,
+    Input,
+    TemplateRef,
+    ViewChild
+} from '@angular/core';
 import {AnimationEvent} from '@angular/animations';
 import {assert, Environment, isBlank, isPresent} from '@aribaui/core';
 import {BaseComponent} from '../../core/base.component';
@@ -173,6 +181,10 @@ export class HoverCardComponent extends BaseComponent
     awOverlay: OverlayComponent;
 
 
+    @ContentChild('actionButton')
+    actionButton: TemplateRef<any>;
+
+
     /**
      *
      * Internal style class to use to apply additional styles when it needs to show a Arrow on the
@@ -218,7 +230,8 @@ export class HoverCardComponent extends BaseComponent
     {
         super.ngOnInit();
 
-        assert(isPresent(this.linkTitle), 'You must provide [linkTitle] binding !');
+        assert(isPresent(this.linkTitle) || isPresent(this.actionButton),
+            'You must provide [linkTitle] binding !');
 
         // make sure there is open HC when we start new component
         this.env.deleteValue('hc-open');
@@ -250,7 +263,7 @@ export class HoverCardComponent extends BaseComponent
                 this.adjustCard(container, cntRect, this.awOverlay.overlay);
 
             } else {
-                this.arrowClass = '';
+                this.arrowClass = this.styleClass;
             }
 
             this.opening = false;
@@ -295,10 +308,10 @@ export class HoverCardComponent extends BaseComponent
      *
      *
      */
-    openCard(event: any): any
+    openCard(event: any, async: boolean = true): any
     {
         if (isPresent(this.awOverlay) && !this.env.hasValue('hc-open')) {
-            this.awOverlay.open(event);
+            this.awOverlay.open(event, async);
             this.cd.detectChanges();
             this.env.setValue('hc-open', true);
         }
@@ -349,7 +362,7 @@ export class HoverCardComponent extends BaseComponent
 
     /**
      *
-      * Before overlay is closed we hide internal content other it does little shake..
+     * Before overlay is closed we hide internal content other it does little shake..
      *
      *
      */
@@ -394,15 +407,12 @@ export class HoverCardComponent extends BaseComponent
 
     applyStyleClass(container: any, containerRect: any, modalContainer: any): void
     {
-
+        this.arrowClass = this.styleClass;
         if (this.currrentPosition !== HCCardPosition.none) {
             let alignment = this.alignmentForCard(containerRect, modalContainer);
 
-            this.arrowClass = (<any>PositionToStyle)[(<any>HCCardPosition)[this.currrentPosition]];
+            this.arrowClass += (<any>PositionToStyle)[(<any>HCCardPosition)[this.currrentPosition]];
             this.arrowClass += (<any>AlignmentToStyle)[(<any>HCCardAlignment)[alignment]];
-
-        } else {
-            this.arrowClass = '';
         }
     }
 
@@ -528,6 +538,9 @@ export class HoverCardComponent extends BaseComponent
         let wLargeTriangle = boundingRect.width * 0.25;
         let wSmallTriangle = boundingRect.width * 0.10;
 
+        // center of the button that triggered this event
+        let centerOfTrigButton = this.awOverlay.overlay.target.getBoundingClientRect().left -
+            (this.awOverlay.overlay.target.getBoundingClientRect().width / 2);
         switch (alignment) {
             case HCCardAlignment.right:
                 let shiftRight = boundingRect.left + wLargeTriangle;
@@ -537,8 +550,9 @@ export class HoverCardComponent extends BaseComponent
             case HCCardAlignment.paddedRight:
                 let shiftRightS = boundingRect.left + wSmallTriangle;
                 let trigRightS = this.trigRect.right - this.trigIconMiddle;
-                return shiftRightS - (boundingRect.right - trigRightS);
 
+                let offsetToButtCenter = trigRightS  - centerOfTrigButton;
+                return shiftRightS - (boundingRect.right - trigRightS);
 
             case HCCardAlignment.paddedLeft:
                 let shiftLeftPad = boundingRect.left - wSmallTriangle;

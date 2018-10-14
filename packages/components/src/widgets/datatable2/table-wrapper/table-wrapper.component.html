@@ -52,6 +52,20 @@
                             (ngModelChange)="searchTerms.next($event)">
             </aw-input-field>
             <span class="ariba-icon icon-more"></span>
+            <aw-hover-card #hc [styleClass]="'dt-show-hide-col'">
+                <!-- Dont use default linkTitle but provide custom button-->
+                <ng-template #actionButton>
+                    <aw-dt-button [icon]="dt.numberOfInvisibleColumns() === 0 ? 'icon-show' : 'icon-hide'"
+                                  [badgetNumber]="dt.numberOfInvisibleColumns()"
+                                  [isActive]="hc.awOverlay.overlay.visible"
+                                  (onAction)="hc.openCard($event, false)"></aw-dt-button>
+                </ng-template>
+
+                <ng-container *ngTemplateOutlet="toggleColumnVisibility">
+                </ng-container>
+
+            </aw-hover-card>
+
         </div>
     </div>
 </ng-template>
@@ -81,6 +95,28 @@
     <ng-container
         *ngTemplateOutlet="dtBody; context:{$implicit: dt.columns, frozenColumns: false }">
     </ng-container>
+</ng-template>
+
+<!-- Render content for the show/hide columns popup-->
+<ng-template #toggleColumnVisibility>
+
+    <aw-list [list]="dt.toggleableColumns()"
+             [borderless]="true"
+             [readOnly]="true"
+             height="300px"
+             width="279px">
+
+        <ng-template #right let-item>
+            <span class="dt-toggle-col sap-icon"
+                  (click)="item.value.toggleVisibility()"
+                  [ngClass]="{
+                  'icon-show': item.value.isVisible,
+                  'icon-hide': !item.value.isVisible}">
+            </span>
+        </ng-template>
+
+    </aw-list>
+
 </ng-template>
 
 

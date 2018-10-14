@@ -151,5 +151,34 @@
   display: none;
 }
 
+// Show hide column
 
+.dt-toggle-col {
+  font-size: 16px;
+  color: #515559;
+  cursor: pointer;
+
+  .icon-hide {
+    color: #949499
+  }
+
+}
+
+.dt-show-hide-col {
+
+  .ui-overlaypanel-content {
+    //padding: 4em 0.5em .6em 1.43em;
+
+    .w-li-middle {
+      font-size: 14px;
+      color: #515559;
+      line-height: 20px;
+    }
+
+    li.ui-listbox-item {
+      padding-top: 9px;
+      padding-bottom: 9px;
+    }
+  }
+}
 
