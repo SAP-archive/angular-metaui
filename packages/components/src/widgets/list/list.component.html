@@ -1,6 +1,7 @@
 <p-listbox #listbox [options]="internalList" [multiple]="isMultiple" [checkbox]="showCheckbox"
            [(ngModel)]="selection" [disabled]="disabled" [style]="listStyle" [showToggleAll]="false"
            (onChange)="onItemSelected($event)" (onDblClick)="action.emit($event.value)"
+           [readonly]="readOnly"
            [styleClass]="styleClass">
 
 

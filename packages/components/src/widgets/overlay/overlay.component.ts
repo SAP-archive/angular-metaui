@@ -19,7 +19,8 @@
  *
  */
 import {
-    AfterContentInit, AfterViewInit,
+    AfterContentInit,
+    AfterViewInit,
     Component,
     EventEmitter,
     Input,
@@ -161,13 +162,20 @@ export class OverlayComponent extends ModalContainer implements OnInit, AfterCon
      * Open Overlay
      * @param event
      */
-    open(event: any)
+    open(event: any, async: boolean = true)
     {
-        setTimeout(() =>
-        {
+        if (async) {
+            setTimeout(() =>
+            {
+                this.overlay.show(event);
+                this.onOpened(null);
+            }, 1);
+        } else {
             this.overlay.show(event);
             this.onOpened(null);
-        }, 1);
+        }
+
+
     }
 
     /**

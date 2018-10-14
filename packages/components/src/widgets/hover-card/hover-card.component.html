@@ -1,5 +1,12 @@
 <span class="w-hc">
-    <span class="w-hc-title">
+
+     <span class="w-hc-title" *ngIf="actionButton">
+         <ng-container *ngTemplateOutlet="actionButton">
+         </ng-container>
+     </span>
+
+
+    <span class="w-hc-title" *ngIf="!actionButton">
         <aw-string [value]="linkTitle"></aw-string>
         <span class="sap-icon icon-slim-arrow-down" (mouseover)="openCard($event)"></span>
     </span>
@@ -8,7 +15,7 @@
 
          <aw-overlay #overlay [showCloseIcon]="forceClose" [dismissable]="!forceClose"
                      [styleClass]="arrowClass"
-                     [appendTo]="appendTo"
+                     [appendTo]="'body'"
                      (beforeClose)="beforeClose($event)"
                      (onClose)="cardClosed($event)">
              <ng-content></ng-content>

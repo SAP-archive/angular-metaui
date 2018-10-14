@@ -1,0 +1,38 @@
+.dt-header .dt-action-btn {
+  position: relative;
+  background-color: #fafbfc;
+  border: 1px solid #dededf;
+  border-radius: 4px;
+  color: #525559;
+  padding: 10px 11px;
+  cursor: pointer;
+  line-height: 38px;
+
+  &.sap-icon {
+    font-size: 16px;
+  }
+
+  &.u-dt-btn-active-bg {
+    background-color: #13A4B4;
+    color: #ffffff;
+  }
+
+  .dt-action-btn-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: .7em;
+    background: #ffffff;
+    color: #525559;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    border-radius: 50%;
+    border: 1px solid #dededf;
+    box-shadow: 0 0 1px #333;
+  }
+}
+
+
+

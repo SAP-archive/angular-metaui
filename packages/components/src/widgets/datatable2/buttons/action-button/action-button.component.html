@@ -1,0 +1,6 @@
+<i class="dt-action-btn sap-icon"
+   [ngClass]="isActive ? icon + '  u-dt-btn-active-bg' : icon"
+   (click)="onButtonClick($event)">
+
+    <span *ngIf="badgetNumber > 0" class="dt-action-btn-badge">{{badgetNumber}}</span>
+</i>
