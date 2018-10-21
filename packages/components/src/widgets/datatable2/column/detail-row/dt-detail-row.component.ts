@@ -20,9 +20,9 @@
  */
 import {Component, Input, ViewEncapsulation} from '@angular/core';
 import {Environment, isPresent} from '@aribaui/core';
-import {DomHandler} from 'primeng/primeng';
 import {DTColumn2Component} from '../dt-column.component';
 import {AWDataTable} from '../../aw-datatable';
+import {DomUtilsService} from '../../../../core/dom-utils.service';
 
 
 /**
@@ -35,9 +35,7 @@ import {AWDataTable} from '../../aw-datatable';
     selector: 'aw-dt-detail-column',
     templateUrl: 'dt-detail-row.component.html',
     styleUrls: ['dt-detail-row.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    providers: [DomHandler]
-
+    encapsulation: ViewEncapsulation.None
 })
 export class DTDetailRowComponent extends DTColumn2Component
 {
@@ -59,9 +57,9 @@ export class DTDetailRowComponent extends DTColumn2Component
     showRowLine: boolean = true;
 
 
-    constructor(public env: Environment, public domHandler: DomHandler)
+    constructor(public env: Environment, public domUtils: DomUtilsService)
     {
-        super(env, domHandler);
+        super(env, domUtils);
     }
 
 

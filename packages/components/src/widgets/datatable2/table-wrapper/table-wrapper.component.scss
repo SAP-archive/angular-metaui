@@ -164,6 +164,30 @@
 
 }
 
+.dt-toogle-toolbar {
+  padding-right: 10px;
+  width: 280px;
+
+  a {
+    white-space: nowrap;
+  }
+
+  .dt-toogle-toolbar-show {
+    text-align: right;
+  }
+
+  .dt-toogle-toolbar-actions, .dt-toogle-toolbar-search {
+    width: 100%;
+  }
+  .dt-toogle-toolbar-search {
+
+  }
+}
+
+.dt-toggle-col-disable {
+  color: #bfbfbf;
+}
+
 .dt-show-hide-col {
 
   .ui-overlaypanel-content {

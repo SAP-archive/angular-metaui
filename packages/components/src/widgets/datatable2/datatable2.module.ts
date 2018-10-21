@@ -46,6 +46,7 @@ import {DTDraggableColumnDirective} from './directives/dt-draggable-column.direc
 import {DTActionButtonComponent} from './buttons/action-button/action-button.component';
 import {AWHoverCardModule} from '../hover-card/hover-card.module';
 import {AWListModule} from '../list/list.module';
+import {AWHyperlinkModule} from '../hyperlink/hyperlink.module';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import {AWListModule} from '../list/list.module';
         AWRadioButtonModule,
         AWInputFieldModule,
         AWHoverCardModule,
-        AWListModule
+        AWListModule,
+        AWHyperlinkModule
     ],
     entryComponents: [
         DTDetailRowExpanderComponent,

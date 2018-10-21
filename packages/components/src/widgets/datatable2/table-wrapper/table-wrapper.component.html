@@ -1,6 +1,6 @@
 <div class="dt-wrapper"
      [ngClass]="dt.styleClass" [class.dt-full-screen-mode]="isFullScreenMode"
-     [style.width]="dt.width" >
+     [style.width]="dt.width">
     <div class="dt-loading-overlay" *ngIf="dt.loading"></div>
     <div class="dt-loading-content" *ngIf="dt.loading">
         <i [class]="'sap-icon u-dt-spin-icon ' + dt.loadingIcon"></i>
@@ -61,7 +61,7 @@
                                   (onAction)="hc.openCard($event, false)"></aw-dt-button>
                 </ng-template>
 
-                <ng-container *ngTemplateOutlet="toggleColumnVisibility">
+                <ng-container *ngTemplateOutlet="toggleColumnVisibility; context: {$implicit: hc}">
                 </ng-container>
 
             </aw-hover-card>
@@ -98,13 +98,53 @@
 </ng-template>
 
 <!-- Render content for the show/hide columns popup-->
-<ng-template #toggleColumnVisibility>
+<ng-template #toggleColumnVisibility let-hc>
+    <div class="dt-toogle-toolbar ui-g ">
+            <div class="ui-g-12 dt-toogle-toolbar-search">
+                <aw-input-field *ngIf="dt.showGlobalSearch"
+                                styleClass="dt-toogle-toolbar-search"
+                                [(ngModel)]="dt.state.colVisibilityQuery"
+                                placeHolder="search"
+                                icon="icon-search"
+                ></aw-input-field>
+            </div>
+
+        <div class="ui-g dt-toogle-toolbar-actions ">
+            <span class="ui-g-4 dt-toogle-toolbar-hide">
+                <aw-hyperlink (action)="onToggleColumnToolbar($event, 'hide')"
+                              [size]="'small'">Hide all</aw-hyperlink>
+            </span>
+            <span class="ui-g-4 dt-toogle-toolbar-req">
+                <aw-hyperlink (action)="onToggleColumnToolbar($event, 'required')"
+                              [size]="'small'">Show mandatory</aw-hyperlink>
+             </span>
+            <span class="ui-g-4 dt-toogle-toolbar-show">
+                <aw-hyperlink (action)="onToggleColumnToolbar($event, 'show')"
+                          [size]="'small'">Show all</aw-hyperlink>
+            </span>
+
+        </div>
+
+    </div>
+
 
     <aw-list [list]="dt.toggleableColumns()"
              [borderless]="true"
+             (onItemClicked)="onColumnVisibilityClick($event); hc.awOverlay.close()"
              [readOnly]="true"
+             [filter]="dt.state.colVisibilityQuery"
              height="300px"
              width="279px">
+
+        <ng-template #middle let-item>
+            <span [ngClass]="{
+                  'dt-toggle-col-disable': item.value.isColumnInView() || !item.value.isVisible,
+                  '': item.value.isColumnInView()}">
+
+                {{item.label}}
+            </span>
+            <span *ngIf="item.value.required">*</span>
+        </ng-template>
 
         <ng-template #right let-item>
             <span class="dt-toggle-col sap-icon"

@@ -616,4 +616,58 @@ export class DTWrapper extends BaseComponent implements AfterViewInit, AfterView
 
         }
     }
+
+    /**
+     * This function auto scroll to selected column
+     *
+     */
+    public onColumnVisibilityClick(event: any): void
+    {
+        if (event.value.isColumnInView()) {
+            return;
+        }
+        let colRect = event.value.myRect();
+        let containerRect = event.value.scrollingContainerRect();
+        let container = event.value.scrollingContainer();
+        let maxScroll = container.scrollWidth - container.clientWidth;
+        let scrollBy = colRect.left - containerRect.left;
+
+        let left = 0;
+
+        if (colRect.right > containerRect.right) {
+            left = container.scrollLeft + ((scrollBy > maxScroll) ? maxScroll : scrollBy);
+        } else {
+            left = container.scrollLeft + scrollBy;
+        }
+
+        try {
+            container.scrollTo({left: left, top: container.scrollTop, behavior: 'smooth'});
+        } catch (e) {
+            container.scrollTo(left, container.scrollTop);
+        }
+    }
+
+
+    /**
+     * This method shows or hide all the columns or the ones that are marked as required
+     *
+     */
+    public onToggleColumnToolbar(event: any, action: 'hide' | 'show' | 'required'): void
+    {
+        switch (action) {
+            case 'hide':
+                this.dt.changeColVisibilityAll(false);
+                break;
+
+            case 'show':
+                this.dt.changeColVisibilityAll(true);
+                break;
+
+            case 'required':
+                this.dt.changeColVisibilityAll(true, true);
+                break;
+        }
+
+    }
+
 }
