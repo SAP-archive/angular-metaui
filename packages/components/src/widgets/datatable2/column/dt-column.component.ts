@@ -22,6 +22,7 @@ import {
     AfterContentInit,
     Component,
     ContentChild,
+    ElementRef,
     Input,
     TemplateRef,
     ViewChild,
@@ -31,7 +32,7 @@ import {AWDataTable} from '../aw-datatable';
 import {Datatable2Component} from '../datatable2.component';
 import {BooleanWrapper, Environment, isBlank, isPresent} from '@aribaui/core';
 import {BaseComponent} from '../../../core/base.component';
-import {DomHandler} from 'primeng/primeng';
+import {DomUtilsService} from '../../../core/dom-utils.service';
 
 
 export type DTHAlignment = 'left' | 'center' | 'right';
@@ -68,8 +69,7 @@ export type DTHAlignment = 'left' | 'center' | 'right';
     selector: 'aw-dt-column2',
     templateUrl: 'dt-column.component.html',
     styleUrls: ['dt-column.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    providers: [DomHandler]
+    encapsulation: ViewEncapsulation.None
 
 })
 export class DTColumn2Component extends BaseComponent implements AfterContentInit
@@ -234,6 +234,13 @@ export class DTColumn2Component extends BaseComponent implements AfterContentIni
     @Input()
     maxWidth: string;
 
+    /**
+     * In some cases column might be set as required meaning they will be always mandatory in
+     * editing
+     */
+    @Input()
+    required: boolean = false;
+
 
     /**
      * Sets the minWidth on the cell. Again just like maxWidth css properly is not supported on
@@ -280,13 +287,21 @@ export class DTColumn2Component extends BaseComponent implements AfterContentIni
     widestCell: number = 0;
 
     /**
+     * Since columns are rendered dynamically using renderingTemplate and columns are not aware
+     * where they appear we need to have a way how to save a elementRef reference anyways.
+     *
+     * We do this with help of directive that we attach to TD
+     *
+     */
+    elementRef: ElementRef;
+
+    /**
      * Reference to Datatable Implementations
      */
     dt: AWDataTable;
 
 
-    constructor(public env: Environment,
-                public domHandler: DomHandler)
+    constructor(public env: Environment, public domUtils: DomUtilsService)
     {
         super(env);
     }
@@ -356,9 +371,9 @@ export class DTColumn2Component extends BaseComponent implements AfterContentIni
             return;
         }
         let targetNode = event.target;
-        if (this.domHandler.hasClass(targetNode, 'dt-u-sortable') ||
-            this.domHandler.hasClass(targetNode, 'dt-col-title') ||
-            this.domHandler.hasClass(targetNode, 'dt-col-sortable-icon'))
+        if (this.domUtils.hasClass(targetNode, 'dt-u-sortable') ||
+            this.domUtils.hasClass(targetNode, 'dt-col-title') ||
+            this.domUtils.hasClass(targetNode, 'dt-col-sortable-icon'))
         {
 
             if (isPresent(this.dt.sortColumn) && this.dt.sortColumn.key === this.key) {
@@ -558,6 +573,34 @@ export class DTColumn2Component extends BaseComponent implements AfterContentIni
         }
 
         return px;
+    }
+
+
+    public isColumnInView(): boolean
+    {
+
+        if (isBlank(this.elementRef)) {
+            return true;
+        }
+        let colRect = this.myRect();
+        let containRect = this.scrollingContainerRect();
+        return (colRect.left >= containRect.left) && (colRect.right <= containRect.right);
+    }
+
+
+    public scrollingContainerRect(): any
+    {
+        return this.scrollingContainer().getBoundingClientRect();
+    }
+
+    public scrollingContainer(): any
+    {
+        return this.domUtils.closest(this.elementRef.nativeElement, '.dt-body-wrapper');
+    }
+
+    public myRect(): any
+    {
+        return this.elementRef.nativeElement.getBoundingClientRect();
     }
 
 

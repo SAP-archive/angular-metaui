@@ -928,6 +928,21 @@ export class Datatable2Component extends BaseComponent implements AWDataTable, A
         return cols;
     }
 
+    changeColVisibilityAll(show: boolean, required: boolean = false): void
+    {
+        if (this.hasFrozenColumns()) {
+            this.frozenColumns.forEach((col: DTColumn2Component) =>
+            {
+                col.isVisible = required ? col.required : show;
+            });
+        }
+        this.columns.forEach((col: DTColumn2Component) =>
+        {
+            col.isVisible = required ? col.required : show;
+        });
+
+    }
+
 
     /**
      * This is more internal as we need to to have number of invisible columns for the

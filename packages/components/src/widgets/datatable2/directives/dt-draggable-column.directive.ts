@@ -33,6 +33,7 @@ import {Datatable2Component} from '../datatable2.component';
 import {DomUtilsService} from '../../../core/dom-utils.service';
 import {isPresent} from '@aribaui/core';
 import {DragColumnDirection, DragEvents, DropPosition} from '../aw-datatable';
+import {DTColumn2Component} from '../column/dt-column.component';
 
 
 /**
@@ -88,6 +89,8 @@ export class DTDraggableColumnDirective implements OnInit, OnDestroy
     constructor(private element: ElementRef,
                 @Inject(forwardRef(() => Datatable2Component))
                 private dt: Datatable2Component,
+                @Inject(forwardRef(() => DTColumn2Component))
+                private column: DTColumn2Component,
                 private domUtils: DomUtilsService,
                 private ngZone: NgZone)
     {
@@ -98,6 +101,10 @@ export class DTDraggableColumnDirective implements OnInit, OnDestroy
     {
         if (this.dt.dndColumnEnabled) {
             this.setupEventListeners();
+        }
+
+        if (isPresent(this.column)) {
+            this.column.elementRef = this.element;
         }
     }
 

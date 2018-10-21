@@ -20,8 +20,8 @@
  */
 import {Component, ViewEncapsulation} from '@angular/core';
 import {Environment} from '@aribaui/core';
-import {DomHandler} from 'primeng/primeng';
 import {DTColumn2Component} from '../dt-column.component';
+import {DomUtilsService} from '../../../../core/dom-utils.service';
 
 
 /**
@@ -34,16 +34,14 @@ import {DTColumn2Component} from '../dt-column.component';
     selector: 'aw-dt-single-select-column',
     templateUrl: 'dt-single-select-column.component.html',
     styleUrls: ['dt-single-select-column.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    providers: [DomHandler]
-
+    encapsulation: ViewEncapsulation.None
 })
 export class DTSingleSelectColumnComponent extends DTColumn2Component
 {
 
-    constructor(public env: Environment, public domHandler: DomHandler)
+    constructor(public env: Environment, public domUtils: DomUtilsService)
     {
-        super(env, domHandler);
+        super(env, domUtils);
 
         // default width of the selection control
         this.width = '45px';

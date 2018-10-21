@@ -27,6 +27,7 @@ import {
     Input,
     Optional,
     Output,
+    SimpleChanges,
     SkipSelf,
     TemplateRef,
     ViewChild
@@ -169,6 +170,9 @@ export class ListComponent extends BaseFormComponent
     @Input()
     readOnly: boolean = false;
 
+    @Input()
+    filter: string;
+
     /**
      * Triggered when we double click on the list Item
      *
@@ -282,6 +286,20 @@ export class ListComponent extends BaseFormComponent
         }
     }
 
+
+    ngOnChanges(changes: SimpleChanges): void
+    {
+        super.ngOnChanges(changes);
+
+        if (isPresent(changes['filter']) &&
+            changes['filter'].previousValue !== changes['filter'].currentValue)
+        {
+
+            this.pListBox.filterValue = this.filter;
+        }
+
+
+    }
 
     /**
      *

@@ -20,8 +20,8 @@
  */
 import {Component, ViewEncapsulation} from '@angular/core';
 import {Environment} from '@aribaui/core';
-import {DomHandler} from 'primeng/primeng';
 import {DTColumn2Component} from '../dt-column.component';
+import {DomUtilsService} from '../../../../core/dom-utils.service';
 
 
 /**
@@ -34,16 +34,15 @@ import {DTColumn2Component} from '../dt-column.component';
     selector: 'aw-dt-detail-column-expand',
     templateUrl: 'dt-detail-row-expander.component.html',
     styleUrls: ['dt-detail-row-expander.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    providers: [DomHandler]
+    encapsulation: ViewEncapsulation.None
 
 })
 export class DTDetailRowExpanderComponent extends DTColumn2Component
 {
 
-    constructor(public env: Environment, public domHandler: DomHandler)
+    constructor(public env: Environment, public domUtils: DomUtilsService)
     {
-        super(env, domHandler);
+        super(env, domUtils);
 
         // we dont want to show the row/column unless application says so
         this.isVisible = false;

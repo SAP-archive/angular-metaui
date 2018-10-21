@@ -369,6 +369,12 @@ export class Datatable2State
      */
     currentSearchQuery: string = '';
 
+
+    /**
+     * safe column visibility filter
+     */
+    colVisibilityQuery: string = '';
+
     /**
      * Current if any preselected filter
      */

@@ -53,6 +53,7 @@
              let-data="data" let-rowIndex="rowIndex">
 
     <th #headerCell1 dtDraggableCol
+        [attr.index]="localColumnIndex"
         [dndIndex]="localColumnIndex"
         [class]="headerStyleClass||styleClass" *ngIf="!isSubHeader"
         (click)="handleHeaderClick($event, headerCell1)"
@@ -120,7 +121,7 @@
         'dt-cell-def': !isCellSelectable(data),
         'dt-is-hidden': !isVisible}"
         [dtMaxWidth]="maxWidthPx"
-        >
+    >
 
         <!--
             Since we need to support cell selection when we need to draw border around it

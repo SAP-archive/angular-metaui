@@ -31,15 +31,26 @@ import {isPresent} from '@aribaui/core';
 export class DomUtilsService
 {
 
-    constructor ()
+    constructor()
     {
+    }
+
+
+    hasClass(element: any, className: string): boolean
+    {
+        if (element.classList) {
+            return element.classList.contains(className);
+        } else {
+            return new RegExp('(^| )' + className + '( |$)',
+                'gi').test(element.className);
+        }
     }
 
     /**
      * goes all the way up to the body and checks if there is a element identified by a 'selector'
      *
      */
-    hasParent (nativeElement: any, selector: string): boolean
+    hasParent(nativeElement: any, selector: string): boolean
     {
         return isPresent(this.closest(nativeElement, selector));
     }
@@ -50,7 +61,7 @@ export class DomUtilsService
      * not found
      *
      */
-    closest (nativeElement: any, selector: string): any
+    closest(nativeElement: any, selector: string): any
     {
         let firstChar = selector.charAt(0);
 
@@ -123,7 +134,7 @@ export class DomUtilsService
      *
      *
      */
-    insertIntoParentNgContent (parentNativeEl: any, childNativeEl: any): void
+    insertIntoParentNgContent(parentNativeEl: any, childNativeEl: any): void
     {
         // default behavior is to insert it as child to parentNativeEl
         let ngContentParent = parentNativeEl;
@@ -143,7 +154,7 @@ export class DomUtilsService
      * Retrieves current browser window width and height
      *
      */
-    browserDimentions (): any
+    browserDimentions(): any
     {
         return {
             width: (window.innerWidth || document.documentElement.clientWidth
@@ -159,7 +170,7 @@ export class DomUtilsService
      * Retrieves elemements dimensions
      *
      */
-    elementDimensions (element: any): any
+    elementDimensions(element: any): any
     {
         if (isPresent(element.getBoundingClientRect)) {
             return element.getBoundingClientRect();
