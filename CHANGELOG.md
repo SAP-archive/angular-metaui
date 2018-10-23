@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.1"></a>
+## [6.2.1](https://github.com/SAP/angular-metaui/compare/v6.2.0...v6.2.1) (2018-10-23)
+
+
+### Bug Fixes
+
+* **doc:** Fixed link in the README.md referring to [@ngx-meta](https://github.com/ngx-meta)/rules ([c3a683e](https://github.com/SAP/angular-metaui/commit/c3a683e))
+
+
+### Features
+
+* **table:** Scroll to column implemented. ([67fdb2f](https://github.com/SAP/angular-metaui/commit/67fdb2f))
+* **table:** Toggle Column Visibility ([3e69252](https://github.com/SAP/angular-metaui/commit/3e69252))
+
+
+
 <a name="6.2.0"></a>
 # [6.2.0](https://github.com/SAP/angular-metaui/compare/v6.1.2...v6.2.0) (2018-10-07)
 
