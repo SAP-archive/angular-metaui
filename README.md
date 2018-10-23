@@ -47,7 +47,7 @@ Packages are organized into 3 main areas:
     * Dom Utilities
  * **Meta UI** is framework for generating UI on the fly.
 
-`MetaUI` is now in its own github repository [@ngx-meta/rules][3] to make sure it gets the attentions and mainly to be able to take it to the 
+`MetaUI` is now in its own github repository [@ngx-meta/rules][4] to make sure it gets the attentions and mainly to be able to take it to the 
 next level to support even more features such as JIT support and much more without breaking this existing project. 
 
 Both repositories will stay identical (compatible) for some time with a plan to slowly transition `@ngx-meta/rules` to be pure metaui module 
