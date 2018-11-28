@@ -186,6 +186,22 @@ export class DateAndTimeComponent extends BaseFormComponent {
     hourFormat: string = '24';
 
     /**
+     *
+     * Tells the date picker what is the minimum Date that could be selected(inclusive)
+     *
+     */
+    @Input()
+    minDate: Date ;
+
+    /**
+     *
+     * Tells the date picker what is the maximum Date that could be selected(inclusive)
+     *
+     */
+    @Input()
+    maxDate: Date ;
+
+    /**
      * Triggers event when specific date is clicked inside DatePicker
      *
      */
