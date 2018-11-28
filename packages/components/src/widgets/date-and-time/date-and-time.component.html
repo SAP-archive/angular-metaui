@@ -13,7 +13,9 @@
                     (onSelect)="onDateChange($event)"
                     [timeOnly]="!showDate"
                     [readonlyInput]="true"
-                    [locale]="i18n">
+                    [locale]="i18n"
+                    [minDate]="minDate"
+                    [maxDate]="maxDate">
         </p-calendar>
 
         <p-calendar *ngIf="showTime"
@@ -26,7 +28,9 @@
                     [showTime]="showTime"
                     [placeholder]="timePlaceHolder"
                     (onSelect)="onDateChange($event)"
-                    [locale]="i18n">
+                    [locale]="i18n"
+                    [minDate]="minDate"
+                    [maxDate]="maxDate">
         </p-calendar>
 
     </div>
