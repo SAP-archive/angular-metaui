@@ -87,9 +87,9 @@ describe('Component: DateAndTime', () => {
         fixtureWrapper.detectChanges();
 
 
-        let currentDay = fixtureWrapper.componentInstance.dateTime.value.getDate();
-        let minDate = fixtureWrapper.componentInstance.dateTime.minDate.getDate();
-        let maxDate = fixtureWrapper.componentInstance.dateTime.maxDate.getDate();
+        let currentDay = fixtureWrapper.componentInstance.dateTime.value.getTime();
+        let minDate = fixtureWrapper.componentInstance.dateTime.minDate.getTime();
+        let maxDate = fixtureWrapper.componentInstance.dateTime.maxDate.getTime();
         let item = fixtureWrapper.nativeElement.querySelector('.pi-calendar');
         item.click();
 
@@ -102,7 +102,7 @@ describe('Component: DateAndTime', () => {
         tick();
         fixtureWrapper.detectChanges();
 
-        let changedDay = fixtureWrapper.componentInstance.dateTime.value.getDate();
+        let changedDay = fixtureWrapper.componentInstance.dateTime.value.getTime();
         expect(changedDay).not.toEqual(currentDay);
         expect(changedDay).toBeGreaterThanOrEqual(minDate);
         expect(changedDay).toBeLessThanOrEqual(maxDate);
@@ -118,7 +118,8 @@ describe('Component: DateAndTime', () => {
 @Component({
     selector: 'wrapper-comp',
     template: `
-        <aw-date-time [value]="date" [editable]="editable" [name]="'bbdd'">
+        <aw-date-time [value]="date" [editable]="editable" [name]="'bbdd'"
+                      [minDate]="minDate" [maxDate]="maxDate">
         </aw-date-time>
 
     `
