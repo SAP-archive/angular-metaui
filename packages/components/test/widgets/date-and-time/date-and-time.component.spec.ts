@@ -107,7 +107,8 @@ describe('Component: DateAndTime', () => {
         flushPendingTimers();
     }));
 
-    it('should change the date value when date is clicked within the range of minDate and maxDate', fakeAsync(() => {
+    it('should change the date value when date is clicked within the range of minDate and maxDate',
+    fakeAsync(() => {
 
         let fixtureWrapper = TestBed.createComponent(TestDateTimeMinMaxDateBehaviorComponent);
         fixtureWrapper.detectChanges();
@@ -183,10 +184,10 @@ class TestDateTimeMinMaxDateBehaviorComponent {
     constructor() {
         this.date.setFullYear(2016, 10, 3);
         this.date.setHours(10, 10, 10);
-        this.minDate.setFullYear(2016,9,1);
-        this.minDate.setHours(10,10,10);
-        this.maxDate.setFullYear(2016,11,1);
-        this.maxDate.setHours(10,10,10);
+        this.minDate.setFullYear(2016, 9, 1);
+        this.minDate.setHours(10, 10, 10);
+        this.maxDate.setFullYear(2016, 11, 1);
+        this.maxDate.setHours(10, 10, 10);
     }
 }
 
