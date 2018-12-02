@@ -88,33 +88,6 @@ describe('Component: DateAndTime', () => {
 
 
         let currentDay = fixtureWrapper.componentInstance.dateTime.value.getDate();
-        let item = fixtureWrapper.nativeElement.querySelector('.pi-calendar');
-        item.click();
-
-        tick();
-        fixtureWrapper.detectChanges();
-
-        let children = fixtureWrapper.nativeElement.querySelectorAll('a.ui-state-default')[7];
-        children.click();
-
-        tick();
-        fixtureWrapper.detectChanges();
-
-        let changedDay = fixtureWrapper.componentInstance.dateTime.value.getDate();
-        expect(changedDay).not.toEqual(currentDay);
-
-        flushMicrotasks();
-        flushPendingTimers();
-    }));
-
-    it('should change the date value when date is clicked within the range of minDate and maxDate',
-    fakeAsync(() => {
-
-        let fixtureWrapper = TestBed.createComponent(TestDateTimeMinMaxDateBehaviorComponent);
-        fixtureWrapper.detectChanges();
-
-
-        let currentDay = fixtureWrapper.componentInstance.dateTime.value.getDate();
         let minDate = fixtureWrapper.componentInstance.dateTime.minDate.getDate();
         let maxDate = fixtureWrapper.componentInstance.dateTime.maxDate.getDate();
         let item = fixtureWrapper.nativeElement.querySelector('.pi-calendar');
@@ -138,7 +111,6 @@ describe('Component: DateAndTime', () => {
         flushPendingTimers();
     }));
 
-
 });
 
 
@@ -153,22 +125,6 @@ describe('Component: DateAndTime', () => {
 })
     /* jshint ignore:end */
 class TestDateTimeBasicBehaviorComponent {
-    @ViewChild(DateAndTimeComponent)
-    dateTime: DateAndTimeComponent;
-
-    editable = true;
-    showTime = true;
-
-    date: Date = new Date();
-
-
-    constructor() {
-        this.date.setFullYear(2016, 10, 3);
-        this.date.setHours(10, 10, 10);
-    }
-}
-
-class TestDateTimeMinMaxDateBehaviorComponent {
     @ViewChild(DateAndTimeComponent)
     dateTime: DateAndTimeComponent;
 
@@ -190,7 +146,6 @@ class TestDateTimeMinMaxDateBehaviorComponent {
         this.maxDate.setHours(10, 10, 10);
     }
 }
-
 
 /* jshint ignore:start */
 @Component({
