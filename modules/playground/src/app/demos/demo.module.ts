@@ -93,6 +93,7 @@ import {
     ToggleSwitchDemoComponent
 } from './components/toggle-switch/toggle-switch-demo.component';
 import {HighlightPipe} from './datatable/highlight-text.pipe';
+import {TermValuePipe} from './datatable/term-value.pipe';
 /**
  * This module contains set of examples how to use some of the key components and also provides
  * developer some playground to start with
@@ -143,7 +144,9 @@ import {HighlightPipe} from './datatable/highlight-text.pipe';
         DatatablePageComponent,
         WizardProgressDemoComponent,
         ToggleSwitchDemoComponent,
-        HighlightPipe
+        HighlightPipe,
+        TermValuePipe
+
     ],
     imports: [
         CommonModule,

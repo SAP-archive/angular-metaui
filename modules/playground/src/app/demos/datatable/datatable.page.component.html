@@ -1,7 +1,7 @@
-<h3 class="first">Tree format mode for outline</h3>
+<h3 class="first" *ngIf="false">Tree format mode for outline</h3>
 
 <!-- save the reference #dt since we want to access outlinestate to ask if the item is expanded -->
-<aw-datatable2 #dtTree *ngIf="true" [list]="dataTree" [loading]="loading"
+<aw-datatable2 #dtTree *ngIf="false" [list]="dataTree" [loading]="loading"
                [outlineFormat]="'tree'"
                [dndColumnEnabled]="true"
                [selectionMode]="'cell'"
@@ -63,13 +63,13 @@
         </ng-container>
     </ng-template>
 </aw-datatable2>
-<hr/>
 
 
-<h3 class="first">Tree format mode with allot of columns scrolling horizontally - Rendering mode - Normal</h3>
+<h3 class="first" *ngIf="false">Tree format mode with allot of columns scrolling horizontally - Rendering mode -
+    Normal</h3>
 
 <!-- save the reference #dt since we want to access outlinestate to ask if the item is expanded -->
-<aw-datatable2 #dtTree *ngIf="true" [list]="dataTree" [loading]="loading"
+<aw-datatable2 #dtTree *ngIf="false" [list]="dataTree" [loading]="loading"
                [outlineFormat]="'tree'"
                [dndColumnEnabled]="true"
                [selectionMode]="'cell'"
@@ -182,11 +182,9 @@
 
 <hr/>
 
-<hr/>
-<h1> With detail row with single </h1>
-<hr/>
+<h1 *ngIf="false"> With detail row with single </h1>
 <!--[showSelectionColumn]="false"-->
-<aw-datatable2 #dt2 *ngIf="true" [list]="data" [loading]="loading"
+<aw-datatable2 #dt2 *ngIf="false" [list]="data" [loading]="loading"
                [children]="children"
                [dndColumnEnabled]="true"
                [context]="this"
@@ -255,13 +253,9 @@
 </aw-datatable2>
 
 
-
-
-<hr/>
-<h1> With allot of data </h1>
-<hr/>
+<h1 *ngIf="false"> With allot of data </h1>
 <!--[showSelectionColumn]="false"-->
-<aw-datatable2 #dt2 *ngIf="true" [list]="dynData" [loading]="loading"
+<aw-datatable2 #dt2 *ngIf="false" [list]="dynData" [loading]="loading"
                [children]="children2"
                [context]="this"
                [height]="400"
@@ -330,12 +324,10 @@
     </ng-template>
 </aw-datatable2>
 
-<hr/>
-<h1> Plain detail row</h1>
-<hr/>
+<h1 *ngIf="false"> Plain detail row</h1>
 
 
-<aw-datatable2 #dt3 *ngIf="true" [list]="data" [loading]="loading"
+<aw-datatable2 #dt3 *ngIf="false" [list]="data" [loading]="loading"
                [context]="this"
                [selectionMode]="'cell'"
                [bodyClassFn]="calculatedClass"
@@ -364,10 +356,8 @@
 </aw-datatable2>
 
 
-<hr/>
-<h1> Plain with multi selection </h1>
-<hr/>
-<aw-datatable2 #dt4 *ngIf="true" [list]="data" [loading]="loading"
+<h1 *ngIf="false"> Plain with multi selection </h1>
+<aw-datatable2 #dt4 *ngIf="false" [list]="data" [loading]="loading"
                [context]="this"
                [initialSortKey]="'itemDescr'"
                [showSelectionColumn]="true"
@@ -397,10 +387,9 @@
 </aw-datatable2>
 
 
-<hr/>
-<h1> Plain with single select and supporting Row Drag & Drop</h1>
-<p>Press Alt + CLICK to start dragging, then you can release ALT key to move and drop the row</p>
-<aw-datatable2 #dt4 *ngIf="true" [loading]="loading"
+<h1 *ngIf="false"> Plain with single select and supporting Row Drag & Drop</h1>
+<p *ngIf="false">Press Alt + CLICK to start dragging, then you can release ALT key to move and drop the row</p>
+<aw-datatable2 #dt4 *ngIf="false" [loading]="loading"
                [context]="this"
                [dataSource]="dataSource"
                [showSelectionColumn]="true"
@@ -432,66 +421,89 @@
 </aw-datatable2>
 
 
-<hr/>
-<h1> Plain with frozen columns </h1>
-<hr/>
-<aw-datatable2 #dt4 *ngIf="true" [loading]="loading"
+<h1 *ngIf="false"> Plain with frozen columns </h1>
+<aw-datatable2 #dt4 *ngIf="false" [loading]="loading"
                [context]="this"
                [dataSource]="dataSource"
+               [dndColumnEnabled]="true"
                [showSelectionColumn]="true"
                [selectionMode]="'single'"
                [bodyClassFn]="calculatedClass"
                (onRowSelectionChange)="onRowSelected($event)"
                [isRowSelectable]="isRowSelectable">
 
-    <aw-dt-column2 key="itemDescr" label="Name" width="300px" [frozen]="true" maxWidth="450px">
+    <aw-dt-column2 key="itemDescr" label="Name" width="300px" [isDroppable]="false"
+                   [isDraggable]="false" [frozen]="true" maxWidth="450px">
         <ng-template #body let-colum let-item="rowData">
             This is some extra text {{item.itemDescr}}
         </ng-template>
     </aw-dt-column2>
 
-    <aw-dt-column2 key="type" [label]="'Type'" width="200px">
+    <aw-dt-column2 [isDraggable]="true" key="type" [label]="'Type'" width="200px">
     </aw-dt-column2>
 
-    <aw-dt-column2 [label]="'Quantity'" width="200px">
+    <aw-dt-column2 [isDraggable]="true" [label]="'Quantity'" width="200px">
         <ng-template #body let-column let-rowData="rowData" let-rowIndex="rowIndex">
             {{rowIndex}}
         </ng-template>
     </aw-dt-column2>
 
-    <aw-dt-column2 [label]="'Supplier'" width="200px">
+    <aw-dt-column2 [isDraggable]="true" [label]="'Supplier'" width="200px">
         <ng-template #body let-column let-rowData="rowData" let-rowIndex="rowIndex">
             Supplier {{rowIndex}}
         </ng-template>
     </aw-dt-column2>
 
-    <aw-dt-column2 [label]="'Item price'" width="200px">
+    <aw-dt-column2 [isDraggable]="true" [label]="'Item price'" width="200px">
         <ng-template #body let-column let-rowData="rowData" let-rowIndex="rowIndex">
             ${{rowIndex * 100}}
         </ng-template>
     </aw-dt-column2>
 
 
-    <aw-dt-column2 [label]="'Some Other column '" width="200px">
+    <aw-dt-column2 [isDraggable]="true" [label]="'Some Other column '" width="200px">
         <ng-template #body let-column let-rowData="rowData" let-rowIndex="rowIndex">
             ${{rowIndex * 100}}
         </ng-template>
     </aw-dt-column2>
 
 
-    <aw-dt-column2 [label]="'Some Other column 2'" width="300px">>
+    <aw-dt-column2 [isDraggable]="true" [label]="'Some Other column 2'" width="300px">>
         <ng-template #body let-column let-rowData="rowData" let-rowIndex="rowIndex">
             ${{rowIndex * 100}}
         </ng-template>
     </aw-dt-column2>
-
 </aw-datatable2>
 
 
-<hr/>
-<h1> Outline with frozen columns </h1>
-<hr/>
-<aw-datatable2 #dt *ngIf="true" [list]="data" [loading]="loading"
+<h1> Large Table with frozen columns </h1>
+<aw-datatable2 #dt4 *ngIf="true" [loading]="loading" [list]="sData"
+               [context]="this"
+               [dndColumnEnabled]="true"
+               [showSelectionColumn]="true"
+               [selectionMode]="'multi'"
+               displayRowSize="100"
+               [bodyClassFn]="calculatedClass"
+               (onRowSelectionChange)="onRowSelected($event)"
+               [isRowSelectable]="isRowSelectable">
+
+    <aw-dt-column2 *ngFor="let col of termsColsDef"
+                   [isDraggable]="col.isDroppable"
+                   [width]="col.width"
+                   [maxWidth]="col.maxWidth"
+                   [frozen]="col.frozen"
+                   [isDraggable]="col.isDraggable"
+                   [label]="col.title">
+
+        <ng-template #body let-colum let-item="rowData">
+
+            {{item.termsById[col.itemId] | termValue:item  }}
+        </ng-template>
+    </aw-dt-column2>
+</aw-datatable2>
+
+<h1 *ngIf="false"> Outline with frozen columns </h1>
+<aw-datatable2 #dt *ngIf="false" [list]="data" [loading]="loading"
                [children]="children"
                [context]="this"
                [selectionMode]="'cell'"

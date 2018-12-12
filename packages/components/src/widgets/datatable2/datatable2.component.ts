@@ -743,14 +743,14 @@ export class Datatable2Component extends BaseComponent implements AWDataTable, A
     {
         if (this.columnsChanged && this.el.nativeElement.offsetParent) {
             this.columnsChanged = false;
-        }
 
-        if (this.hasFrozenColumns()) {
-            this.frozenColumns.forEach((col: DTColumn2Component, index: number) =>
-                col.postInitialize(index));
-        } else {
-            this.columns.forEach((col: DTColumn2Component, index: number) =>
-                col.postInitialize(index));
+            if (this.hasFrozenColumns()) {
+                this.frozenColumns.forEach((col: DTColumn2Component, index: number) =>
+                    col.postInitialize(index));
+            } else {
+                this.columns.forEach((col: DTColumn2Component, index: number) =>
+                    col.postInitialize(index));
+            }
         }
     }
 

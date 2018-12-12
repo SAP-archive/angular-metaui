@@ -297,6 +297,7 @@ export class DTWrapper extends BaseComponent implements AfterViewInit, AfterView
     {
 
         if (this.dt.hasFrozenColumns()) {
+
             let frozenView = this.thisElement.nativeElement.querySelector('.dt-body-frozen');
             let unFrozenView = this.thisElement.nativeElement.querySelector('.dt-body-unfrozen');
 

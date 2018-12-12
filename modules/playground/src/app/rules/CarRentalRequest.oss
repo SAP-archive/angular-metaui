@@ -1,57 +1,13 @@
 class=CarRentalRequest {
 
-    field=firstName {
-        label:"Name";
-    }
-
     zNone => *;
-    zLeft => firstName#required;
-}
-
-
-operation=view class=CarRentalRequest {
-
-    field=firstName {
-        label:"Name";
-    }
-
-    field=requester#asHover {
-        label:"Requester";
-    }
-
-
-    zNone => *;
-    zLeft => firstName#required => requester;
+    zLeft => firstName#required => lastName#required;
 }
 
 operation=create class=CarRentalRequest {
 
     zNone => *;
-    zLeft => firstName#required => lastName#required => driverLicenseNumber#required;
+    zLeft => firstName#required => lastName#required => driverLicenseNumber#required => note#longtext;
 
 }
 
-
-
-class=ApproverUser {
-
-    layout {
-        trait:labelsOnTop;
-    }
-
-    field {
-        bindings:{
-           useNoLabelLayout:true;
-           styleClass:'u-user-detail';
-        }
-    }
-
-    @field=fullName#derived {
-            type:String;
-            trait:bold;
-            value:${object.firstName  + " -  " + object.lastName};
-    }
-
-    zNone => *;
-    zLeft => lastName;
-}

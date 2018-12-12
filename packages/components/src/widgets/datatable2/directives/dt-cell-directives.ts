@@ -58,6 +58,8 @@ export class SetCellMaxWidthDirective implements OnInit, AfterViewInit
                         this.td.widestCell = (this.dtMaxWidth > this.td.widestCell)
                             ? this.dtMaxWidth : this.td.widestCell;
                     }
+                } else {
+                    this.td.widestCell =  Math.min(this.dtMaxWidth, this.td.widthPx);
                 }
             }
         }
